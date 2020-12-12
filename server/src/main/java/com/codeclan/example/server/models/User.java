@@ -26,14 +26,18 @@ public class User {
     private String community;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "owner")
-    @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties({"owner"})
+    @JoinColumn(name = "book_id", nullable = false)
     private ArrayList<Book> shareBooks;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "owner")
-    @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties({"owner"})
+    @JoinColumn(name = "book_id", nullable = false)
     private ArrayList<Book> ownedBooks;
+
+    @OneToMany(mappedBy = "request_id", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"owner"})
+    private ArrayList<Request> requests;
 
     public User(String firstName, String lastName, String email, String community) {
         this.firstName = firstName;
@@ -42,6 +46,7 @@ public class User {
         this.community = community;
         this.shareBooks = new ArrayList<>();
         this.ownedBooks = new ArrayList<>();
+        this.requests = new ArrayList<>();
     }
 
     public Long getId() {
@@ -106,5 +111,17 @@ public class User {
 
     public void addBookToOwnedBooks(Book bookToAdd){
         this.ownedBooks.add(bookToAdd);
+    }
+
+    public ArrayList<Request> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(ArrayList<Request> requests) {
+        this.requests = requests;
+    }
+
+    public void addRequest(Request request){
+        this.requests.add(request);
     }
 }
