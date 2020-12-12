@@ -26,16 +26,16 @@ public class User {
     private String community;
 
     @ManyToOne
-    @JsonIgnoreProperties({"owner"})
+    @JsonIgnoreProperties({"owner", "requester"})
     @JoinColumn(name = "book_id", nullable = false)
     private ArrayList<Book> shareBooks;
 
     @ManyToOne
-    @JsonIgnoreProperties({"owner"})
+    @JsonIgnoreProperties({"owner", "requester"})
     @JoinColumn(name = "book_id", nullable = false)
     private ArrayList<Book> ownedBooks;
 
-    @OneToMany(mappedBy = "request_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"owner"})
     private ArrayList<Request> requests;
 

@@ -23,7 +23,7 @@ public class Request {
     @ManyToOne
     @JsonIgnoreProperties({"requests"})
     @JoinColumn(name = "user_id", nullable = false)
-    private User requestor;
+    private User requester;
 
     @Column(name = "book")
     private Book book;
@@ -31,7 +31,7 @@ public class Request {
     public Request(String status, User owner, User requestor, Book book) {
         this.status = status;
         this.owner = owner;
-        this.requestor = requestor;
+        this.requester = requestor;
         this.book = book;
     }
 
@@ -63,12 +63,12 @@ public class Request {
         this.owner = owner;
     }
 
-    public User getRequestor() {
-        return requestor;
+    public User getRequester() {
+        return requester;
     }
 
-    public void setRequestor(User requestor) {
-        this.requestor = requestor;
+    public void setRequester(User requester) {
+        this.requester = requester;
     }
 
     public Book getBook() {
