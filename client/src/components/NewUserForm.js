@@ -55,6 +55,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 		<>
 			<div>
 				<form>
+					<label for="username">Username:</label>
 					<input
 						type="text"
 						placeholder="username"
@@ -62,6 +63,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handleUsernameChange}
 						required
 					/>
+					<label for="userEmail">Email:</label>
 					<input
 						type="text"
 						placeholder="email"
@@ -69,6 +71,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handleEmailChange}
 						required
 					/>
+					<label for="userPassword">Password:</label>
 					<input
 						type="password"
 						placeholder="password"
@@ -76,6 +79,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handlePasswordChange}
 						required
 					/>
+					<label for="userCommunity">Community:</label>
 					<input
 						type="text"
 						placeholder="community"
