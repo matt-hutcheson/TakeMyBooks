@@ -35,6 +35,10 @@ public class Request {
         this.book = book;
     }
 
+    public Request() {
+
+    }
+
     public Long getId() {
         return id;
     }

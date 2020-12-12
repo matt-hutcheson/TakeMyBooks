@@ -49,6 +49,10 @@ public class User {
         this.requests = new ArrayList<>();
     }
 
+    public User() {
+
+    }
+
     public Long getId() {
         return id;
     }
