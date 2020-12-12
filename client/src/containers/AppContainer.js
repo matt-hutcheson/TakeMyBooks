@@ -1,5 +1,11 @@
+import NewUserBox from './NewUserBox';
+
 const AppContainer = () => {
-	return <></>;
+	return (
+		<>
+			<NewUserBox />
+		</>
+	);
 };
 
 export default AppContainer;
