@@ -14,7 +14,12 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
     @GetMapping("/users")
-    public ResponseEntity<List<User>> getAllUsers(){
+    public ResponseEntity<List<User>> getAllUsers(
+            @RequestParam(name="firstName", required=false) String firstName,
+            @RequestParam(name="lastName", required=false) String lastName,
+            @RequestParam(name="community", required=false) String community,
+            @RequestParam(name="shareBooksId", required=false) Long shareBookId){
+
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
     @GetMapping(value="/users/{id}")
