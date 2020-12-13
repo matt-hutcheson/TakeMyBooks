@@ -41,4 +41,16 @@ public class RequestTest {
         List<Request> found = requestRepository.findRequestsByRequesterId(2L);
         assertEquals(2, found.size());
     }
+
+    @Test
+    public void canGetRequestsByOwnerIdAndStatus(){
+        List<Request> found = requestRepository.findRequestsByOwnerIdAndStatus(1L, "Rejected");
+        assertEquals(1, found.size());
+    }
+
+    @Test
+    public void canGetRequestsByRequesterIdAndStatus(){
+        List<Request> found = requestRepository.findRequestsByRequesterIdAndStatus(2L, "Pending");
+        assertEquals(1, found.size());
+    }
 }
