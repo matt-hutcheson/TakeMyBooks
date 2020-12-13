@@ -5,7 +5,7 @@ const AppContainer = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/" component={NewUserBox} />
+				<Route exact path="/sign-up" component={NewUserBox} />
 			</Switch>
 		</Router>
 	);

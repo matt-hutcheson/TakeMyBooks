@@ -5,9 +5,15 @@ const Header = () => {
 				<h1>bookYeet</h1>
 			</div>
 			<ul>
-				<li>Sign In</li>
-				<li>Register</li>
-				<li>About</li>
+				<li>
+					<a href="">Sign In</a>
+				</li>
+				<li>
+					<a href="">Register</a>
+				</li>
+				<li>
+					<a href="">About</a>
+				</li>
 			</ul>
 		</header>
 	);
