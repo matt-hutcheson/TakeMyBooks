@@ -2,6 +2,8 @@ package com.codeclan.example.server;
 
 import com.codeclan.example.server.models.Book;
 import com.codeclan.example.server.models.User;
+import com.codeclan.example.server.repositories.BookRepository;
+import com.codeclan.example.server.repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class UserTest {
 
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    BookRepository bookRepository;
+
     @Test
     public void contextLoads(){
 
@@ -23,6 +31,7 @@ public class UserTest {
     public void canAddBookToShareBooks(){
         User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
         Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
+
         user.addBookToSharedBooks(book);
         assertEquals(1, user.getShareBooks().size());
     }

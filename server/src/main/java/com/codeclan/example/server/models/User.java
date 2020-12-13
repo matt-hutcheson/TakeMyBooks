@@ -26,13 +26,13 @@ public class User {
     @Column(name = "community")
     private String community;
 
-    @JsonIgnoreProperties({"owner"})
+    @JsonIgnoreProperties("owner")
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Book> shareBooks;
 
-//    @JsonIgnoreProperties({"owner"})
-//    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
-//    private List<Book> ownedBooks;
+    @JsonIgnoreProperties({"owner"})
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Book> ownedBooks;
 
 //    @JsonIgnoreProperties({"owner", "requester"})
 //    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
@@ -44,7 +44,7 @@ public class User {
         this.email = email;
         this.community = community;
         this.shareBooks = new ArrayList<>();
-//        this.ownedBooks = new ArrayList<>();
+        this.ownedBooks = new ArrayList<>();
 //        this.requests = new ArrayList<>();
     }
 
@@ -100,21 +100,21 @@ public class User {
         this.shareBooks = shareBooks;
     }
 
-//    public List<Book> getOwnedBooks() {
-//        return ownedBooks;
-//    }
-//
-//    public void setOwnedBooks(List<Book> ownedBooks) {
-//        this.ownedBooks = ownedBooks;
-//    }
+    public List<Book> getOwnedBooks() {
+        return ownedBooks;
+    }
+
+    public void setOwnedBooks(List<Book> ownedBooks) {
+        this.ownedBooks = ownedBooks;
+    }
 
     public void addBookToSharedBooks(Book bookToAdd){
         this.shareBooks.add(bookToAdd);
     }
 
-//    public void addBookToOwnedBooks(Book bookToAdd){
-//        this.ownedBooks.add(bookToAdd);
-//    }
+    public void addBookToOwnedBooks(Book bookToAdd){
+        this.ownedBooks.add(bookToAdd);
+    }
 
 //    public List<Request> getRequests() {
 //        return requests;
