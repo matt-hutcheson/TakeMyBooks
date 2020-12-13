@@ -7,7 +7,7 @@ const NewUserBox = () => {
 	const [users, setUsers] = useState([]);
 
 	const addNewUser = (newUser) => {
-		// POSTS IT TO BACKEND API
+		// POSTS IT TO BACKEND API & REDIRECTS TO SEARCH PAGE OR MY BOOKS PAGE
 		setUsers([...users, newUser]);
 	};
 
@@ -26,7 +26,6 @@ const NewUserBox = () => {
 				{users.map((user, index) => {
 					return (
 						<div key={index}>
-							<h6>{index}</h6>
 							<h6>{user.username}</h6>
 							<h6>{user.userEmail}</h6>
 							<h6>{user.userCommunity}</h6>
