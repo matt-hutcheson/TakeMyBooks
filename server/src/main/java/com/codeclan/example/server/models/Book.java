@@ -27,14 +27,14 @@ public class Book {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = "books")
-    private List<User> owner;
+    private User owner;
 
     public Book(String title, String author, String genre, String barcode, User owner) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.barcode = barcode;
-        this.owner = new ArrayList<>();
+        this.owner = owner;
     }
 
     public Book() {

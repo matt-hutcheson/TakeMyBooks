@@ -1,4 +1,4 @@
-package com.codeclan.example.server.controllers.components;
+package com.codeclan.example.server.components;
 
 import com.codeclan.example.server.models.Book;
 import com.codeclan.example.server.models.User;
