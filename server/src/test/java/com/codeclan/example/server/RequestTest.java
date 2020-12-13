@@ -59,4 +59,22 @@ public class RequestTest {
         List<Request> found = requestRepository.findRequestsByBookId(1L);
         assertEquals(1, found.size());
     }
+
+    @Test
+    public void canGetRequestsByOwnerIdAndId(){
+        List<Request> found = requestRepository.findRequestsByOwnerIdAndId(1L, 2L);
+        assertEquals(1, found.size());
+    }
+
+    @Test
+    public void canGetRequestsByRequesterIdAndId(){
+        List<Request> found = requestRepository.findRequestsByRequesterIdAndId(2l, 2l);
+        assertEquals(1, found.size());
+    }
+
+    @Test
+    public void canGetRequestsByOwnerIdAndRequesterId(){
+        List<Request> found = requestRepository.findRequestsByOwnerIdAndRequesterId(1L, 2L);
+        assertEquals(2, found.size());
+    }
 }
