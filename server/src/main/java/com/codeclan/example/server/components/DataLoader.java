@@ -26,10 +26,16 @@ public class DataLoader implements ApplicationRunner {
         User user1 = new User("Bob", "Wiseman", "bobthereader@waterstones.com", "Edinburgh");
         userRepository.save(user1);
 
+        User user2 = new User("Robert", "Bruce", "bobthebruce@waterstones.com", "Glasgow");
+        userRepository.save(user2);
+
         Book book1 = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user1);
         bookRepository.save(book1);
 
         Book book2 = new Book("Never Go Back", "Lee Child", "Thriller", "987654321", user1);
         bookRepository.save(book2);
+
+        user1.addBookToSharedBooks(book1);
+        userRepository.save(user1);
     }
 }
