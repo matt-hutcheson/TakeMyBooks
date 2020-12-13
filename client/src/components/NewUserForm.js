@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const NewUserForm = ({ onNewUserSubmit }) => {
 	const [username, setUsername] = useState('');
@@ -55,7 +55,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 		<>
 			<div>
 				<form>
-					<label for="username">Username:</label>
+					<label htmlFor="username">Username:</label>
 					<input
 						type="text"
 						placeholder="username"
@@ -63,7 +63,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handleUsernameChange}
 						required
 					/>
-					<label for="userEmail">Email:</label>
+					<label htmlFor="userEmail">Email:</label>
 					<input
 						type="text"
 						placeholder="email"
@@ -71,7 +71,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handleEmailChange}
 						required
 					/>
-					<label for="userPassword">Password:</label>
+					<label htmlFor="userPassword">Password:</label>
 					<input
 						type="password"
 						placeholder="password"
@@ -79,7 +79,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						onChange={handlePasswordChange}
 						required
 					/>
-					<label for="userCommunity">Community:</label>
+					<label htmlFor="userCommunity">Community:</label>
 					<input
 						type="text"
 						placeholder="community"
@@ -90,7 +90,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 					<input
 						type="submit"
 						value="Sign Up"
-						onSubmit={handleNewUserSubmit}
+						onClick={handleNewUserSubmit}
 					/>
 				</form>
 			</div>

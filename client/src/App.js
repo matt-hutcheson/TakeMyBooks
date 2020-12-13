@@ -5,7 +5,6 @@ function App() {
 		//ROUTES HERE
 		<>
 			<AppContainer />
-			<h1>hello</h1>
 		</>
 	);
 }
