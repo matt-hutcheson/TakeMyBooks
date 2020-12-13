@@ -34,9 +34,9 @@ public class User {
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Book> ownedBooks;
 
-//    @JsonIgnoreProperties({"owner", "requester"})
-//    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
-//    private List<Request> requests;
+    @JsonIgnoreProperties({"owner", "requester"})
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Request> requests;
 
     public User(String firstName, String lastName, String email, String community) {
         this.firstName = firstName;
@@ -45,7 +45,7 @@ public class User {
         this.community = community;
         this.shareBooks = new ArrayList<>();
         this.ownedBooks = new ArrayList<>();
-//        this.requests = new ArrayList<>();
+        this.requests = new ArrayList<>();
     }
 
     public User() {
@@ -116,15 +116,15 @@ public class User {
         this.ownedBooks.add(bookToAdd);
     }
 
-//    public List<Request> getRequests() {
-//        return requests;
-//    }
-//
-//    public void setRequests(List<Request> requests) {
-//        this.requests = requests;
-//    }
-//
-//    public void addRequest(Request request){
-//        this.requests.add(request);
-//    }
+    public List<Request> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<Request> requests) {
+        this.requests = requests;
+    }
+
+    public void addRequest(Request request){
+        this.requests.add(request);
+    }
 }
