@@ -19,7 +19,15 @@ public class UserController {
             @RequestParam(name="lastName", required=false) String lastName,
             @RequestParam(name="community", required=false) String community,
             @RequestParam(name="shareBooksId", required=false) Long shareBookId){
-
+        if(firstName != null && lastName != null){
+            return new ResponseEntity<>(userRepository.findUsersByFirstNameAndLastName(firstName, lastName), HttpStatus.OK);
+        }
+        if(community != null){
+            return new ResponseEntity<>(userRepository.findUsersByCommunity(community), HttpStatus.OK);
+        }
+        if(shareBookId != null){
+            return new ResponseEntity<>(userRepository.findUsersByShareBooksId(shareBookId), HttpStatus.OK);
+        }
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
     @GetMapping(value="/users/{id}")
