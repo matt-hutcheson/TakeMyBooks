@@ -29,4 +29,16 @@ public class RequestTest {
         List<Request> found = requestRepository.findAll();
         assertEquals(2, found.size());
     }
+
+    @Test
+    public void canGetRequestsByOwnerId(){
+        List<Request> found = requestRepository.findRequestsByOwnerId(1L);
+        assertEquals(2, found.size());
+    }
+
+    @Test
+    public void canGetRequestsByRequesterId(){
+        List<Request> found = requestRepository.findRequestsByRequesterId(2L);
+        assertEquals(2, found.size());
+    }
 }

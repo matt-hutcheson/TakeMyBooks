@@ -1,8 +1,10 @@
 package com.codeclan.example.server.components;
 
 import com.codeclan.example.server.models.Book;
+import com.codeclan.example.server.models.Request;
 import com.codeclan.example.server.models.User;
 import com.codeclan.example.server.repositories.BookRepository;
+import com.codeclan.example.server.repositories.RequestRepository;
 import com.codeclan.example.server.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -17,6 +19,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    RequestRepository requestRepository;
 
     public DataLoader() {
 
@@ -36,6 +41,13 @@ public class DataLoader implements ApplicationRunner {
         bookRepository.save(book2);
 
         user1.addBookToSharedBooks(book1);
+        user1.addBookToSharedBooks(book2);
         userRepository.save(user1);
+
+        Request request = new Request("Pending", user1, user2, book1);
+        requestRepository.save(request);
+
+        Request request2 = new Request("Rejected", user1, user2, book2);
+        requestRepository.save(request2);
     }
 }
