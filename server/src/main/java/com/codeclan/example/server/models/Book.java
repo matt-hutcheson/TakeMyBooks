@@ -3,6 +3,7 @@ package com.codeclan.example.server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "books")
@@ -26,14 +27,14 @@ public class Book {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = "books")
-    private User owner;
+    private List<User> owner;
 
     public Book(String title, String author, String genre, String barcode, User owner) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.barcode = barcode;
-        this.owner = owner;
+        this.owner = new ArrayList<>();
     }
 
     public Book() {
