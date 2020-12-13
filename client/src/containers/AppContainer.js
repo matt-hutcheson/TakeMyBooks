@@ -1,10 +1,13 @@
 import NewUserBox from './NewUserBox';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const AppContainer = () => {
 	return (
-		<>
-			<NewUserBox />
-		</>
+		<Router>
+			<Switch>
+				<Route exact path="/" component={NewUserBox} />
+			</Switch>
+		</Router>
 	);
 };
 
