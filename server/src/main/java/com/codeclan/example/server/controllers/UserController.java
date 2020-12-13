@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 public class UserController {
+
     @Autowired
     UserRepository userRepository;
     @GetMapping("/users")
@@ -35,6 +36,7 @@ public class UserController {
         userRepository.save(userToUpdate);
         return new ResponseEntity<>(userToUpdate, HttpStatus.OK);
     }
+
     @DeleteMapping(value = "/users/{id}")
     public ResponseEntity<Long> deleteUser(@PathVariable Long id){
         userRepository.deleteById(id);
