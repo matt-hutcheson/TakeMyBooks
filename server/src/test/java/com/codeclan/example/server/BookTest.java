@@ -20,6 +20,9 @@ public class BookTest {
     @Autowired
     BookRepository bookRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Test
     public void contextLoads(){
 
@@ -27,6 +30,10 @@ public class BookTest {
 
     @Test
     public void canGetAllBooks(){
+        User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
+        userRepository.save(user);
+        Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
+        bookRepository.save(book);
         List<Book> found = bookRepository.findAll();
         assertEquals(2, found.size());
     }

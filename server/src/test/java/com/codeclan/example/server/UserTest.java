@@ -27,12 +27,12 @@ public class UserTest {
         assertEquals(1, user.getShareBooks().size());
     }
 
-    @Test
-    public void canAddBookToOwnedBooks(){
-        User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
-        Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
-        user.addBookToOwnedBooks(book);
-        assertEquals(1, user.getOwnedBooks().size());
-    }
+//    @Test
+//    public void canAddBookToOwnedBooks(){
+//        User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
+//        Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
+//        user.addBookToOwnedBooks(book);
+//        assertEquals(1, user.getOwnedBooks().size());
+//    }
 
 }

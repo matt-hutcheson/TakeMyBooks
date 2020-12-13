@@ -25,8 +25,9 @@ public class Book {
     @Column(name = "barcode")
     private String barcode;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = "books")
+    @ManyToOne()
+    @JsonIgnoreProperties({"shareBooks", "ownedBooks"})
+    @JoinColumn(name = "user_id", nullable = false)
     private User owner;
 
     public Book(String title, String author, String genre, String barcode, User owner) {
