@@ -40,6 +40,7 @@ build/
 # dependencies
 /client/node_modules
 /client/.pnp
+/client/.eslintcache
 .pnp.js
 
 # testing
