@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import SearchResults from './SearchResults';
 
 const SearchBar = ({ findBooks }) => {
 	const [searchInput, setSearchInput] = useState('');

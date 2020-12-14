@@ -30,8 +30,8 @@ const FindBooksPage = () => {
 
 	const [foundBooks, setFoundBooks] = useState([]);
 
-	const findBooks = (searchInput) => {
-		const lowerInput = searchInput.toLowerCase();
+	const findBooksBySearchBar = (searchInput) => {
+		const lowerInput = searchInput.toLowerCase().trim();
 
 		const foundBooksByTitle = books.filter((book) => {
 			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
@@ -40,11 +40,19 @@ const FindBooksPage = () => {
 		setFoundBooks(foundBooksByTitle);
 	};
 
+	const findBooksByFilterBar = (filterWord) => {
+		const foundBooksByFilterWord = books.filter((book) => {
+			return book.genre.some((genre) => genre === filterWord);
+		});
+
+		setFoundBooks(foundBooksByFilterWord);
+	};
+
 	return (
 		<>
 			<Header />
-			<SearchBar findBooks={findBooks} />
-			<FilterBar />
+			<SearchBar findBooks={findBooksBySearchBar} />
+			<FilterBar findBooks={findBooksByFilterBar} />
 			<SearchResults books={foundBooks} />
 			<BookBar />
 			<Footer />
