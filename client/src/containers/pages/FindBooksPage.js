@@ -8,10 +8,17 @@ import BookBar from '../../components/findBooksPage/BookBar';
 const FindBooksPage = () => {
 	const [searchInput, setSearchInput] = useState('');
 
+	const onSearchInputChange = (event) => {
+		setSearchInput(event.target.value);
+	};
+
 	return (
 		<>
 			<Header />
-			<SearchBar searchInput={searchInput} />
+			<SearchBar
+				searchInput={searchInput}
+				onSearchInputChange={onSearchInputChange}
+			/>
 			<FilterBar />
 			<BookBar />
 			<Footer />
