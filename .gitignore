@@ -2,7 +2,7 @@
 /server/HELP.md
 /server/target/
 /server/.idea
-/server/db/
+/server/db
 !/server/.mvn/wrapper/maven-wrapper.jar
 !**/server/src/main/**/target/
 !**/server/src/test/**/target/
