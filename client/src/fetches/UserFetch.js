@@ -29,7 +29,7 @@ const getUsersByShareBooksId = (bookId) => {
 };
 
 
-const getUsersByUserId = (userId) => {
+const getUsersById = (userId) => {
     return(
         fetch(`${url}/${userId}`)
     );

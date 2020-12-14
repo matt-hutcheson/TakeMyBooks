@@ -35,7 +35,7 @@ const getBooksByOwnerId = (ownerId) => {
     );
 };
 
-const getBooksByBookId = (bookId) => {
+const getBooksById = (bookId) => {
     return(
         fetch(`${url}/${bookId}`)
     );
