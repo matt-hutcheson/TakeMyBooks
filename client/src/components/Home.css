@@ -1,0 +1,7 @@
+form input[type="submit"] {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(241, 141, 10);
+    color: rgb(12, 11, 11);
+  }
