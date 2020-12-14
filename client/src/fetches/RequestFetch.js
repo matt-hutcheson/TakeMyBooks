@@ -20,23 +20,23 @@ const getRequestsByOwnerId = (ownerId) => {
     );
 };
 
-const getRequestsByOwnerIdAndRequestId = (ownerID, requestId) => {
+const getRequestsByOwnerIdAndRequestId = (ownerId, requestId) => {
     return(
-        fetch(`${url}/owner/${ownerID}?request-id=${requestId}`)
+        fetch(`${url}/owner/${ownerId}?request-id=${requestId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByOwnerIdAndStatus = (ownerID, status) => {
+const getRequestsByOwnerIdAndStatus = (ownerId, status) => {
     return(
-        fetch(`${url}/owner/${ownerID}?status=${status}`)
+        fetch(`${url}/owner/${ownerId}?status=${status}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByOwnerIdAndStatusAndRequestId = (ownerID, status, requestId) => {
+const getRequestsByOwnerIdAndStatusAndRequestId = (ownerId, status, requestId) => {
     return(
-        fetch(`${url}/owner/${ownerID}?status=${status}&request-id=${requestId}`)
+        fetch(`${url}/owner/${ownerId}?status=${status}&request-id=${requestId}`)
             .then(res => res.json())
     );
 };
@@ -48,9 +48,29 @@ const getRequestsByRequesterId = (requesterId) => {
     );
 };
 
+const getRequestsByRequesterIdAndStatus = (requesterId, status) => {
+    return(
+        fetch(`${url}/requester/${requesterId}?status=${status}`)
+            .then(res => res.json())
+    );
+};
+
+const getRequestsByRequesterIdAndRequestId = (requesterId, requestId) => {
+    return(
+        fetch(`${url}/requester/${requesterId}?request-id=${requestId}`)
+            .then(res => res.json())
+    );
+};
+
+const getRequestsByRequesterIdAndStatusAndRequestId = (requesterId, status, requestId) => {
+    return(
+        fetch(`${url}/requester/${requesterId}?status=${status}&request-id=${requestId}`)
+            .then(res => res.json())
+    );
+};
 
 
-const postrequest = (request) => {
+const postRequest = (request) => {
     return(
         fetch(`${url}`, {
             method: 'post',
@@ -59,7 +79,7 @@ const postrequest = (request) => {
     );
 };
 
-const updaterequest = (request, requestId) => {
+const updateRequest = (request, requestId) => {
     return(
         fetch(`${url}/${requestId}`, {
             method: 'put',
@@ -68,7 +88,7 @@ const updaterequest = (request, requestId) => {
     );
 };
 
-const deleterequest = (requestId) => {
+const deleteRequest = (requestId) => {
     return(
         fetch(`${url}/${requestId}`, {
             method: 'delete',
