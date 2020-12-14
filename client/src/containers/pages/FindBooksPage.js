@@ -41,11 +41,15 @@ const FindBooksPage = () => {
 	};
 
 	const findBooksByFilterBar = (filterWord) => {
-		const foundBooksByFilterWord = books.filter((book) => {
-			return book.genre.some((genre) => genre === filterWord);
-		});
+		if (!filterWord) {
+			setFoundBooks(books);
+		} else {
+			const foundBooksByFilterWord = books.filter((book) => {
+				return book.genre.some((genre) => genre === filterWord);
+			});
 
-		setFoundBooks(foundBooksByFilterWord);
+			setFoundBooks(foundBooksByFilterWord);
+		}
 	};
 
 	return (
