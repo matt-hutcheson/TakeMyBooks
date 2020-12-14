@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -13,31 +14,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column
+    @Column(name = "email")
     private String email;
 
-    @Column
+    @Column(name = "community")
     private String community;
 
-    @ManyToOne
-    @JsonIgnoreProperties({"owner", "requester"})
-    @JoinColumn(name = "book_id", nullable = false)
-    private ArrayList<Book> shareBooks;
-
-    @ManyToOne
-    @JsonIgnoreProperties({"owner", "requester"})
-    @JoinColumn(name = "book_id", nullable = false)
-    private ArrayList<Book> ownedBooks;
-
+    @JsonIgnoreProperties("owner")
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Book> shareBooks;
+
     @JsonIgnoreProperties({"owner"})
-    private ArrayList<Request> requests;
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Book> ownedBooks;
+
+    @JsonIgnoreProperties({"owner", "requester"})
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Request> requests;
 
     public User(String firstName, String lastName, String email, String community) {
         this.firstName = firstName;
@@ -93,19 +92,19 @@ public class User {
         this.community = community;
     }
 
-    public ArrayList<Book> getShareBooks() {
+    public List<Book> getShareBooks() {
         return shareBooks;
     }
 
-    public void setShareBooks(ArrayList<Book> shareBooks) {
+    public void setShareBooks(List<Book> shareBooks) {
         this.shareBooks = shareBooks;
     }
 
-    public ArrayList<Book> getOwnedBooks() {
+    public List<Book> getOwnedBooks() {
         return ownedBooks;
     }
 
-    public void setOwnedBooks(ArrayList<Book> ownedBooks) {
+    public void setOwnedBooks(List<Book> ownedBooks) {
         this.ownedBooks = ownedBooks;
     }
 
@@ -117,11 +116,11 @@ public class User {
         this.ownedBooks.add(bookToAdd);
     }
 
-    public ArrayList<Request> getRequests() {
+    public List<Request> getRequests() {
         return requests;
     }
 
-    public void setRequests(ArrayList<Request> requests) {
+    public void setRequests(List<Request> requests) {
         this.requests = requests;
     }
 

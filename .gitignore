@@ -6,6 +6,8 @@
 !/server/.mvn/wrapper/maven-wrapper.jar
 !**/server/src/main/**/target/
 !**/server/src/test/**/target/
+/server/db
+
 
 ### STS ###
 .apt_generated
