@@ -40,6 +40,7 @@ build/
 # dependencies
 /client/node_modules
 /client/.pnp
+/client/src/keys/
 .pnp.js
 
 # testing
