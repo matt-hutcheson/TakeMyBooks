@@ -3,6 +3,7 @@ package com.codeclan.example.server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "books")
@@ -24,8 +25,9 @@ public class Book {
     @Column(name = "barcode")
     private String barcode;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = "books")
+    @ManyToOne
+    @JsonIgnoreProperties({"shareBooks", "ownedBooks", "requests"})
+    @JoinColumn(name = "user_id", nullable = false)
     private User owner;
 
     public Book(String title, String author, String genre, String barcode, User owner) {
