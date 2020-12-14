@@ -1,6 +1,8 @@
+/node_modules
 /server/HELP.md
 /server/target/
 /server/.idea
+/server/db/
 !/server/.mvn/wrapper/maven-wrapper.jar
 !**/server/src/main/**/target/
 !**/server/src/test/**/target/
@@ -40,6 +42,7 @@ build/
 # dependencies
 /client/node_modules
 /client/.pnp
+/client/.eslintcache
 /client/src/keys/
 .pnp.js
 
