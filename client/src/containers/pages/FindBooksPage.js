@@ -3,11 +3,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SearchBar from '../../components/findBooksPage/SearchBar';
 import FilterBar from '../../components/findBooksPage/FilterBar';
+import SearchResults from '../../components/findBooksPage/SearchResults';
 import BookBar from '../../components/findBooksPage/BookBar';
 
 const FindBooksPage = () => {
-	const [searchInput, setSearchInput] = useState('');
-
 	const books = [
 		{
 			title: 'LW&W',
@@ -29,20 +28,24 @@ const FindBooksPage = () => {
 		}
 	];
 
-	const onSearchInputChange = (event) => {
-		event.preventDefault();
-		setSearchInput(event.target.value);
+	const [foundBooks, setFoundBooks] = useState([]);
+
+	const findBooks = (searchInput) => {
+		const lowerInput = searchInput.toLowerCase();
+
+		const foundBooksByTitle = books.filter((book) => {
+			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
+		});
+
+		setFoundBooks(foundBooksByTitle);
 	};
 
 	return (
 		<>
 			<Header />
-			<SearchBar
-				books={books}
-				searchInput={searchInput}
-				onSearchInputChange={onSearchInputChange}
-			/>
+			<SearchBar findBooks={findBooks} />
 			<FilterBar />
+			<SearchResults books={foundBooks} />
 			<BookBar />
 			<Footer />
 		</>

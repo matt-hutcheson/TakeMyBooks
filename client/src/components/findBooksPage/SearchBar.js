@@ -1,38 +1,16 @@
 import { useState, useEffect } from 'react';
+import SearchResults from './SearchResults';
 
-const SearchBar = ({ books, searchInput, onSearchInputChange }) => {
-	const [foundBooks, setFoundBooks] = useState([]);
+const SearchBar = ({ findBooks }) => {
+	const [searchInput, setSearchInput] = useState('');
 
-	const findBooks = (searchInput) => {
-		const lowerInput = searchInput.toLowerCase();
-
-		const foundBooksByTitle = books.filter((book) => {
-			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
-		});
-
-		const foundBooksByAuthor = books.filter((book) => {
-			return book.author.toLowerCase().indexOf(lowerInput) >= 0;
-		});
-
-		const foundBooksByGenre = books.filter((book) => {
-			return book.Genre.toLowerCase().indexOf(lowerInput) >= 0;
-		});
-
-		const foundBooksByISBN = books.filter((book) => {
-			return book.ISBN.indexOf(lowerInput) >= 0;
-		});
-
-		setFoundBooks([
-			...foundBooks,
-			foundBooksByTitle,
-			foundBooksByAuthor,
-			foundBooksByGenre,
-			foundBooksByISBN
-		]);
+	const onSearchInputChange = (event) => {
+		event.preventDefault();
+		setSearchInput(event.target.value);
 	};
 
 	useEffect(() => {
-		onSearchInputChange(searchInput);
+		findBooks(searchInput);
 	}, [searchInput]);
 
 	return (
