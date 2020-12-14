@@ -26,7 +26,7 @@ public class Book {
     private String barcode;
 
     @ManyToOne
-    @JsonIgnoreProperties({"shareBooks"})
+    @JsonIgnoreProperties({"shareBooks", "ownedBooks", "requests"})
     @JoinColumn(name = "user_id", nullable = false)
     private User owner;
 
