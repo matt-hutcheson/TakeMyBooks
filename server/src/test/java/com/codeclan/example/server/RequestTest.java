@@ -77,4 +77,10 @@ public class RequestTest {
         List<Request> found = requestRepository.findRequestsByOwnerIdAndRequesterId(1L, 2L);
         assertEquals(2, found.size());
     }
+
+    @Test
+    public void canGetRequestsByOwnerIdOrRequesterId(){
+        List<Request> found = requestRepository.findRequestsByOwnerIdOrRequesterId(1L, 1L);
+        assertEquals(2, found.size());
+    }
 }
