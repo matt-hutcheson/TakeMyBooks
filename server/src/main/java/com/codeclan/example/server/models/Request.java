@@ -16,12 +16,12 @@ public class Request {
     private String status;
 
     @ManyToOne
-    @JsonIgnoreProperties({"requests"})
+    @JsonIgnoreProperties({"requests", "shareBooks", "ownedBooks"})
     @PrimaryKeyJoinColumn(name = "owner_id", referencedColumnName = "id")
     private User owner;
 
     @ManyToOne
-    @JsonIgnoreProperties({"requests"})
+    @JsonIgnoreProperties({"requests", "shareBooks", "ownedBooks"})
     @PrimaryKeyJoinColumn(name = "requester_id", referencedColumnName = "id")
     private User requester;
 

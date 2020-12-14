@@ -49,14 +49,8 @@ public class RequestTest {
     }
 
     @Test
-    public void canGetRequestsByRequesterIdAndStatus(){
+    public void canGetRequestsByRequesterIdAndStatus() {
         List<Request> found = requestRepository.findRequestsByRequesterIdAndStatus(2L, "Pending");
-        assertEquals(1, found.size());
-    }
-
-    @Test
-    public void canGetRequestsByBookId(){
-        List<Request> found = requestRepository.findRequestsByBookId(1L);
         assertEquals(1, found.size());
     }
 
@@ -82,5 +76,11 @@ public class RequestTest {
     public void canGetRequestsByOwnerIdOrRequesterId(){
         List<Request> found = requestRepository.findRequestsByOwnerIdOrRequesterId(1L, 1L);
         assertEquals(2, found.size());
+    }
+
+    @Test
+    public void canGetRequestsByBookId(){
+        List<Request> found = requestRepository.findRequestsByBookId(2L);
+        assertEquals("Rejected", found.get(0).getStatus());
     }
 }

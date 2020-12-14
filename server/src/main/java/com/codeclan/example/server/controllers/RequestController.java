@@ -15,30 +15,32 @@ public class RequestController {
     @Autowired
     RequestRepository requestRepository;
 
-    @GetMapping(value = "/requests/owner/{id}")
-    public ResponseEntity<List<Request>> getRequestsByOwnerUserId(@PathVariable Long id, @RequestParam(name = "status", required = false) String status){
-        if (status != null){
-            return new ResponseEntity<>(requestRepository.findRequestsByOwnerIdAndStatus(id, status), HttpStatus.OK);
+    @GetMapping(value = "/requests/owner/{ownerId}")
+    public ResponseEntity<List<Request>> getRequestsByOwnerUserId(
+            @PathVariable Long ownerId,
+            @RequestParam(name = "status", required = false) String status,
+            @RequestParam(name = "request-id", required = false) Long requestId){
+        if (requestId != null){
+            return new ResponseEntity<>(requestRepository.findRequestsByOwnerIdAndId(ownerId, requestId), HttpStatus.OK);
         }
-        return new ResponseEntity<>(requestRepository.findRequestsByOwnerId(id), HttpStatus.OK);
-    }
-
-    @GetMapping(value = "/requests/requester/{id}")
-    public ResponseEntity<List<Request>> getRequestsByRequesterId(@PathVariable Long id, @RequestParam(name = "status", required = false) String status){
         if (status != null){
-            return new ResponseEntity<>(requestRepository.findRequestsByRequesterIdAndStatus(id, status), HttpStatus.OK);
+            return new ResponseEntity<>(requestRepository.findRequestsByOwnerIdAndStatus(ownerId, status), HttpStatus.OK);
         }
-        return new ResponseEntity<>(requestRepository.findRequestsByRequesterId(id), HttpStatus.OK);
+        return new ResponseEntity<>(requestRepository.findRequestsByOwnerId(ownerId), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/requests/owner/{id}/{id}")
-    public ResponseEntity<Request> getRequestByOwnerIdAndRequestId(@PathVariable Long ownerId, @PathVariable Long requestId){
-        return new ResponseEntity(requestRepository.findRequestsByOwnerIdAndId(ownerId, requestId), HttpStatus.OK);
-    }
-
-    @GetMapping(value = "/requests/requester/{id}/{id}")
-    public ResponseEntity<Request> getRequestByRequesterIdAndRequestId(@PathVariable Long requesterId, @PathVariable Long requestId){
-        return new ResponseEntity(requestRepository.findRequestsByRequesterIdAndId(requesterId, requestId), HttpStatus.OK);
+    @GetMapping(value = "/requests/requester/{requesterId}")
+    public ResponseEntity<List<Request>> getRequestsByRequesterId(
+            @PathVariable Long requesterId,
+            @RequestParam(name = "status", required = false) String status,
+            @RequestParam(name = "request-id", required = false) Long requestId){
+        if (requestId != null){
+            return new ResponseEntity<>(requestRepository.findRequestsByRequesterIdAndId(requesterId, requestId), HttpStatus.OK);
+        }
+        if (status != null){
+            return new ResponseEntity<>(requestRepository.findRequestsByRequesterIdAndStatus(requesterId, status), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(requestRepository.findRequestsByRequesterId(requesterId), HttpStatus.OK);
     }
 
     // INDEX
