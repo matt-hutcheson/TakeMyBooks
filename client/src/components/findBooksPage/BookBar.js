@@ -1,7 +1,14 @@
-const BookBar = () => {
+import Book from './Book';
+
+const BookBar = ({ findBooks }) => {
+	const showBooks = findBooks.map((book, i) => {
+		return <Book key={i} book={book} />;
+	});
+
 	return (
 		<>
-			<h1>Book Bar</h1>
+			<h3>Fiction</h3>
+			<ul>{showBooks}</ul>
 		</>
 	);
 };

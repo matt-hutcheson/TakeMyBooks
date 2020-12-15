@@ -52,13 +52,17 @@ const FindBooksPage = () => {
 		}
 	};
 
+	const findFictionBooks = books.filter((book) => {
+		return book.genre.some((genre) => genre === 'fiction');
+	});
+
 	return (
 		<>
 			<Header />
 			<SearchBar findBooks={findBooksBySearchBar} />
 			<FilterBar findBooks={findBooksByFilterBar} />
 			<SearchResults books={foundBooks} />
-			<BookBar />
+			<BookBar findBooks={findFictionBooks} />
 			<Footer />
 		</>
 	);
