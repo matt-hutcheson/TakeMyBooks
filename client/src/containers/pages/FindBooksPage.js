@@ -7,62 +7,70 @@ import SearchResults from '../../components/findBooksPage/SearchResults';
 import BookBar from '../../components/findBooksPage/BookBar';
 
 const FindBooksPage = () => {
-	const books = [
-		{
-			title: 'LW&W',
-			author: 'CS Lewis',
-			ISBN: 123456789,
-			genre: ['fantasy', 'fiction', 'childrens']
-		},
-		{
-			title: 'Bible',
-			author: 'Various',
-			ISBN: 987654321,
-			genre: ['religious', 'non-fiction']
-		},
-		{
-			title: '1984',
-			author: 'George Orwell',
-			ISBN: 132423433,
-			genre: ['fiction']
-		}
-	];
-
 	const [foundBooks, setFoundBooks] = useState([]);
 
-	const findBooksBySearchBar = (searchInput) => {
-		const lowerInput = searchInput.toLowerCase().trim();
-
-		const foundBooksByTitle = books.filter((book) => {
-			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
-		});
-
-		setFoundBooks(foundBooksByTitle);
+	const getBooks = () => {
+		return fetch('http://localhost:8080/books')
+			.then((res) => res.json())
+			.then((data) => setFoundBooks(data));
 	};
 
-	const findBooksByFilterBar = (filterWord) => {
-		if (!filterWord) {
-			setFoundBooks(books);
-		} else {
-			const foundBooksByFilterWord = books.filter((book) => {
-				return book.genre.some((genre) => genre === filterWord);
-			});
+	const books = getBooks();
 
-			setFoundBooks(foundBooksByFilterWord);
-		}
-	};
+	// const books = [
+	// 	{
+	// 		title: 'LW&W',
+	// 		author: 'CS Lewis',
+	// 		ISBN: 123456789,
+	// 		genre: ['fantasy', 'fiction', 'childrens']
+	// 	},
+	// 	{
+	// 		title: 'Bible',
+	// 		author: 'Various',
+	// 		ISBN: 987654321,
+	// 		genre: ['religious', 'non-fiction']
+	// 	},
+	// 	{
+	// 		title: '1984',
+	// 		author: 'George Orwell',
+	// 		ISBN: 132423433,
+	// 		genre: ['fiction']
+	// 	}
+	// ];
 
-	const findFictionBooks = books.filter((book) => {
-		return book.genre.some((genre) => genre === 'fiction');
-	});
+	// const findBooksBySearchBar = (searchInput) => {
+	// 	const lowerInput = searchInput.toLowerCase().trim();
+
+	// 	const foundBooksByTitle = books.filter((book) => {
+	// 		return book.title.toLowerCase().indexOf(lowerInput) >= 0;
+	// 	});
+
+	// 	setFoundBooks(foundBooksByTitle);
+	// };
+
+	// const findBooksByFilterBar = (filterWord) => {
+	// 	if (!filterWord) {
+	// 		setFoundBooks(books);
+	// 	} else {
+	// 		const foundBooksByFilterWord = books.filter((book) => {
+	// 			return book.genre.some((genre) => genre === filterWord);
+	// 		});
+
+	// 		setFoundBooks(foundBooksByFilterWord);
+	// 	}
+	// };
+
+	// const findFictionBooks = books.filter((book) => {
+	// 	return book.genre.some((genre) => genre === 'fiction');
+	// });
 
 	return (
 		<>
 			<Header />
-			<SearchBar findBooks={findBooksBySearchBar} />
-			<FilterBar findBooks={findBooksByFilterBar} />
+			{/* <SearchBar findBooks={findBooksBySearchBar} />
+			<FilterBar findBooks={findBooksByFilterBar} /> */}
 			<SearchResults books={foundBooks} />
-			<BookBar findBooks={findFictionBooks} />
+			{/* <BookBar findBooks={findFictionBooks} /> */}
 			<Footer />
 		</>
 	);
