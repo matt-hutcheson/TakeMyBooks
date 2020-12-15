@@ -5,23 +5,18 @@ import SearchBar from '../../components/findBooksPage/SearchBar';
 import FilterBar from '../../components/findBooksPage/FilterBar';
 import SearchResults from '../../components/findBooksPage/SearchResults';
 import BookBar from '../../components/findBooksPage/BookBar';
+import { getBooks } from '../../fetches/BookFetch';
 
 const FindBooksPage = () => {
 	const [books, setBooks] = useState([]);
 	const [foundBooks, setFoundBooks] = useState([]);
 
-	const getAndSetBooksAndFoundBooks = () => {
-		return fetch('http://localhost:8080/books').then((res) => res.json());
-	};
-
 	useEffect(() => {
-		getAndSetBooksAndFoundBooks().then((data) => {
+		getBooks().then((data) => {
 			setBooks(data);
 			setFoundBooks(data);
 		});
 	}, []);
-
-	// const books = getBooks();
 
 	const findBooksBySearchBar = (searchInput) => {
 		const lowerInput = searchInput.toLowerCase().trim();
