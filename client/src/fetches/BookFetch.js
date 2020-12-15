@@ -1,67 +1,65 @@
-let url = "http://localhost:8080/books";
-
-const getBooks = () => {
+export const getBooks = () => {
     return(
-        fetch(url)
+        fetch("http://localhost:8080/books")
             .then(res => res.json())
     );
 };
 
-const getBooksByAuthorAndGenre = (author, genre) => {
+export const getBooksByAuthorAndGenre = (author, genre) => {
     return(
-        fetch(`${url}?author=${author}&genre=${genre}`)
+        fetch(`http://localhost:8080/books?author=${author}&genre=${genre}`)
             .then(res => res.json())
     );
 };
 
-const getBooksByAuthor = (author) => {
+export const getBooksByAuthor = (author) => {
     return(
-        fetch(`${url}?author=${author}`)
+        fetch(`http://localhost:8080/books?author=${author}`)
             .then(res => res.json())
     );
 };
 
-const getBooksByGenre = (genre) => {
+export const getBooksByGenre = (genre) => {
     return(
-        fetch(`${url}?genre=${genre}`)
+        fetch(`http://localhost:8080/books?genre=${genre}`)
             .then(res => res.json())
     );
 };
 
-const getBooksByOwnerId = (ownerId) => {
+export const getBooksByOwnerId = (ownerId) => {
     return(
-        fetch(`${url}?ownerId=${ownerId}`)
+        fetch(`http://localhost:8080/books?ownerId=${ownerId}`)
             .then(res => res.json())
     );
 };
 
-const getBooksById = (bookId) => {
+export const getBooksById = (bookId) => {
     return(
-        fetch(`${url}/${bookId}`)
+        fetch(`http://localhost:8080/books/${bookId}`)
     );
 };
 
-const postBook = (book) => {
+export const postBook = (book) => {
     return(
-        fetch(`${url}`, {
+        fetch(`http://localhost:8080/books`, {
             method: 'post',
             body: JSON.stringify(book)
         })
     );
 };
 
-const updateBook = (book, bookId) => {
+export const updateBook = (book, bookId) => {
     return(
-        fetch(`${url}/${bookId}`, {
+        fetch(`http://localhost:8080/books/${bookId}`, {
             method: 'put',
             body: JSON.stringify(book)
         })
     );
 };
 
-const deleteBook = (bookId) => {
+export const deleteBook = (bookId) => {
     return(
-        fetch(`${url}/${bookId}`, {
+        fetch(`http://localhost:8080/books/${bookId}`, {
             method: 'delete',
         })
     );
