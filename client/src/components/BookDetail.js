@@ -8,18 +8,14 @@ const BookDetail = ({title, author, genre, barcode, user}) => {
     const [clicked, setClick] = useState(false)
 
     const handleClick = () => {
-        // this.setState(state => ({
-        //     isToggleOn: !state.isToggleOn
-        // }));
-       setClick (true)
+       clicked ? setClick(false):setClick(true)
     }
 
     return(
         <>
             <p >Title: { title }</p>
-            <button onClick={ handleClick }>Show</button>
-            {/* {this.state.isToggleOn? 'Show':'Hide'} */}
-            {clicked ? <Book author={author} genre={genre} barcode={barcode}/> : <p>something</p>}
+            <button onClick={ handleClick }>{clicked ? "Hide" : "Show"}</button>
+            {clicked ? <Book author={author} genre={genre} barcode={barcode}/> : null}
         </>
   );
         
