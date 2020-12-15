@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SearchBar from '../../components/findBooksPage/SearchBar';
@@ -7,46 +7,31 @@ import SearchResults from '../../components/findBooksPage/SearchResults';
 import BookBar from '../../components/findBooksPage/BookBar';
 
 const FindBooksPage = () => {
+	const [books, setBooks] = useState([]);
 	const [foundBooks, setFoundBooks] = useState([]);
 
-	const getBooks = () => {
-		return fetch('http://localhost:8080/books')
-			.then((res) => res.json())
-			.then((data) => setFoundBooks(data));
+	const getAndSetBooksAndFoundBooks = () => {
+		return fetch('http://localhost:8080/books').then((res) => res.json());
 	};
 
-	const books = getBooks();
+	useEffect(() => {
+		getAndSetBooksAndFoundBooks().then((data) => {
+			setBooks(data);
+			setFoundBooks(data);
+		});
+	}, []);
 
-	// const books = [
-	// 	{
-	// 		title: 'LW&W',
-	// 		author: 'CS Lewis',
-	// 		ISBN: 123456789,
-	// 		genre: ['fantasy', 'fiction', 'childrens']
-	// 	},
-	// 	{
-	// 		title: 'Bible',
-	// 		author: 'Various',
-	// 		ISBN: 987654321,
-	// 		genre: ['religious', 'non-fiction']
-	// 	},
-	// 	{
-	// 		title: '1984',
-	// 		author: 'George Orwell',
-	// 		ISBN: 132423433,
-	// 		genre: ['fiction']
-	// 	}
-	// ];
+	// const books = getBooks();
 
-	// const findBooksBySearchBar = (searchInput) => {
-	// 	const lowerInput = searchInput.toLowerCase().trim();
+	const findBooksBySearchBar = (searchInput) => {
+		const lowerInput = searchInput.toLowerCase().trim();
 
-	// 	const foundBooksByTitle = books.filter((book) => {
-	// 		return book.title.toLowerCase().indexOf(lowerInput) >= 0;
-	// 	});
+		const foundBooksByTitle = books.filter((book) => {
+			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
+		});
 
-	// 	setFoundBooks(foundBooksByTitle);
-	// };
+		setFoundBooks(foundBooksByTitle);
+	};
 
 	// const findBooksByFilterBar = (filterWord) => {
 	// 	if (!filterWord) {
@@ -67,8 +52,8 @@ const FindBooksPage = () => {
 	return (
 		<>
 			<Header />
-			{/* <SearchBar findBooks={findBooksBySearchBar} />
-			<FilterBar findBooks={findBooksByFilterBar} /> */}
+			<SearchBar findBooks={findBooksBySearchBar} />
+			{/* <FilterBar findBooks={findBooksByFilterBar} /> */}
 			<SearchResults books={foundBooks} />
 			{/* <BookBar findBooks={findFictionBooks} /> */}
 			<Footer />
