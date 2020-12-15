@@ -1,3 +1,5 @@
+import BookContainer from './BookContainer'
+import MyBooksContainer from './MyBookContainer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import {getUsers} from '../fetches/UserFetch';
@@ -24,8 +26,11 @@ const AppContainer = () => {
 				<NavBar />
 				<Switch>
 					<Route path="/sign-up" component={NewUserBox} />
-					<Route exact path="/" component={Home} />
-					{/* <Route path="/my-books" component={MyBooks}/> */}
+					<Route exact path="/" component={Home}/>
+					<Route exact path="/books" component={BookContainer} />
+					<Route exact path="/book-detail" component={BookContainer} />	
+					<Route path="/my-books" component={MyBooksContainer}/>
+>>>>>>> client
 					<Route path="/find-books" component={FindBooksPage} />
 					<Route path="/my-books/add-book" component={AddBook} />
 					{/* <Route component={ErrorPage}/> */}
