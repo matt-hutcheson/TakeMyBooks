@@ -42,7 +42,9 @@ build/
 # dependencies
 /client/node_modules
 /client/.pnp
+*.eslintcache
 /client/.eslintcache
+.eslintcache
 /client/src/keys/
 .pnp.js
 
