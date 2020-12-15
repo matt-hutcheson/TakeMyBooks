@@ -63,5 +63,4 @@ public class BookTest {
         List<Book> found = bookRepository.findBooksByAuthorAndGenre("Lee Child", "Thriller");
         assertEquals(1, found.size());
     }
-
 }
