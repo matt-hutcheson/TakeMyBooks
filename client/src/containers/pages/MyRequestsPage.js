@@ -1,16 +1,28 @@
 import {useState} from 'react'
-import { getRequestsByOwnerId } from '../../fetches/RequestFetch';
+import Header from '../../components/Header';
+import { getRequestsByOwnerId, getRequestsByRequesterId } from '../../fetches/RequestFetch';
 
-const MyRequestsPage = () => {
-    const [request, setRequest] = useState([])
+const MyRequestsPage = ({currentUser}) => {
+    const [requestShare, setRequestShare] = useState([])
+    const [requestBorrow, setRequestBorrow] = useState([])
 
     useEffect(() => {
-		getRequestsByOwnerId().then((data) => {
-			setRequests(data);
-		});
+		getRequestsByOwnerId({currentUser}.id).then((data) => {
+			setRequestsShare(data);
+        });
+        getRequestsByRequesterId({currentUser}.id).then((data) => {
+            setRequestBorrow(data);
+        });
     }, []);
     
     return(
-        <h1 request={request}>Requests</h1>
-    )
-}
+        <>
+            <Header/>
+            <h2>Books I'm Sharing:</h2>
+            <RequestList request={requestShare}/>
+            <h2>Books I'm Receiving:</h2>
+            <RequestList request={requestBorrow}/>
+            <Footer/>
+        </>
+    );
+};
