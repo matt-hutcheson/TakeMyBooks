@@ -1,96 +1,94 @@
-let url = "http://localhost:8080/requests";
-
-const getRequests = () => {
+export const getRequests = () => {
     return(
-        fetch(url)
+        fetch("http://localhost:8080/requests")
             .then(res => res.json())
     );
 };
 
-const getRequestsById = (requestId) => {
+export const getRequestsById = (requestId) => {
     return(
-        fetch(`${url}/${requestId}`)
+        fetch(`http://localhost:8080/requests/${requestId}`)
     );
 };
 
-const getRequestsByOwnerId = (ownerId) => {
+export const getRequestsByOwnerId = (ownerId) => {
     return(
-        fetch(`${url}/owner/${ownerId}`)
+        fetch(`http://localhost:8080/requests/owner/${ownerId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByOwnerIdAndRequestId = (ownerId, requestId) => {
+export const getRequestsByOwnerIdAndRequestId = (ownerId, requestId) => {
     return(
-        fetch(`${url}/owner/${ownerId}?request-id=${requestId}`)
+        fetch(`http://localhost:8080/requests/owner/${ownerId}?request-id=${requestId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByOwnerIdAndStatus = (ownerId, status) => {
+export const getRequestsByOwnerIdAndStatus = (ownerId, status) => {
     return(
-        fetch(`${url}/owner/${ownerId}?status=${status}`)
+        fetch(`http://localhost:8080/requests/owner/${ownerId}?status=${status}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByOwnerIdAndStatusAndRequestId = (ownerId, status, requestId) => {
+export const getRequestsByOwnerIdAndStatusAndRequestId = (ownerId, status, requestId) => {
     return(
-        fetch(`${url}/owner/${ownerId}?status=${status}&request-id=${requestId}`)
+        fetch(`http://localhost:8080/requests/owner/${ownerId}?status=${status}&request-id=${requestId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByRequesterId = (requesterId) => {
+export const getRequestsByRequesterId = (requesterId) => {
     return(
-        fetch(`${url}/requester/${requesterId}`)
+        fetch(`http://localhost:8080/requests/requester/${requesterId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByRequesterIdAndStatus = (requesterId, status) => {
+export const getRequestsByRequesterIdAndStatus = (requesterId, status) => {
     return(
-        fetch(`${url}/requester/${requesterId}?status=${status}`)
+        fetch(`http://localhost:8080/requests/requester/${requesterId}?status=${status}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByRequesterIdAndRequestId = (requesterId, requestId) => {
+export const getRequestsByRequesterIdAndRequestId = (requesterId, requestId) => {
     return(
-        fetch(`${url}/requester/${requesterId}?request-id=${requestId}`)
+        fetch(`http://localhost:8080/requests/requester/${requesterId}?request-id=${requestId}`)
             .then(res => res.json())
     );
 };
 
-const getRequestsByRequesterIdAndStatusAndRequestId = (requesterId, status, requestId) => {
+export const getRequestsByRequesterIdAndStatusAndRequestId = (requesterId, status, requestId) => {
     return(
-        fetch(`${url}/requester/${requesterId}?status=${status}&request-id=${requestId}`)
+        fetch(`http://localhost:8080/requests/requester/${requesterId}?status=${status}&request-id=${requestId}`)
             .then(res => res.json())
     );
 };
 
 
-const postRequest = (request) => {
+export const postRequest = (request) => {
     return(
-        fetch(`${url}`, {
+        fetch(`http://localhost:8080/requests`, {
             method: 'post',
             body: JSON.stringify(request)
         })
     );
 };
 
-const updateRequest = (request, requestId) => {
+export const updateRequest = (request, requestId) => {
     return(
-        fetch(`${url}/${requestId}`, {
+        fetch(`http://localhost:8080/requests/${requestId}`, {
             method: 'put',
             body: JSON.stringify(request)
         })
     );
 };
 
-const deleteRequest = (requestId) => {
+export const deleteRequest = (requestId) => {
     return(
-        fetch(`${url}/${requestId}`, {
+        fetch(`http://localhost:8080/requests/${requestId}`, {
             method: 'delete',
         })
     );

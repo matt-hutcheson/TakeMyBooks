@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {useState, useEffect} from 'react';
-import {getUsers, url as userURL} from '../fetches/UserFetch';
+import {getUsers} from '../fetches/UserFetch';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
@@ -12,7 +12,7 @@ const AppContainer = () => {
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
-		getUsers
+		getUsers()
 		.then(data => setUsers(data))
 	}, [])
 

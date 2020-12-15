@@ -1,62 +1,62 @@
-let url = "http://localhost:8080/users";
-
-const getUsers = () => {
+export const getUsers = () => {
     return(
-        fetch(url)
+        fetch("http://localhost:8080/users")
             .then(res => res.json())
     );
 };
 
-const getUsersByFirstAndLastNames = (firstName, lastName) => {
+export const getUsersByFirstAndLastNames = (firstName, lastName) => {
     return(
-        fetch(`${url}?firstName=${firstName}&lastName=${lastName}`)
+        fetch(`http://localhost:8080/users?firstName=${firstName}&lastName=${lastName}`)
             .then(res => res.json())
     );
 };
 
-const getUsersByCommunity = (community) => {
+export const getUsersByCommunity = (community) => {
     return(
-        fetch(`${url}?community=${community}`)
+        fetch(`http://localhost:8080/users?community=${community}`)
             .then(res => res.json())
     );
 };
 
-const getUsersByShareBooksId = (bookId) => {
+export const getUsersByShareBooksId = (bookId) => {
     return(
-        fetch(`${url}?shareBooksId=${bookId}`)
+        fetch(`http://localhost:8080/users?shareBooksId=${bookId}`)
             .then(res => res.json())
     );
 };
 
 
-const getUsersById = (userId) => {
+export const getUsersById = (userId) => {
     return(
-        fetch(`${url}/${userId}`)
+        fetch(`http://localhost:8080/users/${userId}`)
     );
 };
 
-const postUser = (user) => {
+export const postUser = (user) => {
     return(
-        fetch(`${url}`, {
+        fetch(`http://localhost:8080/users`, {
             method: 'post',
             body: JSON.stringify(user)
         })
     );
 };
 
-const updateUser = (user, userId) => {
+export const updateUser = (user, userId) => {
     return(
-        fetch(`${url}/${userId}`, {
+        fetch(`http://localhost:8080/users/${userId}`, {
             method: 'put',
             body: JSON.stringify(user)
         })
     );
 };
 
-const deleteUser = (userId) => {
+export const deleteUser = (userId) => {
     return(
-        fetch(`${url}/${userId}`, {
+        fetch(`http://localhost:8080/users/${userId}`, {
             method: 'delete',
         })
     );
 };
+
+
