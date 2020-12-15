@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NewUserForm from '../../components/signUpPage/NewUserForm';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { getUsers, postUser } from '../../fetches/UserFetch';
 
 const NewUserBox = () => {
 	const [users, setUsers] = useState([]);
 
 	const addNewUser = (newUser) => {
 		// POSTS IT TO BACKEND API & REDIRECTS TO SEARCH PAGE OR MY BOOKS PAGE
-		setUsers([...users, newUser]);
+		postUser(newUser);
 	};
+
+	useEffect(() => {
+		getUsers().then((data) => setUsers(data));
+	}, []);
 
 	return (
 		<>
