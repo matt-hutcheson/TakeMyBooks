@@ -51,7 +51,9 @@ public class BookController {
     @PostMapping("/books/new/{isbn}")
     public ResponseEntity<Book> createBookFromISBN(@RequestBody User user, @PathVariable String isbn){
         BookWebFetch webFetch = new BookWebFetch();
-        return new ResponseEntity<>(webFetch.fetchWithBarcode(isbn, user), HttpStatus.OK);
+        Book book = webFetch.fetchWithBarcode(isbn, user);
+        Book savedBook = bookRepository.save(book);
+        return new ResponseEntity<>(savedBook, HttpStatus.OK);
     }
 
     @PutMapping(value="/books/{id}")
