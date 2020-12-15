@@ -1,10 +1,21 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {getUsers} from '../fetches/UserFetch';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
 
 const AppContainer = () => {
+
+	const [currentUser, setCurrentUser] = useState({});
+	const [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		getUsers()
+		.then(data => setUsers(data))
+	}, [])
+
 	return (
 		<Router>
 			<>
