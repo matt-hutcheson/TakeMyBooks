@@ -1,0 +1,24 @@
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 30px; 
+    width: 100%;
+    background-color: #f39c12;
+}
+
+li {
+    float: right;
+  }
+  
+  a {
+    display: block;
+    padding: 8px;
+    
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: rgb(243, 88, 36);
+    color: white;
+  }
