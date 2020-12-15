@@ -1,4 +1,5 @@
 import BookContainer from './BookContainer'
+import MyBooksContainer from './MyBooksContainer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import {getUsers} from '../fetches/UserFetch';
@@ -6,6 +7,7 @@ import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
+
 
 const AppContainer = () => {
 
@@ -26,7 +28,7 @@ const AppContainer = () => {
 					<Route exact path="/" component={Home}/>
 					<Route exact path="/books" component={BookContainer} />
 					<Route exact path="/book-detail" component={BookContainer} />	
-					{/* <Route path="/my-books" component={MyBooks}/> */}
+					<Route path="/my-books" component={MyBooksContainer}/>
 					<Route path="/find-books" component={FindBooksPage} />
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
