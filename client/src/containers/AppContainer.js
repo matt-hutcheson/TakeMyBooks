@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
 import AddBook from '../components/addBookPage/AddBook';
-
+import './AppContainer.css'
 
 const AppContainer = () => {
 
@@ -22,7 +22,7 @@ const AppContainer = () => {
 
 	return (
 		<Router>
-			<>
+			<main>
 				<NavBar />
 				<Switch>
 					<Route path="/sign-up" component={NewUserBox} />
@@ -34,7 +34,7 @@ const AppContainer = () => {
 					<Route path="/my-books/add-book" component={AddBook} />
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
-			</>
+			</main>
 		</Router>
 	);
 };
