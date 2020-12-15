@@ -30,7 +30,7 @@ public class BookController {
             return new ResponseEntity<>(bookRepository.findBooksByAuthor(author), HttpStatus.OK);
         }
         if (ownerId != null){
-            return new ResponseEntity<>(bookRepository.findBooksByOwnerUserId(ownerId), HttpStatus.OK);
+            return new ResponseEntity<>(bookRepository.findBooksByOwnerId(ownerId), HttpStatus.OK);
         }
         return new ResponseEntity<>(bookRepository.findAll(), HttpStatus.OK);
     }
