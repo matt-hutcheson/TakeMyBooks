@@ -36,10 +36,10 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(user2);
 
 
-        Book book1 = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user1);
+        Book book1 = new Book("Children Of Time", "Tchaikovsky, Adrian", "Sci-Fi", "9781447273288", user1, "https://images.barcodelookup.com/3143/31435732-1.jpg");
         bookRepository.save(book1);
 
-        Book book2 = new Book("Never Go Back", "Lee Child", "Thriller", "987654321", user1);
+        Book book2 = new Book("Never Go Back: (Jack Reacher 18)", "Child, Lee", "Thriller", "9780553825541", user1, "https://images.barcodelookup.com/2504/25047627-1.jpg");
         bookRepository.save(book2);
 
         user1.addBookToSharedBooks(book1);
