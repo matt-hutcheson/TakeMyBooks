@@ -1,6 +1,8 @@
 package com.codeclan.example.server.controllers;
 
+import com.codeclan.example.server.components.BookWebFetch;
 import com.codeclan.example.server.models.Book;
+import com.codeclan.example.server.models.User;
 import com.codeclan.example.server.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,6 +46,12 @@ public class BookController {
     public ResponseEntity<Book> postBook(@RequestBody Book book){
         bookRepository.save(book);
         return new ResponseEntity<>(book, HttpStatus.OK);
+    }
+
+    @PostMapping("/books/new/{isbn}")
+    public ResponseEntity<Book> createBookFromISBN(@RequestBody User user, @PathVariable String isbn){
+        BookWebFetch webFetch = new BookWebFetch();
+        return new ResponseEntity<>(webFetch.fetchWithBarcode(isbn, user), HttpStatus.OK);
     }
 
     @PutMapping(value="/books/{id}")
