@@ -7,6 +7,7 @@ import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
+import AddBook from '../components/addBookPage/AddBook';
 
 
 const AppContainer = () => {
@@ -14,10 +15,10 @@ const AppContainer = () => {
 	const [currentUser, setCurrentUser] = useState({});
 	const [users, setUsers] = useState([]);
 
-	useEffect(() => {
-		getUsers()
-		.then(data => setUsers(data))
-	}, [])
+	// useEffect(() => {
+	// 	getUsers()
+	// 	.then(data => setUsers(data))
+	// }, [])
 
 	return (
 		<Router>
@@ -30,6 +31,7 @@ const AppContainer = () => {
 					<Route exact path="/book-detail" component={BookContainer} />	
 					<Route path="/my-books" component={MyBooksContainer}/>
 					<Route path="/find-books" component={FindBooksPage} />
+					<Route path="/my-books/add-book" component={AddBook} />
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
 			</>
