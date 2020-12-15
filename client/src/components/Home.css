@@ -13,9 +13,14 @@ button {
     background: rgb(241, 141, 10);
     color: rgb(0, 0, 0);
     margin: 30px;
-    border-radius: 12px;;
+    border-radius: 12px;
   }
 
-  p {
+button:hover {
+    background-color:  rgb(243, 88, 36);
+    color: white;
+  }
+
+p {
     color: aliceblue;
   }

@@ -1,4 +1,4 @@
-import barcodeAPIKey from '../keys/APIkey';
+import barcodeAPIKey from '../keys/APIkey.js';
 
 const BookWebFetch = (isbn) => {
 	return fetch(
