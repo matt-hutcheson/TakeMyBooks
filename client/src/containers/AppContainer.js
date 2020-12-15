@@ -30,7 +30,6 @@ const AppContainer = () => {
 					<Route exact path="/books" component={BookContainer} />
 					<Route exact path="/book-detail" component={BookContainer} />	
 					<Route path="/my-books" component={MyBooksContainer}/>
->>>>>>> client
 					<Route path="/find-books" component={FindBooksPage} />
 					<Route path="/my-books/add-book" component={AddBook} />
 					{/* <Route component={ErrorPage}/> */}

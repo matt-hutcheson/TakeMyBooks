@@ -1,3 +1,5 @@
+
+
 div {
   display: flex;
   flex-flow: row;
@@ -8,12 +10,13 @@ div {
 
 button {
     border: none;
-    padding: 10px 20px;
+    padding: 48px 24px;
     cursor: pointer;
     background: rgb(241, 141, 10);
     color: rgb(0, 0, 0);
     margin: 30px;
     border-radius: 12px;
+    font-family: 'Old Standard TT', serif;
   }
 
 button:hover {

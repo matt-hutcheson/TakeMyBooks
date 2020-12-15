@@ -5,7 +5,8 @@ import './NavBar.css'
 const NavBar = () => {
     return (
         <nav>
-            <img src="" alt="logo"></img>
+            <img src="./images/BookYeetLogo.png" alt="logo"></img>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/how-it-works">How it works</Link></li>
             <li><Link to="/my-books">My Books</Link></li>
             <li><Link to="/find-books">Find books</Link></li>
