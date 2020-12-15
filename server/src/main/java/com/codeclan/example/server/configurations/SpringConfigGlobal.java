@@ -1,5 +1,8 @@
 package com.codeclan.example.server.configurations;
 
+import com.codeclan.example.server.models.Book;
+import com.codeclan.example.server.models.Request;
+import com.codeclan.example.server.models.User;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -22,6 +25,7 @@ public class SpringConfigGlobal implements RepositoryRestConfigurer, WebMvcConfi
                 .allowedOrigins(ALLOWED_ORIGINS)
                 .allowedHeaders(ALLOWED_HEADERS)
                 .allowedMethods(ALLOWED_METHODS);
+        config.exposeIdsFor(Book.class, User.class, Request.class);
     }
 
     @Override
