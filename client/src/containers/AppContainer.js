@@ -10,8 +10,8 @@ const AppContainer = () => {
 			<>
 				<NavBar/>
 				<Switch>
-					{/* <Route path="/sign-up" component={NewUserBox} /> */}
 					<Route exact path="/" component={Home}/>
+					{/* <Route path="/sign-up" component={NewUserBox} /> */}
 					{/* <Route path="/my-books" component={MyBooks}/> */}
 					{/* <Route path="/find-books" component={FindBooks}/> */}
 					{/* <Route component={ErrorPage}/> */}
