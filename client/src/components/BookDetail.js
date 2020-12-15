@@ -2,23 +2,27 @@ import Book from "./Book"
 import {useState} from 'react'
 
 
+
 const BookDetail = ({title, author, genre, barcode, user}) => {
     
     const [clicked, setClick] = useState(false)
 
     const handleClick = () => {
+        // this.setState(state => ({
+        //     isToggleOn: !state.isToggleOn
+        // }));
        setClick (true)
     }
 
     return(
         <>
-            <h1>This is the BookDetail element</h1>
             <p >Title: { title }</p>
-            <button onClick={ handleClick } >Show</button>
-            {clicked ? <Book title={title} author={author} genre={genre} barcode={barcode} user={user} /> : <p>nothing</p>}
+            <button onClick={ handleClick }>Show</button>
+            {/* {this.state.isToggleOn? 'Show':'Hide'} */}
+            {clicked ? <Book author={author} genre={genre} barcode={barcode}/> : <p>something</p>}
         </>
-    )
+  );
+        
 }
 
 export default BookDetail
-

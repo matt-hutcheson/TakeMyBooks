@@ -1,11 +1,10 @@
-const Book = ({title, author, genre, barcode, user}) => {
+const Book = ({author, genre, barcode}) => {
     return (
         <div>
-            <p>Title: { title }</p>
             <p>Author: { author }</p>
             <p>Genre: { genre }</p>
-            <p>Barcode: { barcode }</p>
-            <p>User: { user }</p>
+            <p>ISBN: { barcode }</p>
+            {/* <image></image> */}
         </div>
 
     )

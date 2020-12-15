@@ -1,8 +1,6 @@
 import BookList from "../components/BookList"
-import React, { useState } from 'react';
 
 const BookContainer = () => {
-    // const [books, setBooks] = useState([]);
 
         const books = [ 
             {
@@ -30,7 +28,6 @@ const BookContainer = () => {
     
     return(
       <>  
-        <h1>This is the BookContainer</h1> 
         <BookList books={books} />
       </>   
     )
