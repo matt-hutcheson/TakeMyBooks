@@ -1,8 +1,9 @@
 import User from './User'
 
-const UserDetails = ({username,community}) => {
+const UserDetail = ({username,community}) => {
     return (
         <>
+            <h3>this is the user detail</h3>
             <image>User Image Here</image>
             <h2>My details:</h2>
             <User />
@@ -11,4 +12,4 @@ const UserDetails = ({username,community}) => {
     )
 }
 
-export default UserDetails
+export default UserDetail

@@ -1,6 +1,6 @@
 import MyBookList from '../components/myBooksPage/MyBookList'
 
-const MyBooksContainer = () => {
+const MyBookContainer = () => {
 
     const books = [ 
         {
@@ -40,8 +40,7 @@ return(
     <MyBookList users={users} />
   </>   
 )
-
 }
 
 
-export default MyBooksContainer
+export default MyBookContainer

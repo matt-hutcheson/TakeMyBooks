@@ -10,3 +10,12 @@ select user0_.id as id1_2_, user0_.community as communit2_2_, user0_.email as em
 2020-12-15 15:14:56 jdbc[123]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
 select user0_.id as id1_2_, user0_.community as communit2_2_, user0_.email as email3_2_, user0_.first_name as first_na4_2_, user0_.last_name as last_nam5_2_ from users user0_ [42102-200]
+2020-12-15 15:53:17 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+select user0_.id as id1_2_, user0_.community as communit2_2_, user0_.email as email3_2_, user0_.first_name as first_na4_2_, user0_.last_name as last_nam5_2_ from users user0_ [42102-200]
+2020-12-15 16:15:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+select user0_.id as id1_2_, user0_.community as communit2_2_, user0_.email as email3_2_, user0_.first_name as first_na4_2_, user0_.last_name as last_nam5_2_ from users user0_ [42102-200]
+2020-12-15 16:24:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+select user0_.id as id1_2_, user0_.community as communit2_2_, user0_.email as email3_2_, user0_.first_name as first_na4_2_, user0_.last_name as last_nam5_2_ from users user0_ [42102-200]

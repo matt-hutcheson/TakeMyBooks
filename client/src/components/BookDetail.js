@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 
 
-const BookDetail = ({title, author, genre, barcode, user}) => {
+const BookDetail = ({title, author, genre, barcode}) => {
     
     const [clicked, setClick] = useState(false)
 
