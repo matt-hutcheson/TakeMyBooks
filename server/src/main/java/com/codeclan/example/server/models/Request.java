@@ -16,22 +16,24 @@ public class Request {
     private String status;
 
     @ManyToOne
-    @JsonIgnoreProperties({"requests"})
-    @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties({"requests", "shareBooks", "ownedBooks"})
+    @PrimaryKeyJoinColumn(name = "owner_id", referencedColumnName = "id")
     private User owner;
 
     @ManyToOne
-    @JsonIgnoreProperties({"requests"})
-    @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties({"requests", "shareBooks", "ownedBooks"})
+    @PrimaryKeyJoinColumn(name = "requester_id", referencedColumnName = "id")
     private User requester;
 
-    @Column(name = "book")
+    @ManyToOne
+    @JsonIgnoreProperties({"owner"})
+    @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
-    public Request(String status, User owner, User requestor, Book book) {
+    public Request(String status, User owner, User requester, Book book) {
         this.status = status;
         this.owner = owner;
-        this.requester = requestor;
+        this.requester = requester;
         this.book = book;
     }
 

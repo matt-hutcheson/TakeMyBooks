@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import NewUserForm from '../components/NewUserForm';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import NewUserForm from '../../components/signUpPage/NewUserForm';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const NewUserBox = () => {
 	const [users, setUsers] = useState([]);
