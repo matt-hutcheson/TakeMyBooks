@@ -1,18 +1,17 @@
 import React from 'react';
-import './Home.css'
+import './Home.css';
 
 const Home = () => {
     return (
         <>
             <h1>Home</h1>
-            <div>
-            <p>Welcome to Book Yeet!</p>
+            {/* <p>Welcome to Book Yeet!</p>
             <p>We are driven by Community</p>
-            <p>Get more from your books</p>
-            </div>
+            <p>Get more from your books</p> */}
             <div>
                 <button>Find Books</button>
                 <button>Share Books</button>
+                <button>How it Works</button>
             </div>  
         </>
     )

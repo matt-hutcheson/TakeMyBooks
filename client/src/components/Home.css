@@ -1,6 +1,8 @@
 div {
-  /* display: flex; */
-  justify-content: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
 }
 
@@ -12,4 +14,8 @@ button {
     color: rgb(0, 0, 0);
     margin: 30px;
     border-radius: 12px;;
+  }
+
+  p {
+    color: aliceblue;
   }

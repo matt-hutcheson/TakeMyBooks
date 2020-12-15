@@ -2,12 +2,13 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from "../components/Home";
 import NavBar from '../components/NavBar'
+import './AppContainer.css'
 
 
 const AppContainer = () => {
 	return (
 		<Router>
-			<>
+			<main>
 				<NavBar/>
 				<Switch>
 					<Route exact path="/" component={Home}/>
@@ -16,7 +17,7 @@ const AppContainer = () => {
 					{/* <Route path="/find-books" component={FindBooks}/> */}
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
-			</>
+			</main>
 		</Router>
 );
 	
