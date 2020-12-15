@@ -44,6 +44,7 @@ build/
 /client/.pnp
 *.eslintcache
 /client/.eslintcache
+.eslintcache
 /client/src/keys/
 .pnp.js
 
