@@ -13,8 +13,9 @@ const BookDetail = ({title, author, genre, barcode, user}) => {
 
     return(
         <>
-            <p >Title: { title }</p>
+            
             <button onClick={ handleClick }>{clicked ? "Hide" : "Show"}</button>
+            <p >Title: { title }</p>
             {clicked ? <Book author={author} genre={genre} barcode={barcode}/> : null}
         </>
   );
