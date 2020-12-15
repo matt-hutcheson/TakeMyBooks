@@ -8,6 +8,7 @@
 !**/server/src/test/**/target/
 /server/db
 /client/.eslintcache
+/db
 
 
 ### STS ###
