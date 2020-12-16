@@ -20,6 +20,7 @@ const NewUserBox = ({handleSelectUser}) => {
 	const showAllUsers = () => {
 		return (
 			<select onChange={handleSelectUser}>
+				<option selected disabled>choose a user</option>
 				{users.map((user, index) => {
 					return <option key={index} value={JSON.stringify(user)} >{user.firstName} {user.lastName}</option>
 				})}

@@ -1,3 +1,5 @@
+import RequestUpdate from "./RequestUpdate"
+
 const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
     
     if(selectedRequest.owner.id===currentUser.id){
@@ -7,6 +9,7 @@ const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
             <h5>You can contact them by E-mail to arrange the swap.</h5>
             <h6>{selectedRequest.requester.email}</h6>
             <button onClick={resetSelectRequest}>Go Back</button>
+            <RequestUpdate/>
             </>
         )} else {
             return(
@@ -16,6 +19,7 @@ const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
                 <h5>You can contact them by E-mail to arrange the swap.</h5>
                 <h6>{selectedRequest.owner.email}</h6>
                 <button onClick={resetSelectRequest}>Go Back</button>
+                <button>Cancel my request</button>
                 </>
             );
         }
