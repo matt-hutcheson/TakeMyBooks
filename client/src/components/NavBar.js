@@ -3,21 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
-<<<<<<< HEAD
-    return (
-        <nav>
-            <img src="./images/BookYeetLogo" alt="logo"></img>
-            <li><Link to="/how-it-works">How it works</Link></li>
-            <li><Link to="/my-books">My Books</Link></li>
-            <li><Link to="/find-books">Find books</Link></li>
-            <li><Link to="/new-user">New User</Link></li>
-            <li><Link to="/share-books">Share books</Link></li>
-            <li><Link to="/my-requests">My Requests</Link></li>
-            <li><Link to="/sign-up">Sign Up</Link></li>
-        </nav>
-    )
-}
-=======
 	return (
 		<nav>
 			<ul className="nav-bar-list">
@@ -55,6 +40,5 @@ const NavBar = () => {
 		</nav>
 	);
 };
->>>>>>> client
 
 export default NavBar;
