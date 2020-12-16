@@ -5,16 +5,35 @@ import NavBar from './NavBar';
 const Home = () => {
 	return (
 		<>
-			<div className="home-div">
-				<Link to="/how-it-works">
-					<button>How it Works</button>
-				</Link>
-				<Link to="/find-books">
-					<button>Find Books</button>
-				</Link>
-				<Link to="/share-books">
-					<button>Share Books</button>
-				</Link>
+			<div className="home-container">
+				<div className="home-upper">
+					<div className="home-main-text">
+						<p>The libraries are dead.</p>
+						<p>Long live the libraries.</p>
+					</div>
+					<div className="home-upper-btn">
+						{/* <div> */}
+						<button className="btn-how-it-works">
+							<Link to="/how-it-works">How it Works</Link>
+						</button>
+						{/* </div> */}
+						{/* <div> */}
+						<img
+							className="img-down-arrow"
+							src={'../images/down-arrow.svg'}
+							alt={'down arrow'}
+						/>
+						{/* </div> */}
+					</div>
+				</div>
+				<div className="home-lower">
+					<button>
+						<Link to="/share-books">Share a Book</Link>
+					</button>
+					<button>
+						<Link to="/find-books">Find a Book</Link>
+					</button>
+				</div>
 			</div>
 		</>
 	);
