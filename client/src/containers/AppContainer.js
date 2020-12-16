@@ -31,7 +31,7 @@ const AppContainer = () => {
 					<Route exact path="/book-detail" component={BookContainer} />
 					<Route exact path="/my-books" component={MyBooksContainer}/>
 					<Route exact path="/find-books" component={FindBooksPage} />
-					<Route path="/my-books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
+					<Route path="/users/:id/books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
 			</main>
