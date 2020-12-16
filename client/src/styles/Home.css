@@ -9,16 +9,31 @@
 }
 
 .home-main-text {
-	/* border: 1px black solid; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
 	height: 75%;
 	width: 100%;
 }
 
-.home-upper-btn {
+.home-main-text > p {
+	font-family: Crimson Text;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	line-height: 83px;
+	margin: 0;
+	padding: 0 0 0 5vw;
+}
+
+#home-upper-btn {
 	border: 1px black solid;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
 /* button {
@@ -68,5 +83,4 @@
 .img-down-arrow {
 	width: 40px;
 	height: 40px;
-	margin-bottom: 20px;
 }

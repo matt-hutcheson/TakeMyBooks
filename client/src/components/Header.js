@@ -26,7 +26,7 @@ const Header = () => {
 					</li>
 				</ul>
 			</header>
-			<NavBar />
+			{/* <NavBar /> */}
 		</>
 	);
 };
