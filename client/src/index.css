@@ -5,7 +5,7 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
 		'Helvetica Neue', sans-serif;
-	background-image: url('./images/books_on_shelf.jpg');
+	/* background-image: url('./images/books_on_shelf.jpg'); */
 	/* background-repeat: no-repeat; */
 	background-size: 1600px 800px;
 	/* justify-content: center; */

@@ -1,8 +1,11 @@
+import NavBar from './NavBar';
+import '../styles/Header.css';
+
 const Header = () => {
 	return (
 		<header>
 			<div>
-				<h1>bookYeet</h1>
+				<img src={'../images/BookYeetLogo.png'} alt={'logo'}></img>
 			</div>
 			<ul>
 				<li>
@@ -15,6 +18,12 @@ const Header = () => {
 					<a href="">About</a>
 				</li>
 			</ul>
+			<img
+				src={'../images/burger-menu.svg'}
+				alt={'nav bar menu'}
+				className="burger-image"
+			/>
+			<NavBar />
 		</header>
 	);
 };
