@@ -1,0 +1,54 @@
+header {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	background-color: #ff6600;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+}
+
+.header-logo:hover {
+	cursor: pointer;
+}
+
+.burger-image {
+	width: 30px;
+	height: 30px;
+}
+
+.header-list {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0 25px 0 0;
+}
+
+.header-list > li {
+	display: block;
+	padding: 0 20px;
+	font-family: Crimson Text;
+	/* font-weight: 600; */
+	font-size: 24px;
+	text-align: center;
+	vertical-align: middle;
+	color: #000000;
+}
+
+.header-list > li > a {
+	text-decoration: none;
+}
+
+.header-list > li > a:visited {
+	color: #000000;
+}
+
+.header-list > li > a:hover {
+	color: #ffffff;
+}
+
+.img-li {
+	height: 30px;
+}

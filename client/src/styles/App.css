@@ -1,3 +1,10 @@
+.wholeApp {
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+	font-family: Crimson Text;
+}
+
 /* .App {
   text-align: center;
 }
@@ -35,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 } */

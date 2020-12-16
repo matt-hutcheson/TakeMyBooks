@@ -3,8 +3,9 @@ import NewUserForm from '../../components/signUpPage/NewUserForm';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { getUsers, postUser } from '../../fetches/UserFetch';
+import '../../styles/NewUserBox.css'
 
-const NewUserBox = () => {
+const NewUserBox = ({handleSelectUser}) => {
 	const [users, setUsers] = useState([]);
 	const [userChange, setUserChange] = useState(0);
 	const [showSignUp, setShowSignUp] = useState(false);
@@ -16,17 +17,16 @@ const NewUserBox = () => {
 		setUserChange(userChange + 1);
 	};
 
-	const showAllUsers = users.map((user, index) => {
+	const showAllUsers = () => {
 		return (
-			<div key={index}>
-				<h6>
-					Name: {user.firstName}&nbsp;{user.lastName}
-				</h6>
-				<h6>Community: {user.community}</h6>
-				<h6>Email: {user.email}</h6> |
-			</div>
+			<select onChange={handleSelectUser}>
+				{users.map((user, index) => {
+					return <option key={index} value={JSON.stringify(user)} >{user.firstName} {user.lastName}</option>
+				})}
+			</select>
 		);
-	});
+	};
+
 
 	useEffect(() => {
 		getUsers().then((data) => setUsers(data));
@@ -46,7 +46,7 @@ const NewUserBox = () => {
 		if (showSelect === false && showSignUp === false) {
 			return (
 				<>
-					<div>
+					<div className="question">
 						<h2>Signed Up Before?</h2>
 					</div>
 					<div>
@@ -61,7 +61,7 @@ const NewUserBox = () => {
 					<div>
 						<h2>Click your name below:</h2>
 					</div>
-					<div>{showAllUsers}</div>
+					<div>{showAllUsers()}</div>
 				</>
 			);
 		} else {
@@ -79,9 +79,7 @@ const NewUserBox = () => {
 
 	return (
 		<>
-			<Header />
 			<div>{renderItems()}</div>
-			<Footer />
 		</>
 	);
 };

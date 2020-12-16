@@ -1,21 +1,38 @@
+import NavBar from './NavBar';
+import '../styles/Header.css';
+
 const Header = () => {
 	return (
+		<>
 		<header>
-			<div>
-				<h1>bookYeet</h1>
-			</div>
-			<ul>
+			{/* <div> */}
+			<img
+				className="header-logo"
+				src={'../images/BookYeetLogo.png'}
+				alt={'logo'}
+			></img>
+			{/* </div> */}
+			{/* <div> */}
+			<ul className="header-list">
 				<li>
-					<a href="">Sign In</a>
-				</li>
-				<li>
-					<a href="">Register</a>
+					<a href="">Login</a>
 				</li>
 				<li>
 					<a href="">About</a>
 				</li>
+				<li className="img-li">
+					<img
+						src={'../images/burger-menu.svg'}
+						alt={'nav bar menu'}
+						className="burger-image"
+					/>
+				</li>
 			</ul>
+			{/* </div> */}
+			{/* <NavBar /> */}
 		</header>
+		<NavBar/>
+		</>
 	);
 };
 
