@@ -7,7 +7,6 @@ import java.net.URL;
 import com.codeclan.example.server.models.Book;
 import com.codeclan.example.server.models.User;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class BookWebFetch {
     public class Store
@@ -76,7 +75,8 @@ public class BookWebFetch {
     public Book fetchWithBarcode(String isbn, User currentUser) {
         Book book = new Book();
         try {
-            URL url = new URL("https://api.barcodelookup.com/v2/products?barcode=" + isbn + "&formatted=y&key=skl7n0q9hkagjqm5947eb37x7x3tm3");
+            APIkey key = new APIkey();
+            URL url = new URL("https://api.barcodelookup.com/v2/products?barcode=" + isbn + "&formatted=y&key=" + key.getKey());
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
             String str = "";
             String data = "";
