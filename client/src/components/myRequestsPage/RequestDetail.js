@@ -1,4 +1,4 @@
-const RequestDetail = ({selectedRequest, currentUser})=>{
+const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
 
     if(selectedRequest.owner.id===currentUser.id){
         return (
@@ -6,6 +6,7 @@ const RequestDetail = ({selectedRequest, currentUser})=>{
             <h4>You are sharing "{selectedRequest.book.title}" with {selectedRequest.requester.firstName} {selectedRequest.requester.lastName}.</h4>
             <h5>You can contact them by E-mail to arrange the swap.</h5>
             <h6>{selectedRequest.requester.email}</h6>
+            <button onClick={resetSelectRequest}>Go Back</button>
             </>
         )} else {
             return(
@@ -14,6 +15,7 @@ const RequestDetail = ({selectedRequest, currentUser})=>{
                 {selectedRequest.owner.firstName} {selectedRequest.owner.lastName}.</h4>
                 <h5>You can contact them by E-mail to arrange the swap.</h5>
                 <h6>{selectedRequest.owner.email}</h6>
+                <button onClick={resetSelectRequest}>Go Back</button>
                 </>
             );
         }

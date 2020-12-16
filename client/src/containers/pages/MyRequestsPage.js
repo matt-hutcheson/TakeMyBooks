@@ -24,13 +24,15 @@ const MyRequestsPage = ({currentUser}) => {
         });}
     }, [currentUser]);
 
-    useEffect(()=>{
-        requestIsSelected?setRequestIsSelected(false):setRequestIsSelected(true)
-    }, [selectedRequest])
-
     const handleSelectRequest = (event)=>{
         setSelectedRequest(JSON.parse(event.target.value));
-    }
+        setRequestIsSelected(true);
+    };
+
+    const resetSelectRequest = () => {
+        setSelectedRequest(null);
+        setRequestIsSelected(false);
+    };
 
     if(!requestIsSelected){
         return(
@@ -43,7 +45,7 @@ const MyRequestsPage = ({currentUser}) => {
         )
     } else {
         return(
-            <RequestDetail currentUser={currentUser} selectedRequest={selectedRequest}/>
+            <RequestDetail resetSelectRequest={resetSelectRequest} currentUser={currentUser} selectedRequest={selectedRequest}/>
         );
     };
 };
