@@ -1,5 +1,5 @@
-import BookContainer from './BookContainer'
-import MyBooksContainer from './MyBookContainer'
+import BookContainer from './BookContainer';
+import MyBooksContainer from './MyBookContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import {getUsers, getUsersById} from '../fetches/UserFetch';
@@ -12,7 +12,6 @@ import MyRequestsPage from '../containers/pages/MyRequestsPage';
 import './AppContainer.css'
 
 const AppContainer = () => {
-
 	const [currentUser, setCurrentUser] = useState({});
 	// const [users, setUsers] = useState([]);
 
@@ -36,8 +35,16 @@ const AppContainer = () => {
 					<Route path="/sign-up" exact render={()=><NewUserBox handleSelectUser={handleSelectUser}/>}/>
 					<Route exact path="/" component={Home}/>
 					<Route exact path="/books" component={BookContainer} />
-					<Route exact path="/book-detail" component={BookContainer} />
-					<Route exact path="/my-books" component={MyBooksContainer}/>
+					<Route
+						exact
+						path="/book-detail"
+						component={BookContainer}
+					/>
+					<Route
+						exact
+						path="/my-books"
+						component={MyBooksContainer}
+					/>
 					<Route exact path="/find-books" component={FindBooksPage} />
 					<Route path="/users/:id/books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
 					<Route path="/my-requests" exact render={()=><MyRequestsPage currentUser={currentUser}/>}/>
