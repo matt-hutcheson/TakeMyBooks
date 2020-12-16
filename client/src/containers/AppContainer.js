@@ -9,6 +9,8 @@ import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
 import AddBook from '../components/addBookPage/AddBook';
 import './AppContainer.css'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const AppContainer = () => {
 
@@ -23,7 +25,8 @@ const AppContainer = () => {
 	return (
 		<Router>
 			<main>
-				<NavBar />
+				<Header/>
+				{/* <NavBar /> */}
 				<Switch>
 					<Route path="/sign-up" component={NewUserBox} />
 					<Route exact path="/" component={Home}/>
@@ -34,6 +37,7 @@ const AppContainer = () => {
 					<Route path="/users/:id/books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
+				<Footer/>
 			</main>
 		</Router>
 	);

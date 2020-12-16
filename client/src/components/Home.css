@@ -1,4 +1,9 @@
 
+article {
+  flex-grow: 2;
+
+
+}
 
 div {
   display: flex;

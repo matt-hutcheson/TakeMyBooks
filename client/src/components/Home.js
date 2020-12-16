@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Home = () => {
     return (
         <>
-        <main>
+        <article>
             <h1>Home</h1>
             {/* <p>Welcome to Book Yeet!</p>
             <p>We are driven by Community</p>
@@ -15,7 +15,7 @@ const Home = () => {
             <Link to="/find-books"><button>Find Books</button></Link>
             <Link to="/share-books"><button>Share Books</button></Link>
             </div> 
-        </main> 
+        </article> 
         </>
     )
 }
