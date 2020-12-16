@@ -7,7 +7,8 @@ const Header = () => {
 			<div>
 				<img src={'../images/BookYeetLogo.png'} alt={'logo'}></img>
 			</div>
-			<ul>
+			<div>
+			<ul className="header-list">
 				<li>
 					<a href="">Sign In</a>
 				</li>
@@ -18,11 +19,14 @@ const Header = () => {
 					<a href="">About</a>
 				</li>
 			</ul>
+			</div>
+			<div>
 			<img
 				src={'../images/burger-menu.svg'}
 				alt={'nav bar menu'}
 				className="burger-image"
 			/>
+			</div>
 			<NavBar />
 		</header>
 	);

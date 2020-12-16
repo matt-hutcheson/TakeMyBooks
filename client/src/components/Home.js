@@ -10,7 +10,7 @@ const Home = () => {
 				{/* <p>Welcome to Book Yeet!</p>
             <p>We are driven by Community</p>
             <p>Get more from your books</p> */}
-				<div>
+				<div className="home-div">
 					<Link to="/how-it-works">
 						<button>How it Works</button>
 					</Link>
