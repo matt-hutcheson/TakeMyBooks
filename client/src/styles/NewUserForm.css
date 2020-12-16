@@ -36,6 +36,12 @@
 	/* line-height: 76px; */
 	align-items: center;
     text-align: center;
+    outline: none; 
+}
+
+.submit:hover {
+	background-color: rgb(243, 88, 36);
+	color: white;
 }
 
 .label {
