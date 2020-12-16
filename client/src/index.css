@@ -1,20 +1,19 @@
-body {
-	display: flex;
-	flex-direction: row;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
-	background-image: url('./images/books_on_shelf.jpg');
-	/* background-repeat: no-repeat; */
-	background-size: 1600px 800px;
-	/* justify-content: center; */
-	/* -webkit-font-smoothing: antialiased;
+/* body {
+  background-image: url("./images/books_on_shelf.jpg");
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: 'Old Standard TT', serif;
+  /* font-family: 'Ubuntu Condensed', sans-serif; */
+  /* background-repeat: no-repeat; */
+  /* background-size: 400px 200px; */
+  /* justify-content: center; */
+  /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100% */
-}
+/* }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
-}
+} */ 

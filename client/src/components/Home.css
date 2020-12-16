@@ -1,3 +1,10 @@
+
+article {
+  flex-grow: 2;
+
+
+}
+
 div {
   display: flex;
   flex-flow: row;
@@ -8,14 +15,21 @@ div {
 
 button {
     border: none;
-    padding: 10px 20px;
+    padding: 32px 24px;
     cursor: pointer;
     background: rgb(241, 141, 10);
     color: rgb(0, 0, 0);
     margin: 30px;
-    border-radius: 12px;;
+    border-radius: 12px;
+    /* font-family: 'Old Standard TT', serif; */
+    font-family: 'Ubuntu Condensed', sans-serif;
   }
 
-  p {
+button:hover {
+    background-color:  rgb(243, 88, 36);
+    color: white;
+  }
+
+p {
     color: aliceblue;
   }
