@@ -1,5 +1,5 @@
 const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
-
+    
     if(selectedRequest.owner.id===currentUser.id){
         return (
             <>
