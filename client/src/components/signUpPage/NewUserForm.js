@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
 const NewUserForm = ({ onNewUserSubmit }) => {
-	const [username, setUsername] = useState('');
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
 	const [userEmail, setUserEmail] = useState('');
-	const [userPassword, setUserPassword] = useState('');
 	const [userCommunity, setUserCommunity] = useState('');
 
-	const handleUsernameChange = (event) => {
-		setUsername(event.target.value);
+	const handleFirstNameChange = (event) => {
+		setFirstName(event.target.value);
 	};
 
-	const handleEmailChange = (event) => {
+	const handleLastNameChange = (event) => {
+		setLastName(event.target.value);
+	};
+
+	const handleUserEmailChange = (event) => {
 		setUserEmail(event.target.value);
-	};
-
-	const handlePasswordChange = (event) => {
-		setUserPassword(event.target.value);
 	};
 
 	const handleCommunityChange = (event) => {
@@ -24,30 +24,30 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 
 	const handleNewUserSubmit = (event) => {
 		event.preventDefault();
-		const usernameToSubmit = username.trim();
+		const firstNameToSubmit = firstName.trim();
+		const lastNameToSubmit = lastName.trim();
 		const userEmailToSubmit = userEmail.trim();
-		const userPasswordToSubmit = userPassword.trim();
 		const userCommunityToSubmit = userCommunity.trim();
 
 		if (
-			!usernameToSubmit ||
+			!firstNameToSubmit ||
+			!lastNameToSubmit ||
 			!userEmailToSubmit ||
-			!userPasswordToSubmit ||
 			!userCommunityToSubmit
 		) {
 			return;
 		}
 
 		onNewUserSubmit({
-			username: usernameToSubmit,
-			userEmail: userEmailToSubmit,
-			userPassword: userPasswordToSubmit,
-			userCommunity: userCommunityToSubmit
+			firstName: firstNameToSubmit,
+			lastName: lastNameToSubmit,
+			email: userEmailToSubmit,
+			community: userCommunityToSubmit
 		});
 
-		setUsername('');
+		setFirstName('');
+		setLastName('');
 		setUserEmail('');
-		setUserPassword('');
 		setUserCommunity('');
 	};
 
@@ -55,12 +55,20 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 		<>
 			<div>
 				<form>
-					<label htmlFor="username">Username:</label>
+					<label htmlFor="firstName">First Name:</label>
 					<input
 						type="text"
-						placeholder="username"
-						value={username}
-						onChange={handleUsernameChange}
+						placeholder="first name"
+						value={firstName}
+						onChange={handleFirstNameChange}
+						required
+					/>
+					<label htmlFor="lastName">Last Name:</label>
+					<input
+						type="text"
+						placeholder="last name"
+						value={lastName}
+						onChange={handleLastNameChange}
 						required
 					/>
 					<label htmlFor="userEmail">Email:</label>
@@ -68,15 +76,7 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 						type="text"
 						placeholder="email"
 						value={userEmail}
-						onChange={handleEmailChange}
-						required
-					/>
-					<label htmlFor="userPassword">Password:</label>
-					<input
-						type="password"
-						placeholder="password"
-						value={userPassword}
-						onChange={handlePasswordChange}
+						onChange={handleUserEmailChange}
 						required
 					/>
 					<label htmlFor="userCommunity">Community:</label>

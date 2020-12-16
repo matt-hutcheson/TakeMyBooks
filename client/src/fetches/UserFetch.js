@@ -37,6 +37,7 @@ export const postUser = (user) => {
     return(
         fetch(`http://localhost:8080/users`, {
             method: 'post',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         })
     );

@@ -29,10 +29,10 @@ const AppContainer = () => {
 					<Route path="/sign-up" component={NewUserBox} />
 					<Route exact path="/" component={Home}/>
 					<Route exact path="/books" component={BookContainer} />
-					<Route exact path="/book-detail" component={BookContainer} />	
-					<Route path="/my-books" component={MyBooksContainer}/>
-					<Route path="/find-books" component={FindBooksPage} />
-					<Route path="/my-books/add-book" component={AddBook} />
+					<Route exact path="/book-detail" component={BookContainer} />
+					<Route exact path="/my-books" component={MyBooksContainer}/>
+					<Route exact path="/find-books" component={FindBooksPage} />
+					<Route path="/users/:id/books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
 					<Route path="/my-requests" exact render={()=><MyRequestsPage currentUser={currentUser}/>}/>
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
