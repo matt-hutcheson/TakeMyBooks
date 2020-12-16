@@ -30,8 +30,7 @@ const AppContainer = () => {
 	return (
 		<Router>
 			<Header />
-			<main>
-				{/* <NavBar /> */}
+			<main className="main-content">
 				<Switch>
 					<Route
 						path="/sign-up"
@@ -45,18 +44,18 @@ const AppContainer = () => {
 					<Route
 						exact
 						path="/book-detail"
-						component={BookContainer}
+						render={() => <BookContainer currentUser={currentUser} />}
 					/>
 					<Route
 						exact
 						path="/my-books"
-						component={MyBooksContainer}
+						render={() => <MyBooksContainer currentUser={currentUser} />}
 					/>
 					<Route exact path="/find-books" component={FindBooksPage} />
 					<Route
 						path="/users/:id/books/add-book"
 						exact
-						render={() => <AddBook currentUser="currentUser" />}
+						render={() => <AddBook currentUser={currentUser} />}
 					/>
 					<Route
 						path="/my-requests"

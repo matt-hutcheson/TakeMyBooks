@@ -1,45 +1,33 @@
 import MyBookList from '../components/myBooksPage/MyBookList'
+import UserDetail from '../components/myBooksPage/UserDetail'
+import {useEffect, useState} from 'react'
+import {getBooksByOwnerId} from '../fetches/BookFetch'
 
-const MyBookContainer = () => {
+const MyBookContainer = ({currentUser}) => {
 
-    const books = [ 
-        {
-            title: "title",
-            author: "author",
-            genre: "genre",
-            barcode: "barcode",
-        },
-        {   
-            title: "title2",
-            author: "author2",
-            genre: "genre2",
-            barcode: "barcode2",
-        },
-        {   
-            title: "title3",
-            author: "author3",
-            genre: "genre3",
-            barcode: "barcode3",
+    const [myBooks, setMyBooks] = useState([])
+
+    useEffect(() => { 
+        if (currentUser){
+            
+            setMyBooks(currentUser.shareBooks)
+            console.log(myBooks)
         }
-    ]
+    },[currentUser])
 
-    const users = [
-        {
-            username: "username1",
-            community: "community",
-        },
-        {
-            username: "username2",
-            community: "community"
-        }
-    ]
-
-return(
-  <>  
-    <MyBookList books={books} />
-    <MyBookList users={users} />
-  </>   
-)
+    if(!currentUser){
+        return(
+            <p>loading</p>
+        )
+    } else {
+        return(
+            <>
+                <h1>this is the MyBookContainer displaying a user</h1>
+                <UserDetail currentUser={currentUser}/>
+                <MyBookList myBooks={myBooks}/>
+            </>
+        )
+    }
 }
 
 
