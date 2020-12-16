@@ -30,8 +30,7 @@ const AppContainer = () => {
 	return (
 		<Router>
 			<Header />
-			<main>
-				{/* <NavBar /> */}
+			<main className="main-content">
 				<Switch>
 					<Route
 						path="/sign-up"
