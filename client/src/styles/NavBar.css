@@ -5,6 +5,8 @@
 	height: 30px;
 	width: 100%;
 	background-color: #f39c12;
+	display: flex;
+	flex-direction: row;
 }
 
 .nav-bar-list > li {
@@ -22,3 +24,4 @@
 .nav-list-link {
 	text-decoration: none;
 }
+

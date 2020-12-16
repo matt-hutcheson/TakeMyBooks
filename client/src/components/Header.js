@@ -3,6 +3,7 @@ import '../styles/Header.css';
 
 const Header = () => {
 	return (
+		<>
 		<header>
 			<div>
 				<img src={'../images/BookYeetLogo.png'} alt={'logo'}></img>
@@ -23,8 +24,10 @@ const Header = () => {
 				alt={'nav bar menu'}
 				className="burger-image"
 			/>
-			<NavBar />
+			{/* <NavBar /> */}
 		</header>
+		<NavBar/>
+		</>
 	);
 };
 

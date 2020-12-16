@@ -78,9 +78,7 @@ const NewUserBox = ({handleSelectUser}) => {
 
 	return (
 		<>
-			<Header />
 			<div>{renderItems()}</div>
-			<Footer />
 		</>
 	);
 };

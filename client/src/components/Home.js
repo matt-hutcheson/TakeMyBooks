@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
-
+import NavBar from './NavBar';
 const Home = () => {
 	return (
 		<>
@@ -11,6 +11,7 @@ const Home = () => {
             <p>We are driven by Community</p>
             <p>Get more from your books</p> */}
 				<div>
+					<NavBar/>
 					<Link to="/how-it-works">
 						<button>How it Works</button>
 					</Link>
