@@ -131,3 +131,44 @@
 	width: 40px;
 	height: 40px;
 }
+
+.home-lower-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.home-lower-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.home-lower-img {
+	width: 40vw;
+}
+
+.home-lower-text {
+	width: 40vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Crimson Text;
+	font-style: normal;
+	font-size: 65px;
+	line-height: 76px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.home-lower-img2 {
+}
+
+.home-lower-text2 {
+}
+
+.img-content {
+	width: 40vw;
+	margin-bottom: 50px;
+}

@@ -30,8 +30,33 @@ const Home = () => {
 				</button>
 
 				<button className="find-btn">
-					<Link to="/find-books">Find a Book</Link>
+					<Link to="/find-books">Find books</Link>
 				</button>
+			</div>
+
+			<div className="home-lower-content">
+				<div className="home-lower-img">
+					<img
+						className="img-content"
+						src={'../images/home-image-lower1.jpg'}
+						alt={'guy reading'}
+					/>
+				</div>
+				<div className="home-lower-text">
+					<p>We are driven by community.</p>
+				</div>
+			</div>
+			<div className="home-lower-content">
+				<div className="home-lower-text">
+					<p>Get more from your books.</p>
+				</div>
+				<div className="home-lower-img2">
+					<img
+						className="img-content"
+						src={'../images/home-image-lower2.jpg'}
+						alt={'girl reading'}
+					/>
+				</div>
 			</div>
 		</>
 	);
