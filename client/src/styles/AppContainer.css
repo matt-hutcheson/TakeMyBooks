@@ -2,7 +2,7 @@ main {
 	/* background-image: url("/src/images/books_on_shelf.jpg"); */
 	display: flex;
 	flex-flow: column;
-	justify-content: space-around;
+	justify-content: unset; 
 	margin: 0;
 	/* background-repeat: no-repeat; */
 	background-size: 33vw;

@@ -46,10 +46,10 @@ const NewUserBox = ({handleSelectUser}) => {
 		if (showSelect === false && showSignUp === false) {
 			return (
 				<>
-					<div className="question">
-						<h2>Signed Up Before?</h2>
-					</div>
 					<div>
+						<h2 className="question">Signed Up Before?</h2>
+					</div>
+					<div className="button">
 						<button onClick={handleYesClick}>YES</button>
 						<button onClick={handleNoClick}>NO</button>
 					</div>
@@ -59,9 +59,9 @@ const NewUserBox = ({handleSelectUser}) => {
 			return (
 				<>
 					<div>
-						<h2>Click your name below:</h2>
+						<h2 className="question">Select your name below:</h2>
 					</div>
-					<div>{showAllUsers()}</div>
+					<div className="show-users">{showAllUsers()}</div>
 				</>
 			);
 		} else {
