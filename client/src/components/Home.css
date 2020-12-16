@@ -1,0 +1,21 @@
+div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(241, 141, 10);
+    color: rgb(0, 0, 0);
+    margin: 30px;
+    border-radius: 12px;;
+  }
+
+  p {
+    color: black;
+  }
