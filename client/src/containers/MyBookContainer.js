@@ -17,7 +17,7 @@ const MyBookContainer = ({currentUser}) => {
 
     if(Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
         return(
-            <p>loading</p>
+            <p>Please login to continue</p>
         )
     } else {
         return(

@@ -13,11 +13,6 @@ const NavBar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to="/how-it-works" className="nav-list-link">
-						how it works
-					</Link>
-				</li>
-				<li>
 					<Link to="/find-books" className="nav-list-link">
 						find books
 					</Link>
