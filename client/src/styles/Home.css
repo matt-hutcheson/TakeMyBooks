@@ -12,8 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/* align-items: center; */
-	height: 75%;
+	height: 80%;
 	width: 100%;
 }
 
@@ -27,32 +26,80 @@
 	padding: 0 0 0 5vw;
 }
 
-#home-upper-btn {
-	border: 1px black solid;
+.home-btns {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	width: 100%;
+	height: 30vh;
 }
 
-/* button {
-	padding: 32px 24px;
-	cursor: pointer;
-	background: #ff6600;
-	color: rgb(0, 0, 0);
-	margin: 30px;
+.share-btn {
+	border: none;
 	width: 360px;
 	height: 124px;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 75px;
 	font-family: Crimson Text;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 36px;
-	align-items: center;
-	text-align: center;
-} */
+	font-size: 56px;
+	line-height: 76px;
+	color: #ffffff;
+	background: #ff6600;
+	border-radius: 60px;
+}
+
+.share-btn > a {
+	text-decoration: none;
+}
+
+.share-btn > a:visited {
+	color: #ffffff;
+}
+
+.share-btn > a:hover {
+	color: black;
+}
+
+.share-btn:hover {
+	background-color: white;
+	border: 8px solid #ff6600;
+	cursor: pointer;
+}
+
+.find-btn {
+	border: none;
+	width: 360px;
+	height: 124px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 56px;
+	line-height: 76px;
+	color: black;
+	background: #ffffff;
+	border-radius: 60px;
+	border: 8px solid #ff6600;
+}
+
+.find-btn > a {
+	text-decoration: none;
+	color: black;
+}
+
+.find-btn:hover {
+	background-color: #ff6600;
+	cursor: pointer;
+}
+
+.find-btn > a:visited {
+	color: black;
+}
+
+.find-btn > a:hover {
+	color: white;
+}
 
 .btn-how-it-works {
 	background: #ff6600;

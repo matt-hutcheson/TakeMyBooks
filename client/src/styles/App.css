@@ -1,6 +1,5 @@
 .wholeApp {
 	display: flex;
 	flex-direction: column;
-	background-color: lightgray;
 	font-family: Crimson Text;
 }
