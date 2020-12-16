@@ -1,13 +1,13 @@
 import User from './User'
 
 
-const UserDetail = ({username,community}) => {
+const UserDetail = ({currentUser}) => {
 
     return (
         <>
             <h3>this is the user detail</h3>
             <h2>My details:</h2>
-            <User username={username} community={community}/>
+            <User firstName={currentUser.firstName} community={currentUser.community}/>
             <button>Add Book</button>
         </>
     )
@@ -15,8 +15,6 @@ const UserDetail = ({username,community}) => {
 
 export default UserDetail
 
-// How does it know which user it is??
-// Will not have user image
 
 
         

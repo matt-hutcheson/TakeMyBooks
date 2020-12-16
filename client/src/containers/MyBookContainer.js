@@ -3,25 +3,31 @@ import UserDetail from '../components/myBooksPage/UserDetail'
 import {useEffect, useState} from 'react'
 import {getBooksByOwnerId} from '../fetches/BookFetch'
 
-const MyBookContainer = ({user}) => {
+const MyBookContainer = ({currentUser}) => {
 
     const [myBooks, setMyBooks] = useState([])
 
     useEffect(() => { 
-        if (user){
-            setMyBooks(user.shareBooks)
+        if (currentUser){
+            
+            setMyBooks(currentUser.shareBooks)
+            console.log(myBooks)
         }
-    },[user])
+    },[currentUser])
 
-    return(
-
-        <>
-        <h1>this is the MyBookContainer displaying a user</h1>
-        <UserDetail currentUser = "user"/>
-
-        <MyBookList myBooks = "myBooks"/>
-        </>
-    )
+    if(!currentUser){
+        return(
+            <p>loading</p>
+        )
+    } else {
+        return(
+            <>
+                <h1>this is the MyBookContainer displaying a user</h1>
+                <UserDetail currentUser={currentUser}/>
+                <MyBookList myBooks={myBooks}/>
+            </>
+        )
+    }
 }
 
 
