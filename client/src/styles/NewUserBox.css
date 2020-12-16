@@ -1,0 +1,8 @@
+.question {
+    font-size: 20px; 
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}

@@ -3,6 +3,7 @@ import NewUserForm from '../../components/signUpPage/NewUserForm';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { getUsers, postUser } from '../../fetches/UserFetch';
+import '../../styles/NewUserBox.css'
 
 const NewUserBox = ({handleSelectUser}) => {
 	const [users, setUsers] = useState([]);
@@ -45,7 +46,7 @@ const NewUserBox = ({handleSelectUser}) => {
 		if (showSelect === false && showSignUp === false) {
 			return (
 				<>
-					<div>
+					<div className="question">
 						<h2>Signed Up Before?</h2>
 					</div>
 					<div>
@@ -78,9 +79,7 @@ const NewUserBox = ({handleSelectUser}) => {
 
 	return (
 		<>
-			<Header />
 			<div>{renderItems()}</div>
-			<Footer />
 		</>
 	);
 };

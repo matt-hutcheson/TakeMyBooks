@@ -1,17 +1,8 @@
-main {
+.main-content {
 	/* background-image: url("/src/images/books_on_shelf.jpg"); */
 	display: flex;
 	flex-flow: column;
 	justify-content: space-around;
 	margin: 0;
-	/* font-family: 'Old Standard TT', serif; */
-	font-family: 'Ubuntu Condensed', sans-serif;
-	/* background-repeat: no-repeat; */
-	background-size: 33vw;
-	/* justify-content: center; */
-	/* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    width: 100% */
-	width: 100vw;
-	height: 100vh;
+	padding: 0;
 }
