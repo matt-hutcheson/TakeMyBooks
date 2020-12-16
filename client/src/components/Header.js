@@ -6,7 +6,7 @@ const Header = () => {
 		<>
 		<header>
 			{/* <div> */}
-			<img
+			<a href="/"></a><img
 				className="header-logo"
 				src={'../images/BookYeetLogo.png'}
 				alt={'logo'}
@@ -15,10 +15,10 @@ const Header = () => {
 			{/* <div> */}
 			<ul className="header-list">
 				<li>
-					<a href="">Login</a>
+					<a href="/login">Login</a>
 				</li>
 				<li>
-					<a href="">About</a>
+					<a href="/about">About</a>
 				</li>
 				<li className="img-li">
 					<img

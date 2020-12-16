@@ -1,8 +1,9 @@
+
 import BookList from "../components/BookList"
 
 const BookContainer = () => {
 
-        const books = [ 
+        const books = [
             {
                 title: "title",
                 author: "author",
@@ -10,14 +11,14 @@ const BookContainer = () => {
                 barcode: "barcode",
                 user: "user1"
             },
-            {   
+            {
                 title: "title2",
                 author: "author2",
                 genre: "genre2",
                 barcode: "barcode2",
                 user: "user2"
             },
-            {   
+            {
                 title: "title3",
                 author: "author3",
                 genre: "genre3",
@@ -25,11 +26,11 @@ const BookContainer = () => {
                 user: "user3"
             }
         ]
-    
+
     return(
-      <>  
+      <>
         <BookList books={books} />
-      </>   
+      </>
     )
 }
 

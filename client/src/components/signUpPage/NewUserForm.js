@@ -1,17 +1,13 @@
 import { useState } from 'react';
 
 const NewUserForm = ({ onNewUserSubmit }) => {
-	const [firstName, setFirstName] = useState('');
+	const [userName, setUserName] = useState('');
 	const [lastName, setLastName] = useState('');
 	const [userEmail, setUserEmail] = useState('');
 	const [userCommunity, setUserCommunity] = useState('');
 
-	const handleFirstNameChange = (event) => {
-		setFirstName(event.target.value);
-	};
-
-	const handleLastNameChange = (event) => {
-		setLastName(event.target.value);
+	const handleUserNameChange = (event) => {
+		setUserName(event.target.value);
 	};
 
 	const handleUserEmailChange = (event) => {
@@ -24,14 +20,12 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 
 	const handleNewUserSubmit = (event) => {
 		event.preventDefault();
-		const firstNameToSubmit = firstName.trim();
-		const lastNameToSubmit = lastName.trim();
+		const userNameToSubmit = userName.trim();
 		const userEmailToSubmit = userEmail.trim();
 		const userCommunityToSubmit = userCommunity.trim();
 
 		if (
-			!firstNameToSubmit ||
-			!lastNameToSubmit ||
+			!userNameToSubmit ||
 			!userEmailToSubmit ||
 			!userCommunityToSubmit
 		) {
@@ -39,14 +33,12 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 		}
 
 		onNewUserSubmit({
-			firstName: firstNameToSubmit,
-			lastName: lastNameToSubmit,
+			userName: userNameToSubmit,
 			email: userEmailToSubmit,
 			community: userCommunityToSubmit
 		});
 
-		setFirstName('');
-		setLastName('');
+		setUserName('');
 		setUserEmail('');
 		setUserCommunity('');
 	};
@@ -55,20 +47,12 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 		<>
 			<div>
 				<form>
-					<label htmlFor="firstName">First Name:</label>
+					<label htmlFor="userName">Username:</label>
 					<input
 						type="text"
-						placeholder="first name"
-						value={firstName}
-						onChange={handleFirstNameChange}
-						required
-					/>
-					<label htmlFor="lastName">Last Name:</label>
-					<input
-						type="text"
-						placeholder="last name"
-						value={lastName}
-						onChange={handleLastNameChange}
+						placeholder="username"
+						value={userName}
+						onChange={handleUserNameChange}
 						required
 					/>
 					<label htmlFor="userEmail">Email:</label>

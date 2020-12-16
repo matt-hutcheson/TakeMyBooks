@@ -7,15 +7,15 @@ const MyBookContainer = ({currentUser}) => {
 
     const [myBooks, setMyBooks] = useState([])
 
-    useEffect(() => { 
-        if (currentUser){
-            
+    useEffect(() => {
+        if (Object.keys(currentUser).length > 0){
+
             setMyBooks(currentUser.shareBooks)
             console.log(myBooks)
         }
     },[currentUser])
 
-    if(!currentUser){
+    if(Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
         return(
             <p>loading</p>
         )
