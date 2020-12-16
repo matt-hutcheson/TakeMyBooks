@@ -24,7 +24,6 @@ const AppContainer = () => {
 
 	const handleSelectUser = (event) => {
 		event.preventDefault();
-		console.log(JSON.parse(event.target.value));
 		setCurrentUser(JSON.parse(event.target.value));
 	};
 
