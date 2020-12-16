@@ -11,6 +11,7 @@ const NavBar = () => {
             <li><Link to="/find-books">Find books</Link></li>
             <li><Link to="/new-user">New User</Link></li>
             <li><Link to="/share-books">Share books</Link></li>
+            <li><Link to="/my-requests">My Requests</Link></li>
         </nav>
     )
 }

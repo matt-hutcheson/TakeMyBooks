@@ -1,31 +1,39 @@
 import BookContainer from './BookContainer';
 import MyBooksContainer from './MyBookContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { getUsers } from '../fetches/UserFetch';
+import {useState, useEffect} from 'react';
+import {getUsers, getUsersById} from '../fetches/UserFetch';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
 import AddBook from '../components/addBookPage/AddBook';
-import './AppContainer.css';
+import MyRequestsPage from '../containers/pages/MyRequestsPage';
+import './AppContainer.css'
 
 const AppContainer = () => {
 	const [currentUser, setCurrentUser] = useState({});
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 
 	// useEffect(() => {
 	// 	getUsers()
 	// 	.then(data => setUsers(data))
 	// }, [])
+	
+
+	const handleSelectUser = (event) => {
+		event.preventDefault();
+		console.log(JSON.parse(event.target.value));
+		setCurrentUser(JSON.parse(event.target.value));
+	};
 
 	return (
 		<Router>
 			<main>
 				<NavBar />
 				<Switch>
-					<Route path="/sign-up" component={NewUserBox} />
-					<Route exact path="/" component={Home} />
+					<Route path="/sign-up" exact render={()=><NewUserBox handleSelectUser={handleSelectUser}/>}/>
+					<Route exact path="/" component={Home}/>
 					<Route exact path="/books" component={BookContainer} />
 					<Route
 						exact
@@ -38,11 +46,8 @@ const AppContainer = () => {
 						component={MyBooksContainer}
 					/>
 					<Route exact path="/find-books" component={FindBooksPage} />
-					<Route
-						path="/users/:id/books/add-book"
-						exact
-						render={() => <AddBook currentUser="currentUser" />}
-					/>
+					<Route path="/users/:id/books/add-book" exact render={() => <AddBook currentUser="currentUser" />} />
+					<Route path="/my-requests" exact render={()=><MyRequestsPage currentUser={currentUser}/>}/>
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
 			</main>
