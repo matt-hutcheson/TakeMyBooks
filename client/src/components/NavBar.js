@@ -1,19 +1,44 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import './NavBar.css'
+import { Link } from 'react-router-dom';
+import '../styles/NavBar.css';
 
 const NavBar = () => {
-    return (
-        <nav>
-            <img src="./images/BookYeetLogo.png" alt="logo"></img>
-            <li><Link to="/">home</Link></li>
-            <li><Link to="/find-books">find books</Link></li>
-            <li><Link to="/share-books">share books</Link></li>
-            <li><Link to="/my-books">my books</Link></li>
-            <li><Link to="/new-user">new user</Link></li>
-            <li><Link to="/how-it-works">how it works</Link></li>
-        </nav>
-    )
-}
+	return (
+		<nav>
+			<ul className="nav-bar-list">
+				<li>
+					<Link to="/" className="nav-list-link">
+						home
+					</Link>
+				</li>
+				<li>
+					<Link to="/find-books" className="nav-list-link">
+						find books
+					</Link>
+				</li>
+				<li>
+					<Link to="/share-books" className="nav-list-link">
+						share books
+					</Link>
+				</li>
+				<li>
+					<Link to="/my-books" className="nav-list-link">
+						my books
+					</Link>
+				</li>
+				<li>
+					<Link to="/sign-up" className="nav-list-link">
+						new user
+					</Link>
+				</li>
+				<li>
+					<Link to="/how-it-works" className="nav-list-link">
+						how it works
+					</Link>
+				</li>
+			</ul>
+		</nav>
+	);
+};
 
 export default NavBar;

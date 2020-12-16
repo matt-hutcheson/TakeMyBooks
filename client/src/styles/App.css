@@ -1,3 +1,8 @@
+.wholeApp {
+	display: flex;
+	flex-direction: column;
+}
+
 /* .App {
   text-align: center;
 }
@@ -37,9 +42,7 @@
   }
 } */
 
-
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
+} */

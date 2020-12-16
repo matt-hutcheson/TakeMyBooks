@@ -1,0 +1,11 @@
+header {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	background-color: #ff6600;
+}
+
+.burger-image {
+	width: 30px;
+	height: 30px;
+}

@@ -8,9 +8,9 @@ import NavBar from '../components/NavBar';
 import NewUserBox from './pages/NewUserBox';
 import FindBooksPage from './pages/FindBooksPage';
 import AddBook from '../components/addBookPage/AddBook';
-import './AppContainer.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import '../styles/AppContainer.css';
 
 const AppContainer = () => {
 	const [currentUser, setCurrentUser] = useState({});
@@ -23,8 +23,8 @@ const AppContainer = () => {
 
 	return (
 		<Router>
+			<Header />
 			<main>
-				<Header />
 				{/* <NavBar /> */}
 				<Switch>
 					<Route path="/sign-up" component={NewUserBox} />
@@ -48,8 +48,8 @@ const AppContainer = () => {
 					/>
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
-				<Footer />
 			</main>
+			<Footer />
 		</Router>
 	);
 };
