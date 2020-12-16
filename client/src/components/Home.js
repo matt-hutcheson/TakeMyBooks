@@ -11,7 +11,6 @@ const Home = () => {
             <p>We are driven by Community</p>
             <p>Get more from your books</p> */}
 				<div>
-					<NavBar/>
 					<Link to="/how-it-works">
 						<button>How it Works</button>
 					</Link>
