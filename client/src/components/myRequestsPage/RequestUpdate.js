@@ -10,9 +10,8 @@ const RequestUpdate = ({selectedRequest}) =>{
                 <option value="">Reject</option>
                 <option value="">Cancel</option>
             </select>
-            <submit>Update Status</submit>
+            <button>Update Status</button>
         </form>
-
         </>
     );
 };

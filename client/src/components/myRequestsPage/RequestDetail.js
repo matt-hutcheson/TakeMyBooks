@@ -20,6 +20,7 @@ const RequestDetail = ({selectedRequest, currentUser, resetSelectRequest})=>{
                 <h6>{selectedRequest.owner.email}</h6>
                 <button onClick={resetSelectRequest}>Go Back</button>
                 <button>Cancel my request</button>
+                <RequestUpdate/>
                 </>
             );
         }
