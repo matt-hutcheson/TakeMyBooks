@@ -1,15 +1,16 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import BookWebFetch from '../../fetches/BookWebFetch'
+import { useHistory } from 'react-router-dom';
+import {postBarcode} from '../../fetches/BookFetch';
 
-const AddBook = () => {
+const AddBook = ({currentUser}) => {
 
   const [newBook, setNewBook] = useState({});
   const [barcode, setBarcode] = useState("");
 
   useEffect(() => {
     if (barcode.length === 13) {
-      BookWebFetch(barcode)
+      postBarcode(barcode, currentUser)
       .then(data => console.log(data))
     }
   }, [barcode])
