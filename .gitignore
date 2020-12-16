@@ -7,7 +7,7 @@
 !**/server/src/main/**/target/
 !**/server/src/test/**/target/
 /server/db
-/server/src/main/java/com/codeclan/example/server/components/key.java
+/server/src/main/java/com/codeclan/example/server/components/APIkey.java
 /client/.eslintcache
 /db
 
