@@ -10,14 +10,17 @@ const MyRequestsPage = ({currentUser}) => {
     
 
     useEffect(() => {
-		getRequestsByOwnerId({currentUser}).then((data) => {
+        if(!currentUser){
+		getRequestsByOwnerId(currentUser.id).then((data) => {
 			setRequestsShare(data);
-        });
+        });}
     }, [currentUser]);
+
     useEffect(()=>{
-    getRequestsByRequesterId({currentUser}).then((data) => {
+        if(!currentUser){
+    getRequestsByRequesterId(currentUser.id).then((data) => {
         setRequestsBorrow(data);
-    });
+    });}
     }, [currentUser]);
 
     return(

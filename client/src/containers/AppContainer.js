@@ -14,19 +14,26 @@ import './AppContainer.css'
 const AppContainer = () => {
 
 	const [currentUser, setCurrentUser] = useState({});
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 
-	useEffect(() => {
-		getUsers()
-		.then(data => setUsers(data))
-	}, [])
+	// useEffect(() => {
+	// 	getUsers()
+	// 	.then(data => setUsers(data))
+	// }, [])
+	
+
+	const handleSelectUser = (event) => {
+		event.preventDefault();
+		console.log(JSON.parse(event.target.value));
+		setCurrentUser(JSON.parse(event.target.value));
+	};
 
 	return (
 		<Router>
 			<main>
 				<NavBar />
 				<Switch>
-					<Route path="/sign-up" component={NewUserBox} />
+					<Route path="/sign-up" exact render={()=><NewUserBox handleSelectUser={handleSelectUser}/>}/>
 					<Route exact path="/" component={Home}/>
 					<Route exact path="/books" component={BookContainer} />
 					<Route exact path="/book-detail" component={BookContainer} />
