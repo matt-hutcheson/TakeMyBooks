@@ -1,0 +1,15 @@
+body {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	font-family: Crimson Text;
+	/* background-image: url('./images/books_on_shelf.jpg'); */
+	/* background-repeat: no-repeat; */
+	background-size: 1600px 800px;
+	/* justify-content: center; */
+	/* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100% */
+}
+
+
