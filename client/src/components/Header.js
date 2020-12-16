@@ -18,16 +18,16 @@ const Header = () => {
 				<li>
 					<a href="">About</a>
 				</li>
-			</ul>
-			</div>
-			<div>
-			<img
+				<li>
+				<img
 				src={'../images/burger-menu.svg'}
 				alt={'nav bar menu'}
 				className="burger-image"
-			/>
+				/>
+				</li>
+			</ul>
 			</div>
-			<NavBar />
+			{/* <NavBar /> */}
 		</header>
 	);
 };

@@ -4,8 +4,6 @@ main {
 	flex-flow: column;
 	justify-content: space-around;
 	margin: 0;
-	/* font-family: 'Old Standard TT', serif; */
-	font-family: 'Ubuntu Condensed', sans-serif;
 	/* background-repeat: no-repeat; */
 	background-size: 33vw;
 	/* justify-content: center; */
