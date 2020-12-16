@@ -3,6 +3,7 @@ import '../styles/Header.css';
 
 const Header = () => {
 	return (
+		<>
 		<header>
 			{/* <div> */}
 			<img
@@ -30,6 +31,8 @@ const Header = () => {
 			{/* </div> */}
 			{/* <NavBar /> */}
 		</header>
+		<NavBar/>
+		</>
 	);
 };
 

@@ -4,6 +4,7 @@ import '../styles/NavBar.css';
 
 const NavBar = () => {
 	return (
+		<div className="HALP">
 		<nav>
 			<ul className="nav-bar-list">
 				<li>
@@ -36,8 +37,14 @@ const NavBar = () => {
 						how it works
 					</Link>
 				</li>
+				<li>
+					<Link to="/my-requests" className="nav-list-link">
+						My Requests
+					</Link>
+				</li>
 			</ul>
 		</nav>
+		</div>
 	);
 };
 
