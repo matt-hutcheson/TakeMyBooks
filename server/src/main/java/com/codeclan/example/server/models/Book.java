@@ -25,17 +25,21 @@ public class Book {
     @Column(name = "barcode")
     private String barcode;
 
+    @Column(name = "image")
+    private String image;
+
     @ManyToOne
     @JsonIgnoreProperties({"shareBooks", "ownedBooks", "requests"})
     @JoinColumn(name = "user_id", nullable = false)
     private User owner;
 
-    public Book(String title, String author, String genre, String barcode, User owner) {
+    public Book(String title, String author, String genre, String barcode, User owner, String image) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.barcode = barcode;
         this.owner = owner;
+        this.image = image;
     }
 
     public Book() {
@@ -88,5 +92,13 @@ public class Book {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

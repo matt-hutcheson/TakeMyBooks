@@ -48,6 +48,15 @@ export const postBook = (book) => {
     );
 };
 
+export const postBarcode = (isbn, currentUser) => {
+    return(
+        fetch(`http://localhost:8080/my-books/add-book/${isbn}`, {
+            method: 'post',
+            body: JSON.stringify(currentUser)
+        })
+    )
+}
+
 export const updateBook = (book, bookId) => {
     return(
         fetch(`http://localhost:8080/books/${bookId}`, {
