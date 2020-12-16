@@ -5,7 +5,7 @@ public class APIkey {
     private String key;
 
     public APIkey() {
-        this.key = "lfatmnz2yqe6s5eizecx6i1g0pw9io";
+        this.key = "fhwym0z8zfzfe116qhhfxgdgyah063";
     }
 
     public String getKey() {
