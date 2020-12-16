@@ -1,0 +1,31 @@
+.user-details {
+    font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px; 
+}
+
+.my-details {
+    font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px; 
+}
+
+/* .my-books-title {
+    font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 36px; 
+} */
+
+/* .book-covers {
+    position: absolute;
+    height: 270px;
+} */
+
+
+/* 
+- unable to touch button
+- unable to fix the size of book-covers...
+*/

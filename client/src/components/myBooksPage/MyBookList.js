@@ -1,6 +1,5 @@
 import MyBookDetail from './MyBookDetail'
 
-
 const MyBookList = ({myBooks}) => {
 
   if(!myBooks) {
@@ -15,6 +14,7 @@ const MyBookList = ({myBooks}) => {
 
   return (
     <>
+      <p id="my-books-title">My books</p>
       <ul>
           {bookElement}
       </ul>
