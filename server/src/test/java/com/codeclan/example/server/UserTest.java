@@ -32,7 +32,7 @@ public class UserTest {
     @Test
     public void canAddBookToShareBooks(){
         User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
-        Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
+        Book book = new Book("Children Of Time", "Tchaikovsky, Adrian", "Sci-Fi", "9781447273288", user, "https://images.barcodelookup.com/3143/31435732-1.jpg");
 
         user.addBookToSharedBooks(book);
         assertEquals(1, user.getShareBooks().size());
@@ -41,7 +41,7 @@ public class UserTest {
     @Test
     public void canAddBookToOwnedBooks(){
         User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
-        Book book = new Book("Children Of Time", "Adrian Tchaikovsky", "Sci-Fi", "123456789", user);
+        Book book = new Book("Children Of Time", "Tchaikovsky, Adrian", "Sci-Fi", "9781447273288", user, "https://images.barcodelookup.com/3143/31435732-1.jpg");
         user.addBookToOwnedBooks(book);
         assertEquals(1, user.getOwnedBooks().size());
     }
