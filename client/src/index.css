@@ -3,7 +3,8 @@ body {
   display: flex;
   flex-direction: row;
   margin: 0;
-  font-family: 'Old Standard TT', serif;
+  /* font-family: 'Old Standard TT', serif; */
+  font-family: 'Ubuntu Condensed', sans-serif;
   /* background-repeat: no-repeat; */
   background-size: 400px 200px;
   /* justify-content: center; */
