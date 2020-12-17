@@ -1,7 +1,5 @@
 const MyBookDetail = ({book}) => {
     
-    console.log(book.image)
-    
     return (
         <>
             <img id="book-covers" src={book.image} alt="book cover"/>

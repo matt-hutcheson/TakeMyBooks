@@ -15,9 +15,11 @@ const MyBookList = ({myBooks}) => {
   return (
     <>
       <p id="my-books-title">My books</p>
-      <ul>
-          {bookElement}
-      </ul>
+      <div style={{background: "#C4C4C4"}}>
+        <ul>
+            {bookElement}
+        </ul>
+      </div>
     </>
   ) 
 }
