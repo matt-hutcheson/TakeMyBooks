@@ -6,7 +6,7 @@ const SearchResults = ({ books }) => {
 		return <Book key={i} book={book} />;
 	});
 
-	return <ul>{bookList}</ul>;
+	return <div>{bookList}</div>;
 };
 
 export default SearchResults;
