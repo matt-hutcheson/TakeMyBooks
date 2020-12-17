@@ -26,7 +26,12 @@ public class BookController {
     public ResponseEntity<List<Book>> getAllBooks(
             @RequestParam(name = "genre", required = false) String genre,
             @RequestParam(name = "author", required = false) String author,
-            @RequestParam(name = "ownerId", required = false) Long ownerId){
+            @RequestParam(name = "ownerId", required = false) Long ownerId,
+            @RequestParam(name = "search", required = false) Boolean search,
+            @RequestParam(name = "title", required = false) String title){
+        if (search != null && author != null && title != null && genre != null){
+            return new ResponseEntity<>(bookRepository.findBooksByTitleIgnoreCaseContainingOrAuthorIgnoreCaseContainingOrGenreIgnoreCaseContaining(title, author, genre), HttpStatus.OK);
+        }
         if (genre != null && author != null){
             return new ResponseEntity<>(bookRepository.findBooksByAuthorAndGenre(author, genre), HttpStatus.OK);
         }
