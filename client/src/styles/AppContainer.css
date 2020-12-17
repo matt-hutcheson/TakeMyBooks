@@ -2,7 +2,7 @@
 	/* background-image: url("/src/images/books_on_shelf.jpg"); */
 	display: flex;
 	flex-flow: column;
-	justify-content: unset; 
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 }
