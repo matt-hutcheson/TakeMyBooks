@@ -19,7 +19,7 @@ const NewUserBox = ({handleSelectUser}) => {
 
 	const showAllUsers = () => {
 		return (
-			<select onChange={handleSelectUser}>
+			<select className="select-user" onChange={handleSelectUser}>
 				{users.map((user, index) => {
 					return <option key={index} value={JSON.stringify(user)} >{user.userName}</option>
 				})}
@@ -49,9 +49,9 @@ const NewUserBox = ({handleSelectUser}) => {
 					<div>
 						<h2 className="question">Signed Up Before?</h2>
 					</div>
-					<div className="button">
-						<button onClick={handleYesClick}>YES</button>
-						<button onClick={handleNoClick}>NO</button>
+					<div className="log-in-btns">
+						<button className="yes-btn" onClick={handleYesClick}>YES</button>
+						<button className="no-btn" onClick={handleNoClick}>NO</button>
 					</div>
 				</>
 			);
@@ -61,25 +61,23 @@ const NewUserBox = ({handleSelectUser}) => {
 					<div>
 						<h2 className="question">Select your name below:</h2>
 					</div>
-					<div className="show-users">{showAllUsers()}</div>
+					{showAllUsers()}
 				</>
 			);
 		} else {
 			return (
-				<div>
 					<NewUserForm
 						onNewUserSubmit={(newUser) => {
 							addNewUser(newUser);
 						}}
 					/>
-				</div>
 			);
 		}
 	};
 
 	return (
 		<>
-			<div>{renderItems()}</div>
+			{renderItems()}
 		</>
 	);
 };

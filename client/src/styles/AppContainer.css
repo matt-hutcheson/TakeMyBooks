@@ -2,6 +2,7 @@
 	/* background-image: url("/src/images/books_on_shelf.jpg"); */
 	display: flex;
 	flex-flow: column;
+	align-items: center;
 	justify-content: unset; 
 	margin: 0;
 	padding: 0;
