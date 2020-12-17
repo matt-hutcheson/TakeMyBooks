@@ -75,7 +75,7 @@ const NewUserBox = ({setCurrentUser}) => {
 					</div>
 					<div className="show-users">{showAllUsers()}</div>
 					<button className="" onClick={handleSelectClick}>
-						<Link to="/">Select</Link>
+						<Link to="/my-books">Select</Link>
 					</button>
 				</>
 			);
