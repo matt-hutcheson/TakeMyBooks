@@ -2,11 +2,13 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import {postBarcode, postBook} from '../../fetches/BookFetch';
+import {getUsersById} from '../../fetches/UserFetch';
 import MyBookDetail from '../../components/myBooksPage/MyBookDetail'
+import { Link } from 'react-router-dom';
 import '../../styles/AddBook.css';
 
 
-const AddBook = ({currentUser}) => {
+const AddBook = ({currentUser, setCurrentUser}) => {
 
   const [newBook, setNewBook] = useState({});
   const [barcode, setBarcode] = useState("");
@@ -28,7 +30,8 @@ const AddBook = ({currentUser}) => {
   const handleSaveBook = (event) => {
     event.preventDefault();
     postBook(newBook, currentUser.id)
-    .then(data => setNewBook({}))
+    .then((data) => currentUser.shareBooks.push(newBook))
+    .then(() => setNewBook({}))
     .then(setSaved(true))
     .then(setBarcode(""))
   }
@@ -40,6 +43,7 @@ const AddBook = ({currentUser}) => {
   if (Object.keys(newBook).length === 0 && newBook.constructor === Object){
     return (
       <>
+        <Link to="/my-books"><p>Back to My Books</p></Link>
         <div className="add-new-book">
           <h3>Add a New Book to Your Collection</h3>
           <p>Just enter the 13 digit barcode ISBN from the back of the book</p>
@@ -56,6 +60,7 @@ const AddBook = ({currentUser}) => {
   } else {
     return (
       <>
+      <Link to="/my-books"><p>Back to My Books</p></Link>
       <div className="add-new-book">
         <h3>Add a New Book to Your Collection</h3>
         <p>Just enter the 13 digit barcode ISBN from the back of the book</p>

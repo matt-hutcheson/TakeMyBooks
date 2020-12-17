@@ -52,14 +52,14 @@ const AppContainer = () => {
 						exact
 						path="/my-books"
 						render={() => (
-							<MyBookContainer currentUser={currentUser} />
+							<MyBookContainer currentUser={currentUser}/>
 						)}
 					/>
 
 					<Route
 						path="/my-books/add-book"
 						exact
-						render={() => <AddBook currentUser={currentUser} />}
+						render={() => <AddBook currentUser={currentUser} setCurrentUser={setCurrentUser} />}
 					/>
 					<Route
 						path="/my-requests"
