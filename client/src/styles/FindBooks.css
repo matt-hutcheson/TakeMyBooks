@@ -1,10 +1,9 @@
-#find-books-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	gap: 0px 0px;
-	grid-template-areas:
-		'. . . .'
-		'. . . .'
-		'. . . .';
+.find-books-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.find-books-child {
+	max-width: 80vw;
 }

@@ -28,9 +28,11 @@ const FindBooksPage = () => {
 	}, [searchInput]);
 
 	return (
-		<div>
-			<SearchBar setSearchInput={setSearchInput} />
-			<SearchResults books={foundBooks} id="find-books-container" />
+		<div className="find-books-container">
+			<div className="find-books-child">
+				<SearchBar setSearchInput={setSearchInput} />
+				<SearchResults books={foundBooks} />
+			</div>
 		</div>
 	);
 };
