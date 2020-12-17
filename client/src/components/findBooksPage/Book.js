@@ -1,28 +1,34 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { getBooksById } from '/Users/andrewcarnaghan/Desktop/CodeClan/codeclan_work/projects/TakeMyBooks/client/src/fetches/BookFetch.js';
+import { postRequest } from '../../fetches/RequestFetch.js';
 import '../../styles/BookResult.css';
 
 const Book = ({ book, currentUser }) => {
-	const [bookID, setBookID] = useState('');
-	const [bookURL, setBookURL] = useState('');
-
+	const [request, setRequest] = useState({});
 	const isMounted = useRef(false);
 
-	const handleBookClick = (event) => {
+	const handleBookRequestClick = (event) => {
 		event.preventDefault();
+
+		const createRequest = {
+			status: 'Pending',
+			owner: book.owner,
+			requester: currentUser,
+			book: book
+		};
+		setRequest(createRequest);
 	};
 
 	useEffect(() => {
 		if (isMounted.current) {
-			getBooksById(bookID);
+			postRequest(request);
 		} else {
 			isMounted.current = true;
 		}
-	}, [bookID]);
+	}, [request]);
 
 	return (
-		<div className="book-result" onClick={handleBookClick}>
+		<div className="book-result">
 			<img src={book.image} alt="book cover" />
 			<Link to="/book-detail">
 				<div className="overlay">
@@ -30,7 +36,12 @@ const Book = ({ book, currentUser }) => {
 					<p className="text2">by {book.author}.</p>
 					{Object.keys(currentUser).length === 0 &&
 					currentUser.constructor === Object ? null : (
-						<button className="request-btn">Request Book</button>
+						<button
+							className="request-btn"
+							onClick={handleBookRequestClick}
+						>
+							Request Book
+						</button>
 					)}
 				</div>
 			</Link>
