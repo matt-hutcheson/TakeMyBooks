@@ -15,12 +15,11 @@ public class UserController {
     UserRepository userRepository;
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers(
-            @RequestParam(name="firstName", required=false) String firstName,
-            @RequestParam(name="lastName", required=false) String lastName,
+            @RequestParam(name="userName", required=false) String userName,
             @RequestParam(name="community", required=false) String community,
             @RequestParam(name="shareBooksId", required=false) Long shareBookId){
-        if(firstName != null && lastName != null){
-            return new ResponseEntity<>(userRepository.findUsersByFirstNameAndLastName(firstName, lastName), HttpStatus.OK);
+        if(userName != null){
+            return new ResponseEntity<>(userRepository.findUsersByUserName(userName), HttpStatus.OK);
         }
         if(community != null){
             return new ResponseEntity<>(userRepository.findUsersByCommunity(community), HttpStatus.OK);
@@ -42,8 +41,7 @@ public class UserController {
     @PutMapping(value="/users/{id}")
     public ResponseEntity<User> putUser(@RequestBody User user, @PathVariable Long id){
         User userToUpdate = userRepository.findById(id).get();
-        userToUpdate.setFirstName(user.getFirstName());
-        userToUpdate.setLastName(user.getLastName());
+        userToUpdate.setUserName(user.getUserName());
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setCommunity(user.getCommunity());
         userRepository.save(userToUpdate);
