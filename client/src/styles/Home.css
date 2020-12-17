@@ -115,6 +115,10 @@
 	margin-bottom: 20px;
 }
 
+.btn-how-it-works:focus {
+	outline: none;
+}
+
 .btn-how-it-works:hover {
 	cursor: pointer;
 }

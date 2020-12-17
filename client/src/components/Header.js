@@ -3,8 +3,7 @@ import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
-const Header = ({currentUser}) => {
-
+const Header = ({ currentUser }) => {
 	const [burgerClicked, setBurgerClicked] = useState(false);
 
 	const handleBurgerHover = (event) => {
@@ -17,7 +16,10 @@ const Header = ({currentUser}) => {
 		setBurgerClicked(false);
 	};
 
-	if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
+	if (
+		Object.keys(currentUser).length === 0 &&
+		currentUser.constructor === Object
+	) {
 		return (
 			<>
 				<header>
@@ -30,10 +32,9 @@ const Header = ({currentUser}) => {
 					</Link>
 					<ul className="header-list">
 						<li>
-							<a href="/login" className="header-link1">Login</a>
-						</li>
-						<li>
-						<Link to="/"><p>About</p></Link>
+							<a href="/login" className="header-link1">
+								Login
+							</a>
 						</li>
 						<li
 							className="img-li"
@@ -53,38 +54,37 @@ const Header = ({currentUser}) => {
 		);
 	} else {
 		return (
-		<>
-			<header>
-				<Link to="/">
-					<img
-						className="header-logo"
-						src={'../images/BookYeetLogo.png'}
-						alt={'logo'}
-					></img>
-				</Link>
-				<ul className="header-list">
-					<li>
-						<a href="/login" className="header-link1">Change User: {currentUser.userName}</a>
-					</li>
-					<li>
-						<Link to="/"><p>About</p></Link>
-					</li>
-					<li
-						className="img-li"
-						onMouseEnter={handleBurgerHover}
-						onMouseLeave={handleBurgerLeave}
-					>
+			<>
+				<header>
+					<a href="/">
 						<img
-							src={'../images/burger-menu.svg'}
-							alt={'nav bar menu'}
-							className="burger-image"
+							className="header-logo"
+							src={'../images/BookYeetLogo.png'}
+							alt={'logo'}
 						></img>
-						<div>{burgerClicked ? <NavBar /> : null}</div>
-					</li>
-				</ul>
-			</header>
-		</>
-	);
+					</a>
+					<ul className="header-list">
+						<li>
+							<a href="/login" className="header-link1">
+								Change User: {currentUser.userName}
+							</a>
+						</li>
+						<li
+							className="img-li"
+							onMouseEnter={handleBurgerHover}
+							onMouseLeave={handleBurgerLeave}
+						>
+							<img
+								src={'../images/burger-menu.svg'}
+								alt={'nav bar menu'}
+								className="burger-image"
+							></img>
+							<div>{burgerClicked ? <NavBar /> : null}</div>
+						</li>
+					</ul>
+				</header>
+			</>
+		);
 	}
 };
 

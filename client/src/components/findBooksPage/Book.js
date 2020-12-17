@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../../styles/BookResult.css';
 
-const Book = ({ book }) => (
-	<li>
-		<article>
-			<h3>Title: {book.title}</h3>
-			<p>Author: {book.author}.</p>
-			<p>Genre: { book.genre }</p>
-      <img src={book.image} alt="book cover"/>
-		</article>
-	</li>
-);
+const Book = ({ book }) => {
+	return (
+		<div className="book-result">
+			<img src={book.image} alt="book cover" />
+			<div className="overlay">
+				<p className="text1">{book.title}</p>
+				<p className="text2">by {book.author}.</p>
+			</div>
+
+			{/* <p className="book-genre">Genre: {book.genre}</p> */}
+		</div>
+	);
+};
 
 export default Book;

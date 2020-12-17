@@ -82,7 +82,7 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(jkr);
         userRepository.save(kanye);
 
-        Request request = new Request("Pending", kanye, bob, bookReacher2);
+        Request request = new Request("Completed", kanye, bob, bookReacher2);
         requestRepository.save(request);
 
         Request request2 = new Request("Rejected", jkr, kanye, bookHomo);

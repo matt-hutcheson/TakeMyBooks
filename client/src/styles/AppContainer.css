@@ -1,8 +1,9 @@
 .main-content {
 	/* background-image: url("/src/images/books_on_shelf.jpg"); */
 	display: flex;
-	flex-flow: column;
-	justify-content: unset; 
+	flex-direction: column;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
+	min-height: 80vh;
 }

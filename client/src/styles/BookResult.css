@@ -1,0 +1,77 @@
+.book-result img {
+	width: 250px;
+	height: 375px;
+	object-fit: cover;
+}
+
+.book-result p {
+	margin: 2px 0;
+	padding: 0;
+}
+
+.book-title {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.book-author {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.book-genre {
+	color: gray;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.overlay {
+	/* padding: 0; */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: 0.5s ease;
+	background-color: white;
+	border: 8px solid #ff6600;
+}
+
+.text1 {
+	color: black;
+	font-size: 16px;
+	font-family: Helvetica;
+	font-weight: bolder;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	width: 220px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: left;
+}
+
+.text2 {
+	color: black;
+	font-size: 16px;
+	font-family: Helvetica;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: 220px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: left;
+}
+
+.book-result:hover .overlay {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.book-result {
+	position: relative;
+}

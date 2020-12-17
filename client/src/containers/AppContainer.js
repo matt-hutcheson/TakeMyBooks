@@ -1,4 +1,4 @@
-import MyBookContainer from "./MyBookContainer";
+import MyBookContainer from './MyBookContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getUsers, getUsersById } from '../fetches/UserFetch';
@@ -18,16 +18,14 @@ const AppContainer = () => {
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
-		getUsers()
-		.then(data => setUsers(data))
-	}, [])
+		getUsers().then((data) => setUsers(data));
+	}, []);
 
 	return (
 		<Router>
-			<Header currentUser={currentUser}/>
+			<Header currentUser={currentUser} />
 			<main className="main-content">
 				<Switch>
-
 					<Route exact path="/" component={Home} />
 
 					<Route
@@ -38,12 +36,20 @@ const AppContainer = () => {
 						)}
 					/>
 
-					<Route exact path="/find-books" render={() => <FindBooksPage users={users} ></FindBooksPage>} />
+					<Route
+						exact
+						path="/find-books"
+						render={() => (
+							<FindBooksPage users={users}></FindBooksPage>
+						)}
+					/>
 
 					<Route
 						exact
 						path="/my-books"
-						render={() => <MyBookContainer currentUser={currentUser} />}
+						render={() => (
+							<MyBookContainer currentUser={currentUser} />
+						)}
 					/>
 
 					<Route
