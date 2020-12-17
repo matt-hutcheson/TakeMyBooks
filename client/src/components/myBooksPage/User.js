@@ -1,4 +1,4 @@
-const User = ({userName, community, bookCount, requestCount}) => {
+const User = ({userName, community, bookCount}) => {
 
     return (
         <>
@@ -6,7 +6,6 @@ const User = ({userName, community, bookCount, requestCount}) => {
                 <p>Username: { userName }</p>
                 <p>Community: { community }</p>
                 <p>Numbers of books: {bookCount}</p>
-                <p>Numbers of active requests: {requestCount}</p>
             </div>
         </>
     )

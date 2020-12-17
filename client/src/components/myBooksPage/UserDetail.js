@@ -8,21 +8,24 @@ const [noBooks, setNoBooks] = useState(0);
 const [noRequests, setNoRequests] = useState(0);
 
     const calcBooks = () => {
-        setNoBooks(currentUser.shareBooks.length);
+        if (Object.keys(currentUser).length > 0){
+            setNoBooks(currentUser.shareBooks.length);
+        }
     }
 
     // const calcRequests = () => {
-    //     console.log(currentUser.requests)
-    //     setNoRequests(
-    //         if (currentUser.requests.filter(({status}) => status === "Pending").length > 0)) {
-    //             currentUser.requests.filter(({status}) => status === "Pending").reduce((sum, request) => sum + 1)
-    //         }
-
-    //         );
+    //     if (Object.keys(currentUser).length > 0){
+    //         setNoRequests(
+    //             if ((currentUser.requests.filter(({status}) => status === "Pending")).length > 0) {
+    //                 currentUser.requests.filter(({status}) => status === "Pending").reduce((sum, request) => sum + 1)
+    //             });
+    //     }
     // }
 
     useEffect(() => {
-        calcBooks();
+        if (Object.keys(currentUser).length > 0){
+            calcBooks();
+        }
         // calcRequests();
     }, [currentUser])
 
