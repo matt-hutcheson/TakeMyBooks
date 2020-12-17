@@ -1,0 +1,10 @@
+.find-books-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.find-books-child {
+	max-width: 80vw;
+}
