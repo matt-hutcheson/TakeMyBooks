@@ -1,45 +1,33 @@
 import MyBookList from '../components/myBooksPage/MyBookList'
+import UserDetail from '../components/myBooksPage/UserDetail'
+import {useEffect, useState} from 'react'
+import {getBooksByOwnerId} from '../fetches/BookFetch'
+import '../styles/MyBooks.css';
 
-const MyBookContainer = () => {
+const MyBookContainer = ({currentUser}) => {
 
-    const books = [ 
-        {
-            title: "title",
-            author: "author",
-            genre: "genre",
-            barcode: "barcode",
-        },
-        {   
-            title: "title2",
-            author: "author2",
-            genre: "genre2",
-            barcode: "barcode2",
-        },
-        {   
-            title: "title3",
-            author: "author3",
-            genre: "genre3",
-            barcode: "barcode3",
+    const [myBooks, setMyBooks] = useState([])
+
+    useEffect(() => {
+        if (Object.keys(currentUser).length > 0){
+
+            setMyBooks(currentUser.shareBooks)
+            console.log(myBooks)
         }
-    ]
+    },[currentUser])
 
-    const users = [
-        {
-            username: "username1",
-            community: "community",
-        },
-        {
-            username: "username2",
-            community: "community"
-        }
-    ]
-
-return(
-  <>  
-    <MyBookList books={books} />
-    <MyBookList users={users} />
-  </>   
-)
+    if(Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
+        return(
+            <p>Please login to continue</p>
+        )
+    } else {
+        return(
+            <>
+                <UserDetail currentUser={currentUser}/>
+                <MyBookList myBooks={myBooks}/>
+            </>
+        )
+    }
 }
 
 

@@ -1,15 +1,18 @@
 import User from './User'
 
-const UserDetail = ({username,community}) => {
+
+const UserDetail = ({currentUser}) => {
+
     return (
         <>
-            <h3>this is the user detail</h3>
-            <image>User Image Here</image>
-            <h2>My details:</h2>
-            <User />
+            <p id="my-details">My details:</p>
+            <User userName={currentUser.userName} community={currentUser.community}/>
             <button>Add Book</button>
         </>
     )
 }
 
 export default UserDetail
+
+
+

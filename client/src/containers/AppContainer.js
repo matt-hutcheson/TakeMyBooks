@@ -1,5 +1,4 @@
-import BookContainer from './BookContainer';
-import MyBooksContainer from './MyBookContainer';
+import MyBookContainer from "./MyBookContainer";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getUsers, getUsersById } from '../fetches/UserFetch';
@@ -15,12 +14,13 @@ import MyRequestsPage from '../containers/pages/MyRequestsPage';
 
 const AppContainer = () => {
 	const [currentUser, setCurrentUser] = useState({});
-	// const [users, setUsers] = useState([]);
 
-	// useEffect(() => {
-	// 	getUsers()
-	// 	.then(data => setUsers(data))
-	// }, [])
+	const [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		getUsers()
+		.then(data => setUsers(data))
+	}, [])
 
 	const handleSelectUser = (event) => {
 		event.preventDefault();
@@ -30,33 +30,31 @@ const AppContainer = () => {
 	return (
 		<Router>
 			<Header />
-			<main>
-				{/* <NavBar /> */}
+			<main className="main-content">
 				<Switch>
+
+					<Route exact path="/" component={Home} />
+
 					<Route
-						path="/sign-up"
+						path="/login"
 						exact
 						render={() => (
 							<NewUserBox handleSelectUser={handleSelectUser} />
 						)}
 					/>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/books" component={BookContainer} />
-					<Route
-						exact
-						path="/book-detail"
-						component={BookContainer}
-					/>
+
+					<Route exact path="/find-books" render={() => <FindBooksPage users={users} ></FindBooksPage>} />
+
 					<Route
 						exact
 						path="/my-books"
-						component={MyBooksContainer}
+						render={() => <MyBookContainer currentUser={currentUser} />}
 					/>
-					<Route exact path="/find-books" component={FindBooksPage} />
+
 					<Route
-						path="/users/:id/books/add-book"
+						path="/my-books/add-book"
 						exact
-						render={() => <AddBook currentUser="currentUser" />}
+						render={() => <AddBook currentUser={currentUser} />}
 					/>
 					<Route
 						path="/my-requests"

@@ -46,12 +46,10 @@ const FindBooksPage = () => {
 
 	return (
 		<>
-			<Header />
 			<SearchBar findBooks={findBooksBySearchBar} />
 			{/* <FilterBar findBooks={findBooksByFilterBar} /> */}
 			<SearchResults books={foundBooks} />
 			{/* <BookBar findBooks={findFictionBooks} /> */}
-			<Footer />
 		</>
 	);
 };

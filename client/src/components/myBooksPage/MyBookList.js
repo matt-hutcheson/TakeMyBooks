@@ -1,21 +1,28 @@
-import UserDetail from './UserDetail'
 import MyBookDetail from './MyBookDetail'
 
+const MyBookList = ({myBooks}) => {
 
-const MyBookList = () => {
-   
-    return (
-        <>
-            <UserDetail />
-            <h1>My Books</h1>
-            <p>Sort by:</p>
-            <p>Filter by:</p>
-            <image>images of books</image>
-
-            <MyBookDetail />
-        </>
-
+  if(!myBooks) {
+    return(
+      <p>loading</p>
     )
+  }
+
+  const bookElement = myBooks.map((book,index) => {
+    return (<MyBookDetail key={index} book={book}/>)
+  })
+
+  return (
+    <>
+      <p id="my-books-title">My books</p>
+      <div style={{background: "#C4C4C4"}}>
+        <ul>
+            {bookElement}
+        </ul>
+      </div>
+    </>
+  ) 
 }
+
 
 export default MyBookList

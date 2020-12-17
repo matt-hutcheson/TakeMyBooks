@@ -1,10 +1,11 @@
-import MyBook from './MyBook'
-
-const MyBookDetail = () => {
+const MyBookDetail = ({book}) => {
+    
     return (
         <>
-            <h1>this is the my book detail</h1>
-            <MyBook />
+            <img id="book-covers" src={book.image} alt="book cover"/>
+            <p>Title: { book.title }</p>
+            <p>Author: { book.author }</p>
+            <p>Genre: { book.genre }</p>
         </>    
     )
 }
