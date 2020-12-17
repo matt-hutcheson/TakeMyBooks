@@ -5,7 +5,7 @@ import { getBooks } from '../../fetches/BookFetch';
 import { getBooksByTitleOrAuthorOrGenreSearch } from '../../fetches/BookFetch';
 import '../../styles/FindBooks.css';
 
-const FindBooksPage = () => {
+const FindBooksPage = ({ currentUser }) => {
 	const [books, setBooks] = useState([]);
 	const [foundBooks, setFoundBooks] = useState([]);
 	const [searchInput, setSearchInput] = useState('');
@@ -31,7 +31,7 @@ const FindBooksPage = () => {
 		<div className="find-books-container">
 			<div className="find-books-child">
 				<SearchBar setSearchInput={setSearchInput} />
-				<SearchResults books={foundBooks} />
+				<SearchResults books={foundBooks} currentUser={currentUser} />
 			</div>
 		</div>
 	);

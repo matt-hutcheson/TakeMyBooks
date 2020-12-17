@@ -2,9 +2,9 @@ import React from 'react';
 import Book from './Book';
 import '../../styles/SearchResults.css';
 
-const SearchResults = ({ books }) => {
+const SearchResults = ({ books, currentUser }) => {
 	const bookList = books.map((book, i) => {
-		return <Book key={i} book={book} />;
+		return <Book key={i} book={book} currentUser={currentUser} />;
 	});
 
 	return (
