@@ -19,11 +19,13 @@ const NewUserBox = ({handleSelectUser}) => {
 
 	const showAllUsers = () => {
 		return (
+			<div className="select-div">
 			<select className="select-user" onChange={handleSelectUser}>
 				{users.map((user, index) => {
 					return <option key={index} value={JSON.stringify(user)} >{user.userName}</option>
 				})}
 			</select>
+			</div>
 		);
 	};
 
