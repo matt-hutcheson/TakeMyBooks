@@ -1,7 +1,7 @@
 .wholeApp {
 	display: flex;
 	flex-direction: column;
-	background-color: black;
+	/* background-color: black; */
 	font-family: Crimson Text;
 }
 

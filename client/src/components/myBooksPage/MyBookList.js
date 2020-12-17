@@ -1,6 +1,5 @@
 import MyBookDetail from './MyBookDetail'
 
-
 const MyBookList = ({myBooks}) => {
 
   if(!myBooks) {
@@ -15,9 +14,12 @@ const MyBookList = ({myBooks}) => {
 
   return (
     <>
-      <ul>
-          {bookElement}
-      </ul>
+      <p id="my-books-title">My books</p>
+      <div style={{background: "#C4C4C4"}}>
+        <ul>
+            {bookElement}
+        </ul>
+      </div>
     </>
   ) 
 }

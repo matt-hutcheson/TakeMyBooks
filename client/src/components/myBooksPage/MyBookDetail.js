@@ -1,13 +1,12 @@
 const MyBookDetail = ({book}) => {
-
-
+    
     return (
         <>
-            <h3>Title: { book.title }</h3>
+            <img id="book-covers" src={book.image} alt="book cover"/>
+            <p>Title: { book.title }</p>
             <p>Author: { book.author }</p>
             <p>Genre: { book.genre }</p>
-            <img src={book.image} alt="book cover"/>
-        </>
+        </>    
     )
 }
 

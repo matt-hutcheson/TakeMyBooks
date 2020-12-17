@@ -2,6 +2,7 @@ import MyBookList from '../components/myBooksPage/MyBookList'
 import UserDetail from '../components/myBooksPage/UserDetail'
 import {useEffect, useState} from 'react'
 import {getBooksByOwnerId} from '../fetches/BookFetch'
+import '../styles/MyBooks.css';
 
 const MyBookContainer = ({currentUser}) => {
 
@@ -22,7 +23,6 @@ const MyBookContainer = ({currentUser}) => {
     } else {
         return(
             <>
-                <h1>this is the MyBookContainer displaying a user</h1>
                 <UserDetail currentUser={currentUser}/>
                 <MyBookList myBooks={myBooks}/>
             </>
