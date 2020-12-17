@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import RequestDetail from '../../components/myRequestsPage/RequestDetail';
 import RequestList from '../../components/myRequestsPage/RequestList';
-import { getRequestsByOwnerId, getRequestsByRequesterId } from '../../fetches/RequestFetch';
+import { getRequestsByOwnerId, getRequestsByRequesterId, updateRequest } from '../../fetches/RequestFetch';
 
 const MyRequestsPage = ({currentUser}) => {
     const [requestsShare, setRequestsShare] = useState([])
@@ -40,6 +40,10 @@ const MyRequestsPage = ({currentUser}) => {
         setRequestIsSelected(false);
     };
 
+    const handleUpdateRequest = (updatedRequest) => {
+		updateRequest(updatedRequest);
+		// setRequestsChange(requestsChange + 1);
+	};
     
     
     if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object) {
@@ -56,7 +60,7 @@ const MyRequestsPage = ({currentUser}) => {
         )
     } else {
         return(
-            <RequestDetail resetSelectRequest={resetSelectRequest} currentUser={currentUser} selectedRequest={selectedRequest}/>
+            <RequestDetail handleUpdateRequest={handleUpdateRequest} resetSelectRequest={resetSelectRequest} currentUser={currentUser} selectedRequest={selectedRequest}/>
         );
     };
 };
