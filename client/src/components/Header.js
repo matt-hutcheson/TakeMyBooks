@@ -32,12 +32,9 @@ const Header = ({ currentUser }) => {
 					</Link>
 					<ul className="header-list">
 						<li>
-              <a href="/login" className="header-link1">
-                Login
-              </a>
-						</li>
-						<li>
-						  <Link to="/"><p>About</p></Link>
+							<a href="/login" className="header-link1">
+								Login
+							</a>
 						</li>
 						<li
 							className="img-li"
@@ -57,14 +54,14 @@ const Header = ({ currentUser }) => {
 		);
 	} else {
 		return (
-			<header>
-				<Link to="/">
-          <img
-            className="header-logo"
-            src={'../images/BookYeetLogo.png'}
-            alt={'logo'}
-          ></img>
-					</a>
+			<>
+				<header>
+					<Link to="/" />
+					<img
+						className="header-logo"
+						src={'../images/BookYeetLogo.png'}
+						alt={'logo'}
+					></img>
 					<ul className="header-list">
 						<li>
 							<a href="/login" className="header-link1">
