@@ -1,6 +1,6 @@
 import RequestUpdate from "./RequestUpdate"
 
-const RequestDetail = ({handleUpdateRequest, selectedRequest, currentUser, resetSelectRequest})=>{
+const RequestDetail = ({onUpdateRequest, selectedRequest, currentUser, resetSelectRequest})=>{
     
     if(selectedRequest.owner.id===currentUser.id){
         return (
@@ -9,7 +9,8 @@ const RequestDetail = ({handleUpdateRequest, selectedRequest, currentUser, reset
             <h5>You can contact them by E-mail to arrange the swap.</h5>
             <h6>{selectedRequest.requester.email}</h6>
             <button onClick={resetSelectRequest}>Go Back</button>
-            <RequestUpdate book={selectedRequest.book} requester={selectedRequest.requester} owner={selectedRequest.owner} handleUpdateRequest={handleUpdateRequest}/>
+            <RequestUpdate id={selectedRequest.id}
+             book={selectedRequest.book} requester={selectedRequest.requester} owner={selectedRequest.owner} />
             </>
         )} else {
             return(
@@ -20,7 +21,8 @@ const RequestDetail = ({handleUpdateRequest, selectedRequest, currentUser, reset
                 <h6>{selectedRequest.owner.email}</h6>
                 <button onClick={resetSelectRequest}>Go Back</button>
                 <button>Cancel my request</button>
-                <RequestUpdate book={selectedRequest.book} requester={selectedRequest.requester} owner={selectedRequest.owner} handleUpdateRequest={handleUpdateRequest}/>
+                <RequestUpdate
+                id={selectedRequest.id} book={selectedRequest.book} requester={selectedRequest.requester} owner={selectedRequest.owner}/>
                 </>
             );
         }

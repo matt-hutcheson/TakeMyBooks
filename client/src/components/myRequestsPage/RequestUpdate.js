@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {updateRequest} from '../../fetches/RequestFetch';
-const RequestUpdate = ({props}) =>{
+const RequestUpdate = ({ id, owner, requester, book}) =>{
 
     const [status, setStatus] = useState('');
 	// const [owner, setOwner] = useState({});
@@ -14,8 +14,19 @@ const RequestUpdate = ({props}) =>{
 	// }, []);
 
     const handleStatusChange = (event) => {
-		setStatus(event.target.value);
+        setStatus(event.target.value);
+        console.log(event.target.value);
+        console.log(id)
+        console.log(owner)
+        console.log(requester)
+        console.log(book)
     };
+
+    const handleUpdateRequest = (updatedRequest, id) => {
+        console.log(id)
+		updateRequest(updatedRequest, id);
+		// setRequestsChange(requestsChange + 1);
+	};
     
     const handleUpdateRequestSubmit = (event) => {
 		event.preventDefault();
@@ -33,14 +44,14 @@ const RequestUpdate = ({props}) =>{
 			return;
 		}
 
-		props.handleUpdateSubmit({
+		handleUpdateRequest({
 			status: statusToSubmit,
-			owner: props.owner,
-            requester: props.requester,
-            book: props.book
-		});
+			owner: owner,
+            requester: requester,
+            book: book
+		}, id);
 
-        setStatus('');
+        // setStatus('');
 		
 	};
     
