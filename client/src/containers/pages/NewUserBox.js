@@ -74,9 +74,9 @@ const NewUserBox = ({setCurrentUser}) => {
 						<h2 className="question">Select your name below:</h2>
 					</div>
 					<div className="show-users">{showAllUsers()}</div>
-					<button className="" onClick={handleSelectClick}>
-						<Link to="/my-books">Select</Link>
-					</button>
+					<Link to="/my-books"><button className="" onClick={handleSelectClick}>
+						Select
+					</button></Link>
 				</>
 			);
 		} else {

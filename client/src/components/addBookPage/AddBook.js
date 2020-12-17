@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import {postBarcode, postBook} from '../../fetches/BookFetch';
 import MyBookDetail from '../../components/myBooksPage/MyBookDetail'
+import '../../styles/AddBook.css';
 
 const AddBook = ({currentUser}) => {
 
@@ -38,7 +39,10 @@ const AddBook = ({currentUser}) => {
   if (Object.keys(newBook).length === 0 && newBook.constructor === Object){
     return (
       <>
-        <h1>newBook</h1>
+        <h3>Add a New Book to Your Collection</h3>
+        <p>Just enter the 13 digit barcode ISBN from the back of the book</p>
+        <img className="barcode" src={'../images/sample-barcode.jpg'} alt="sample barcode"/>
+        <p>example barcode</p>
         <form onSubmit={handleSubmit}>
           <input type="text" name="isbn" placeholder="ISBN Number" />
           <button type="submit">Lookup Barcode</button>
@@ -49,7 +53,10 @@ const AddBook = ({currentUser}) => {
   } else {
     return (
       <>
-        <h1>newBook</h1>
+        <h3>Add a New Book to Your Collection</h3>
+        <p>Just enter the 13 digit barcode ISBN from the back of the book</p>
+        <img className="barcode" src={'../images/sample-barcode.jpg'} alt="sample barcode"/>
+        <p>example barcode</p>
         <form onSubmit={handleSubmit}>
           <input type="text" name="isbn" placeholder="ISBN Number" />
           <button type="submit">Lookup Barcode</button>
