@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/AppContainer.css';
 import MyRequestsPage from '../containers/pages/MyRequestsPage';
+import BookDetail from '../containers/pages/BookDetail';
 
 const AppContainer = () => {
 	const [currentUser, setCurrentUser] = useState({});
@@ -40,7 +41,10 @@ const AppContainer = () => {
 						exact
 						path="/find-books"
 						render={() => (
-							<FindBooksPage users={users}></FindBooksPage>
+							<FindBooksPage
+								users={users}
+								currentUser={currentUser}
+							></FindBooksPage>
 						)}
 					/>
 
@@ -64,6 +68,11 @@ const AppContainer = () => {
 							<MyRequestsPage currentUser={currentUser} />
 						)}
 					/>
+					{/* <Route
+						path="/book-detail"
+						exact
+						render={() => <BookDetail currentUser={currentUser} />}
+					/> */}
 					{/* <Route component={ErrorPage}/> */}
 				</Switch>
 			</main>
