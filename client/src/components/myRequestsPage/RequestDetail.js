@@ -16,9 +16,10 @@ const RequestDetail = ({onUpdateRequest, selectedRequest, currentUser, resetSele
             <h6>{selectedRequest.requester.email}</h6>
             <button onClick={resetSelectRequest}>Go Back</button>
             <RequestUpdate id={selectedRequest.id} book={selectedRequest.book}
-            requester={selectedRequest.requester} owner={selectedRequest.owner}/>
+            requester={selectedRequest.requester} owner={selectedRequest.owner} resetSelectRequest={resetSelectRequest}/>
             </>
-        )} else {
+        )
+    } else {
             return(
                 <>
                 <h4>You are requesting "{selectedRequest.book.title}" 
@@ -28,14 +29,10 @@ const RequestDetail = ({onUpdateRequest, selectedRequest, currentUser, resetSele
                 <button onClick={resetSelectRequest}>Go Back</button>
                 <button onClick={cancelRequest}>Cancel my request</button>
                 <RequestUpdate id={selectedRequest.id} book={selectedRequest.book} 
-                requester={selectedRequest.requester} owner={selectedRequest.owner}/>
+                requester={selectedRequest.requester} owner={selectedRequest.owner} resetSelectRequest={resetSelectRequest}/>
                 </>
-            );
+            )
         }
-    console.log(currentUser)
-    console.log(selectedRequest);
-    return(
-    <h1>details</h1>
-    )
+        
 };
 export default RequestDetail;

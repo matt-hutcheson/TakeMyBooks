@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {updateRequest} from '../../fetches/RequestFetch';
-const RequestUpdate = ({ id, owner, requester, book}) =>{
+const RequestUpdate = ({ id, owner, requester, book, resetSelectRequest}) =>{
 
     const [status, setStatus] = useState('');
 
@@ -28,7 +28,8 @@ const RequestUpdate = ({ id, owner, requester, book}) =>{
         }, id);
         
         setStatus('');
-		
+
+		resetSelectRequest();
 	};
     
     return(
