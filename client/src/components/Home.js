@@ -15,12 +15,12 @@ const Home = () => {
 						<Link to="/how-it-works">How it Works</Link>
 					</button>
 				</div>
-				<div>
-					<img
+				<div className="img-down-arrow">
+					{/* <img
 						className="img-down-arrow"
 						src={'../images/down-arrow.svg'}
 						alt={'down arrow'}
-					/>
+					/> */}
 				</div>
 			</div>
 
