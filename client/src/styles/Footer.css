@@ -1,7 +1,7 @@
 footer {
 	display: flex;
 	flex-direction: row;
-	background-color: #ff6600;
+	background-color: #ff6600; 
 	justify-content: flex-end;
 	align-items: center;
 	height: 10vh;

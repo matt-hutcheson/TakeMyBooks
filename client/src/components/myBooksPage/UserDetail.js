@@ -7,7 +7,6 @@ const UserDetail = ({currentUser}) => {
         <>
             <p id="my-details">My details:</p>
             <User userName={currentUser.userName} community={currentUser.community}/>
-            <button>Add Book</button>
         </>
     )
 }

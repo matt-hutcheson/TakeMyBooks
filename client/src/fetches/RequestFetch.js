@@ -72,6 +72,7 @@ export const postRequest = (request) => {
     return(
         fetch(`http://localhost:8080/requests`, {
             method: 'post',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(request)
         })
     );
@@ -81,6 +82,7 @@ export const updateRequest = (request, requestId) => {
     return(
         fetch(`http://localhost:8080/requests/${requestId}`, {
             method: 'put',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(request)
         })
     );

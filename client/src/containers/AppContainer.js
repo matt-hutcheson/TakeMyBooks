@@ -21,14 +21,9 @@ const AppContainer = () => {
 		getUsers().then((data) => setUsers(data));
 	}, []);
 
-	const handleSelectUser = (event) => {
-		event.preventDefault();
-		setCurrentUser(JSON.parse(event.target.value));
-	};
-
 	return (
 		<Router>
-			<Header user={currentUser} />
+			<Header currentUser={currentUser} />
 			<main className="main-content">
 				<Switch>
 					<Route exact path="/" component={Home} />
@@ -37,7 +32,7 @@ const AppContainer = () => {
 						path="/login"
 						exact
 						render={() => (
-							<NewUserBox handleSelectUser={handleSelectUser} />
+							<NewUserBox setCurrentUser={setCurrentUser} />
 						)}
 					/>
 

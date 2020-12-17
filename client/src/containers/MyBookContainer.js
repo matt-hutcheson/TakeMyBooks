@@ -2,6 +2,7 @@ import MyBookList from '../components/myBooksPage/MyBookList'
 import UserDetail from '../components/myBooksPage/UserDetail'
 import {useEffect, useState} from 'react'
 import {getBooksByOwnerId} from '../fetches/BookFetch'
+import { Link } from 'react-router-dom';
 import '../styles/MyBooks.css';
 
 const MyBookContainer = ({currentUser}) => {
@@ -24,6 +25,7 @@ const MyBookContainer = ({currentUser}) => {
         return(
             <>
                 <UserDetail currentUser={currentUser}/>
+                <Link to="/my-books/add-book"><button>Add book</button></Link>
                 <MyBookList myBooks={myBooks}/>
             </>
         )
