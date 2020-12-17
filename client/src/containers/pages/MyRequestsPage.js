@@ -18,7 +18,7 @@ const MyRequestsPage = ({currentUser}) => {
         .then((data) => {
         setRequestsShare(data);
         });
-    }, [currentUser]);
+    }, [currentUser, selectedRequest]);
 
     useEffect(()=>{
         if(Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
@@ -28,7 +28,7 @@ const MyRequestsPage = ({currentUser}) => {
         .then((data) => {
         setRequestsBorrow(data);
         });
-    }, [currentUser]);
+    }, [currentUser, selectedRequest]);
 
     const handleSelectRequest = (event)=>{
         setSelectedRequest(JSON.parse(event.target.value));
