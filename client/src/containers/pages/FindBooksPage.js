@@ -6,10 +6,12 @@ import FilterBar from '../../components/findBooksPage/FilterBar';
 import SearchResults from '../../components/findBooksPage/SearchResults';
 import BookBar from '../../components/findBooksPage/BookBar';
 import { getBooks } from '../../fetches/BookFetch';
+import { getBooksByTitleOrAuthorOrGenreSearch } from '../../fetches/BookFetch';
 
 const FindBooksPage = () => {
 	const [books, setBooks] = useState([]);
 	const [foundBooks, setFoundBooks] = useState([]);
+	const [searchInput, setSearchInput] = useState('');
 
 	useEffect(() => {
 		getBooks().then((data) => {
@@ -18,15 +20,25 @@ const FindBooksPage = () => {
 		});
 	}, []);
 
-	const findBooksBySearchBar = (searchInput) => {
-		const lowerInput = searchInput.toLowerCase().trim();
+	useEffect(() => {
+		if (searchInput != null || searchInput == ""){
+			getBooksByTitleOrAuthorOrGenreSearch(searchInput).then((data) => {
+				setFoundBooks(data)
+			})
+		} else {
+			setFoundBooks(books);
+		}
+	}, [searchInput])
 
-		const foundBooksByTitle = books.filter((book) => {
-			return book.title.toLowerCase().indexOf(lowerInput) >= 0;
-		});
+	// const findBooksBySearchBar = (searchInput) => {
+	// 	const lowerInput = searchInput.toLowerCase().trim();
 
-		setFoundBooks(foundBooksByTitle);
-	};
+	// 	const foundBooksByTitle = books.filter((book) => {
+	// 		return book.title.toLowerCase().indexOf(lowerInput) >= 0;
+	// 	});
+
+	// 	setFoundBooks(foundBooksByTitle);
+	// };
 
 	// const findBooksByFilterBar = (filterWord) => {
 	// 	if (!filterWord) {
@@ -46,7 +58,7 @@ const FindBooksPage = () => {
 
 	return (
 		<>
-			<SearchBar findBooks={findBooksBySearchBar} />
+			<SearchBar setSearchInput={setSearchInput} />
 			{/* <FilterBar findBooks={findBooksByFilterBar} /> */}
 			<SearchResults books={foundBooks} />
 			{/* <BookBar findBooks={findFictionBooks} /> */}

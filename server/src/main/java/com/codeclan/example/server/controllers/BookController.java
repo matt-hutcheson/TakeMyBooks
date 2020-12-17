@@ -26,7 +26,12 @@ public class BookController {
     public ResponseEntity<List<Book>> getAllBooks(
             @RequestParam(name = "genre", required = false) String genre,
             @RequestParam(name = "author", required = false) String author,
-            @RequestParam(name = "ownerId", required = false) Long ownerId){
+            @RequestParam(name = "ownerId", required = false) Long ownerId,
+            @RequestParam(name = "search", required = false) Boolean search,
+            @RequestParam(name = "title", required = false) String title){
+        if (search != null && author != null && title != null && genre != null){
+            return new ResponseEntity<>(bookRepository.findBooksByTitleIgnoreCaseContainingOrAuthorIgnoreCaseContainingOrGenreIgnoreCaseContaining(title, author, genre), HttpStatus.OK);
+        }
         if (genre != null && author != null){
             return new ResponseEntity<>(bookRepository.findBooksByAuthorAndGenre(author, genre), HttpStatus.OK);
         }
@@ -47,14 +52,14 @@ public class BookController {
         return new ResponseEntity(bookRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping("/users/{id}/books/add-book")
+    @PostMapping("/user/{id}/my-books/add-book")
     public ResponseEntity<Book> postBook(@RequestBody Book book, @PathVariable Long id){
         Optional<User> currentUser = userRepository.findById(id);
         currentUser.ifPresent(user -> user.addBookToSharedBooks(bookRepository.save(book)));
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
-    @PostMapping("/users/{id}/books/add-book/{isbn}")
+    @PostMapping("/my-books/add-book/{isbn}")
     public ResponseEntity<Book> createBookFromISBN(@RequestBody User user, @PathVariable String isbn){
         BookWebFetch webFetch = new BookWebFetch();
         Book book = webFetch.fetchWithBarcode(isbn, user);

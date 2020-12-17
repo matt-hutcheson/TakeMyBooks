@@ -1,8 +1,12 @@
-import React from 'react';
+import { useRef } from 'react';
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
-import NavBar from './NavBar';
+
 const Home = () => {
+	const myRef = useRef(null);
+
+	const executeScroll = () => myRef.current.scrollIntoView();
+
 	return (
 		<>
 			<div className="home-upper">
@@ -11,17 +15,14 @@ const Home = () => {
 					<p>Long live the libraries.</p>
 				</div>
 				<div>
-					<button className="btn-how-it-works">
-						<Link to="/how-it-works">How it Works</Link>
+					<button
+						className="btn-how-it-works"
+						onClick={executeScroll}
+					>
+						How it Works
 					</button>
 				</div>
-				<div className="img-down-arrow">
-					{/* <img
-						className="img-down-arrow"
-						src={'../images/down-arrow.svg'}
-						alt={'down arrow'}
-					/> */}
-				</div>
+				<div className="img-down-arrow"></div>
 			</div>
 
 			<div className="home-btns">
@@ -34,7 +35,7 @@ const Home = () => {
 				</button>
 			</div>
 
-			<div className="home-lower-content">
+			<div className="home-lower-content" ref={myRef}>
 				<div className="home-lower-img">
 					<img
 						className="img-content"
