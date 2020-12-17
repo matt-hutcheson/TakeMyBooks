@@ -13,10 +13,8 @@ const MyBookList = ({ myBooks }) => {
 
 	return (
 		<div className="my-books-list-div">
-			<p id="my-books-title">My books</p>
-			<div className="my-books-grid">
-				<div>{bookElement}</div>
-			</div>
+			<p className="my-books-title">My books</p>
+			<div className="my-books-grid">{bookElement}</div>
 		</div>
 	);
 };
