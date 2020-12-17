@@ -30,6 +30,7 @@ export const getUsersByShareBooksId = (bookId) => {
 export const getUsersById = (userId) => {
     return(
         fetch(`http://localhost:8080/users/${userId}`)
+        .then(res => res.json())
     );
 };
 
