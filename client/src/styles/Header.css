@@ -36,6 +36,7 @@ header {
 
 .header-list > li > a {
 	text-decoration: none;
+	color: #000000;
 }
 
 .header-list > li > a:visited {
