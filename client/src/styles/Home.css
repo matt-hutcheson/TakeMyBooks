@@ -1,38 +1,187 @@
-article {
-	flex-grow: 2;
+.home-upper {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	background: url('../images/home-image.jpg');
+	background-position: center;
 }
 
-.home-div {
+.home-main-text {
 	display: flex;
-	flex-flow: row;
-	justify-content: space-evenly;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	height: 80%;
 	width: 100%;
 }
 
-button {
+.home-main-text > p {
+	font-family: Crimson Text;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	line-height: 83px;
+	margin: 0;
+	padding: 0 0 0 5vw;
+}
+
+.home-btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 30vh;
+}
+
+.share-btn {
 	border: none;
-	padding: 32px 24px;
-	cursor: pointer;
-	background: #ff6600;
-	color: rgb(0, 0, 0);
-	margin: 30px;
-	/* border-radius: 12px; */
 	width: 360px;
 	height: 124px;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 75px;
 	font-family: Crimson Text;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 36px;
-	/* line-height: 76px; */
-	/* display: flex; */
+	font-size: 56px;
+	line-height: 76px;
+	color: #ffffff;
+	background: #ff6600;
+	border-radius: 60px;
+}
+
+.share-btn > a {
+	text-decoration: none;
+}
+
+.share-btn > a:visited {
+	color: #ffffff;
+}
+
+.share-btn > a:hover {
+	color: black;
+}
+
+.share-btn:hover {
+	background-color: white;
+	border: 8px solid #ff6600;
+	cursor: pointer;
+}
+
+.find-btn {
+	border: none;
+	width: 360px;
+	height: 124px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 56px;
+	line-height: 76px;
+	color: black;
+	background: #ffffff;
+	border-radius: 60px;
+	border: 8px solid #ff6600;
+}
+
+.find-btn > a {
+	text-decoration: none;
+	color: black;
+}
+
+.find-btn:hover {
+	background-color: #ff6600;
+	cursor: pointer;
+}
+
+.find-btn > a:visited {
+	color: black;
+}
+
+.find-btn > a:hover {
+	color: white;
+}
+
+.btn-how-it-works {
+	background: #ff6600;
+	border-radius: 39px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border: none;
+	width: 250px;
+	height: 45px;
+	font-family: Crimson Text;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.btn-how-it-works > a {
+	text-decoration: none;
+}
+
+.btn-how-it-works > a:visited {
+	color: black;
+}
+
+.btn-how-it-works > a:hover {
+	color: white;
+}
+
+.img-down-arrow {
+	background: url('../images/down-arrow.svg');
+	background-size: contain;
+	width: 40px;
+	height: 40px;
+	animation: updown 0.5s 0.5s ease-in infinite alternate;
+	animation-delay: 3s;
+}
+
+@keyframes updown {
+	0% {
+		transform: scale(1, 1) translateY(0px);
+	}
+	100% {
+		transform: scale(1, 1) translateY(10px);
+	}
+}
+
+.home-lower-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.home-lower-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.home-lower-img {
+	width: 40vw;
+}
+
+.home-lower-text {
+	width: 40vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Crimson Text;
+	font-style: normal;
+	font-size: 65px;
+	line-height: 76px;
+	display: flex;
 	align-items: center;
 	text-align: center;
 }
 
-button:hover {
-	background-color: rgb(243, 88, 36);
-	color: white;
+.home-lower-img2 {
+}
+
+.home-lower-text2 {
+}
+
+.img-content {
+	width: 40vw;
+	margin-bottom: 50px;
 }

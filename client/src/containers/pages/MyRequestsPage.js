@@ -8,20 +8,26 @@ const MyRequestsPage = ({currentUser}) => {
     const [requestsBorrow, setRequestsBorrow] = useState([])
     const [selectedRequest, setSelectedRequest] = useState({})
     const [requestIsSelected, setRequestIsSelected] = useState(false)
-    
 
     useEffect(() => {
-        if(currentUser != null){   
-		getRequestsByOwnerId(currentUser.id).then((data) => {
-			setRequestsShare(data);
-        });}
+        if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
+            return null;
+        }
+        console.log(currentUser.id)
+        getRequestsByOwnerId(currentUser.id)
+        .then((data) => {
+        setRequestsShare(data);
+        });
     }, [currentUser]);
 
     useEffect(()=>{
-        if(currentUser != null){
-        getRequestsByRequesterId(currentUser.id).then((data) => {
-            setRequestsBorrow(data);
-        });}
+        if(Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
+            return null;
+        }
+        getRequestsByRequesterId(currentUser.id)
+        .then((data) => {
+        setRequestsBorrow(data);
+        });
     }, [currentUser]);
 
     const handleSelectRequest = (event)=>{
@@ -34,6 +40,11 @@ const MyRequestsPage = ({currentUser}) => {
         setRequestIsSelected(false);
     };
 
+    
+    
+    if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object) {
+        return <p>Please login to continue</p>
+    }
     if(!requestIsSelected){
         return(
             <>

@@ -5,9 +5,9 @@ export const getUsers = () => {
     );
 };
 
-export const getUsersByFirstAndLastNames = (firstName, lastName) => {
+export const getUsersByUserNames = (userName) => {
     return(
-        fetch(`http://localhost:8080/users?firstName=${firstName}&lastName=${lastName}`)
+        fetch(`http://localhost:8080/users?userName=${userName}`)
             .then(res => res.json())
     );
 };
