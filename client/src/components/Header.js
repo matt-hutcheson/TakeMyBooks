@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NavBar from './NavBar';
 import '../styles/Header.css';
 
-const Header = () => {
+const Header = ({ user }) => {
 	const [burgerClicked, setBurgerClicked] = useState(false);
 
 	const handleBurgerHover = (event) => {
