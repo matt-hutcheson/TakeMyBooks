@@ -1,28 +1,24 @@
-import MyBookDetail from './MyBookDetail'
+import MyBookDetail from './MyBookDetail';
+import Book from '../findBooksPage/Book';
+import '../../styles/MyBookList.css';
 
-const MyBookList = ({myBooks}) => {
+const MyBookList = ({ myBooks }) => {
+	if (!myBooks) {
+		return <p>loading</p>;
+	}
 
-  if(!myBooks) {
-    return(
-      <p>loading</p>
-    )
-  }
+	const bookElement = myBooks.map((book, index) => {
+		return <MyBookDetail key={index} book={book} />;
+	});
 
-  const bookElement = myBooks.map((book,index) => {
-    return (<MyBookDetail key={index} book={book}/>)
-  })
+	return (
+		<div className="my-books-list-div">
+			<p id="my-books-title">My books</p>
+			<div className="my-books-grid">
+				<div>{bookElement}</div>
+			</div>
+		</div>
+	);
+};
 
-  return (
-    <>
-      <p id="my-books-title">My books</p>
-      <div style={{background: "#C4C4C4"}}>
-        <ul>
-            {bookElement}
-        </ul>
-      </div>
-    </>
-  ) 
-}
-
-
-export default MyBookList
+export default MyBookList;
