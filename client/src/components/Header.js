@@ -56,13 +56,12 @@ const Header = ({ currentUser }) => {
 		return (
 			<>
 				<header>
-					<a href="/">
-						<img
-							className="header-logo"
-							src={'../images/BookYeetLogo.png'}
-							alt={'logo'}
-						></img>
-					</a>
+					<Link to="/" />
+					<img
+						className="header-logo"
+						src={'../images/BookYeetLogo.png'}
+						alt={'logo'}
+					></img>
 					<ul className="header-list">
 						<li>
 							<a href="/login" className="header-link1">
