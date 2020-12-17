@@ -115,6 +115,10 @@
 	margin-bottom: 20px;
 }
 
+.btn-how-it-works:hover {
+	cursor: pointer;
+}
+
 .btn-how-it-works > a {
 	text-decoration: none;
 }
@@ -173,12 +177,6 @@
 	display: flex;
 	align-items: center;
 	text-align: center;
-}
-
-.home-lower-img2 {
-}
-
-.home-lower-text2 {
 }
 
 .img-content {

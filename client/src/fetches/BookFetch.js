@@ -5,6 +5,13 @@ export const getBooks = () => {
     );
 };
 
+export const getBooksByTitleOrAuthorOrGenreSearch = (search) => {
+    return(
+        fetch(`http://localhost:8080/books?search=true&title=${search}&author=${search}&genre=${search}`)
+        .then(res => res.json())
+    )
+}
+
 export const getBooksByAuthorAndGenre = (author, genre) => {
     return(
         fetch(`http://localhost:8080/books?author=${author}&genre=${genre}`)
