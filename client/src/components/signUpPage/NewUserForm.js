@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../../styles/NewUserForm.css'
 
 const NewUserForm = ({ onNewUserSubmit }) => {
 	const [userName, setUserName] = useState('');
@@ -46,32 +47,32 @@ const NewUserForm = ({ onNewUserSubmit }) => {
 	return (
 		<>
 			<div>
-				<form>
-					<label htmlFor="userName">Username:</label>
-					<input
+				<form className="form">
+					<label className="label" htmlFor="userName">Username:</label>
+					<input className="input"
 						type="text"
 						placeholder="username"
 						value={userName}
 						onChange={handleUserNameChange}
 						required
 					/>
-					<label htmlFor="userEmail">Email:</label>
-					<input
+					<label className="label" htmlFor="userEmail">Email:</label>
+					<input className="input"
 						type="text"
 						placeholder="email"
 						value={userEmail}
 						onChange={handleUserEmailChange}
 						required
 					/>
-					<label htmlFor="userCommunity">Community:</label>
-					<input
+					<label className="label" htmlFor="userCommunity">Community:</label>
+					<input className="input"
 						type="text"
 						placeholder="community"
 						value={userCommunity}
 						onChange={handleCommunityChange}
 						required
 					/>
-					<input
+					<input className="submit"
 						type="submit"
 						value="Sign Up"
 						onClick={handleNewUserSubmit}
