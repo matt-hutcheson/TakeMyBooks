@@ -43,24 +43,29 @@ export const getBooksByOwnerId = (ownerId) => {
 export const getBooksById = (bookId) => {
     return(
         fetch(`http://localhost:8080/books/${bookId}`)
+        .then(res => res.json())
     );
 };
 
-export const postBook = (book) => {
+export const postBook = (book, userId) => {
     return(
-        fetch(`http://localhost:8080/books`, {
+        fetch(`http://localhost:8080/user/${userId}/my-books/add-book`, {
             method: 'post',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(book)
-        })
+        }).then(res => res.json())
     );
 };
 
 export const postBarcode = (isbn, currentUser) => {
+    console.log(isbn)
+    console.log(currentUser)
     return(
         fetch(`http://localhost:8080/my-books/add-book/${isbn}`, {
             method: 'post',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(currentUser)
-        })
+        }).then(res => res.json())
     )
 }
 
