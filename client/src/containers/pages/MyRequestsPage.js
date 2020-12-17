@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import RequestDetail from '../../components/myRequestsPage/RequestDetail';
 import RequestList from '../../components/myRequestsPage/RequestList';
 import { getRequestsByOwnerId, getRequestsByRequesterId } from '../../fetches/RequestFetch';
+import '../../styles/MyRequestsPage.css';
 
 const MyRequestsPage = ({currentUser}) => {
     const [requestsShare, setRequestsShare] = useState([])
@@ -40,20 +41,24 @@ const MyRequestsPage = ({currentUser}) => {
     const resetSelectRequest = () => {
         setRequestIsSelected(false);
         setSelectedRequest(null);
-        
+
     };
-    
+
     if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object) {
         return <p>Please login to continue</p>
     }
     if(!requestIsSelected){
         return(
-            <>
-            <h2>Books I'm Sharing:</h2>
-            <RequestList currentUser={currentUser} requests={requestsShare} handleSelectRequest={handleSelectRequest}/>
-            <h2>Books I'm Receiving:</h2>
-            <RequestList currentUser={currentUser} requests={requestsBorrow} handleSelectRequest=  {handleSelectRequest}/>
-            </>
+            <article className="requestsContainer">
+                <div className="shares">
+                    <h2 className="reqH2">Books I'm Sharing:</h2>
+                    <RequestList currentUser={currentUser} requests={requestsShare} handleSelectRequest={handleSelectRequest}/>
+                </div>
+                <div className="recieves">
+                    <h2 className="reqH2">Books I'm Receiving:</h2>
+                    <RequestList currentUser={currentUser} requests={requestsBorrow} handleSelectRequest=  {handleSelectRequest}/>
+                </div>
+            </article>
         )
     } else {
         return(

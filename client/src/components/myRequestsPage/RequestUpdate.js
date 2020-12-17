@@ -12,7 +12,7 @@ const RequestUpdate = ({ startingStat, id, owner, requester, book, resetSelectRe
         updateRequest(updatedRequest, id)
         .then(()=>resetSelectRequest());
     };
-    
+
     const handleUpdateRequestSubmit = (event) => {
 		event.preventDefault();
 		if (
@@ -27,10 +27,10 @@ const RequestUpdate = ({ startingStat, id, owner, requester, book, resetSelectRe
             requester: requester,
             book: book
         }, id);
-        
+
         setStatus('');
 	};
-    
+
     return(
         <>
         <form className="form">
@@ -42,7 +42,7 @@ const RequestUpdate = ({ startingStat, id, owner, requester, book, resetSelectRe
                 <option value="Rejected">Reject</option>
                 <option value="Completed">Complete</option>
             </select>
-            <input className="submit" type="submit" value="Update Status" onClick={handleUpdateRequestSubmit}/>
+            <input className="reqGoBack" type="submit" value="Update Status" onClick={handleUpdateRequestSubmit}/>
         </form>
         </>
     );

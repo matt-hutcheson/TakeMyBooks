@@ -1,0 +1,74 @@
+.reqLi {
+  /* border: 3px solid #ff6600; */
+  padding: 0 10px 10px 10px;
+  margin: 0 5px;
+  width: 50%
+}
+
+.reqButtonCenter {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.view-request-button {
+border: none;
+width: 180px;
+height: 31px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+font-family: Crimson Text;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 15px;
+color: black;
+border-radius: 60px;
+}
+
+.Completed {
+  border: 3px solid purple;
+}
+
+.Rejected {
+  border: 3px solid red;
+}
+
+.Approved {
+  border: 3px solid green;
+}
+
+.buttonCompleted {
+  background: purple;
+  border: 8px solid purple;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.buttonRejected {
+  background: red;
+  border: 8px solid red;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.buttonApproved {
+  background: green;
+  border: 8px solid green;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.buttonCompleted:hover {
+  background-color: white;
+border: 4px solid purple;
+cursor: pointer;
+}
+
+.buttonRejected:hover {
+  background-color: white;
+border: 4px solid red;
+cursor: pointer;
+}
+
+.buttonApproved:hover {
+  background-color: white;
+border: 4px solid green;
+cursor: pointer;
+}
