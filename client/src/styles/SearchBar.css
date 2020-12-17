@@ -1,0 +1,26 @@
+.search-bar-div {
+	margin: 3vh auto 5vh auto;
+	width: 50vw;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+}
+
+.search-bar-div > input {
+	width: 50vw;
+	height: 5vh;
+	border: 5px solid #ff6600;
+	border-radius: 30px;
+	padding-left: 20px;
+	font-size: 24px;
+}
+
+.search-bar-div > input:focus {
+	outline: none;
+}
+
+.search-bar-div > input::placeholder {
+	color: rgb(201, 198, 198);
+	color: gray;
+	font-size: 20px;
+}

@@ -1,0 +1,21 @@
+.search-results-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 5px 5px;
+	grid-template-areas:
+		'. . . .'
+		'. . . .'
+		'. . . .';
+}
+
+.search-results-header {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+hr {
+	margin-bottom: 25px;
+	border: 1px solid rgb(175, 175, 175);
+	border-radius: 20px;
+}
