@@ -1,0 +1,23 @@
+.my-books-list-div {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.my-books-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 5px 5px;
+	grid-template-areas:
+		'. . . .'
+		'. . . .'
+		'. . . .';
+}
+
+.my-books-title {
+	text-align: left;
+	font-size: 30px;
+	margin-top: 50px;
+	font-weight: 600;
+}
