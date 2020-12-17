@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const SearchBar = ({ findBooks }) => {
-	const [searchInput, setSearchInput] = useState('');
+const SearchBar = ({ setSearchInput }) => {
 
 	const onSearchInputChange = (event) => {
 		event.preventDefault();
 		setSearchInput(event.target.value);
 	};
-
-	useEffect(() => {
-		findBooks(searchInput);
-	}, [searchInput]);
 
 	return (
 		<>
