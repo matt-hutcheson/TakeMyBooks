@@ -36,8 +36,9 @@ const MyRequestsPage = ({currentUser}) => {
     };
 
     const resetSelectRequest = () => {
-        setSelectedRequest(null);
         setRequestIsSelected(false);
+        setSelectedRequest(null);
+        
     };
     
     if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object) {

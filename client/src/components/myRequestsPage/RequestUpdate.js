@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {updateRequest} from '../../fetches/RequestFetch';
-const RequestUpdate = ({ id, owner, requester, book, resetSelectRequest}) =>{
+const RequestUpdate = ({ startingStat, id, owner, requester, book, resetSelectRequest}) =>{
 
     const [status, setStatus] = useState('');
 
@@ -36,8 +36,8 @@ const RequestUpdate = ({ id, owner, requester, book, resetSelectRequest}) =>{
         <>
         <form className="form">
 			<label className="label" htmlFor="status">Update Status:</label>
-            <select className="input" name="status" id="status" placeholder="choose status" onChange={handleStatusChange} required>
-                <option selected disabled>please choose a status</option>
+            <select defaultValue={startingStat} className="input" name="status" id="status" placeholder="choose status" onChange={handleStatusChange} required>
+                <option name="0" disabled>please choose a status</option>
                 <option value="Approved">Approve</option>
                 <option value="Rejected">Reject</option>
                 <option value="Completed">Complete</option>
