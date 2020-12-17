@@ -24,8 +24,6 @@ const FindBooksPage = () => {
 		if (searchInput != null || searchInput == ""){
 			getBooksByTitleOrAuthorOrGenreSearch(searchInput).then((data) => {
 				setFoundBooks(data)
-				console.log(searchInput)
-				console.log(foundBooks)
 			})
 		} else {
 			setFoundBooks(books);
