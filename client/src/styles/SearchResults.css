@@ -8,3 +8,14 @@
 		'. . . .'
 		'. . . .';
 }
+
+.search-results-header {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+hr {
+	margin-bottom: 25px;
+	border: 1px solid rgb(175, 175, 175);
+	border-radius: 20px;
+}

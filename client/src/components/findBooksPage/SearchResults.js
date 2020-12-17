@@ -9,7 +9,8 @@ const SearchResults = ({ books }) => {
 
 	return (
 		<>
-			<h3>Search results:</h3>
+			<h3 className="search-results-header">Search results:</h3>
+			<hr />
 			<div className="search-results-container">{bookList}</div>
 		</>
 	);
