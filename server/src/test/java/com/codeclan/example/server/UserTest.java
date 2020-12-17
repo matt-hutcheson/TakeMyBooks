@@ -31,7 +31,7 @@ public class UserTest {
 
     @Test
     public void canAddBookToShareBooks(){
-        User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
+        User user = new User("BobWriter", "bobbigbrain@hotmail.com", "Edinburgh");
         Book book = new Book("Children Of Time", "Tchaikovsky, Adrian", "Sci-Fi", "9781447273288", user, "https://images.barcodelookup.com/3143/31435732-1.jpg");
 
         user.addBookToSharedBooks(book);
@@ -40,7 +40,7 @@ public class UserTest {
 
     @Test
     public void canAddBookToOwnedBooks(){
-        User user = new User("Bob", "Writer", "bobbigbrain@hotmail.com", "Edinburgh");
+        User user = new User("BobWriter", "bobbigbrain@hotmail.com", "Edinburgh");
         Book book = new Book("Children Of Time", "Tchaikovsky, Adrian", "Sci-Fi", "9781447273288", user, "https://images.barcodelookup.com/3143/31435732-1.jpg");
         user.addBookToOwnedBooks(book);
         assertEquals(1, user.getOwnedBooks().size());
@@ -60,14 +60,14 @@ public class UserTest {
 
     @Test
     public void canGetUserByFirstNameAndLastName(){
-        List<User> found = userRepository.findUsersByFirstNameAndLastName("Robert", "Bruce");
+        List<User> found = userRepository.findUsersByUserName("Robert");
         assertEquals(1, found.size());
     }
 
     @Test
     public void canGetUserByBookId(){
         List<User> found = userRepository.findUsersByShareBooksId(1L);
-        assertEquals("Bob", found.get(0).getFirstName());
+        assertEquals("Bob", found.get(0).getUserName());
     }
 
 }

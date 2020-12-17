@@ -12,7 +12,7 @@ const Home = () => {
 				<Link to="/find-books">
 					<button>Find Books</button>
 				</Link>
-				<Link to="/share-books">
+				<Link to="/my-books">
 					<button>Share Books</button>
 				</Link>
 			</div>
