@@ -21,12 +21,14 @@ const NewUserBox = ({setCurrentUser}) => {
 
 	const showAllUsers = () => {
 		return (
-			<select defaultValue="0" onChange={handleSelectUser}>
+			<div>
+			<select className="select-user" defaultValue="0" onChange={handleSelectUser}>
 				<option value="0" disabled="disabled">Please select your username</option>
 				{users.map((user, index) => {
 					return <option key={index} value={JSON.stringify(user)} >{user.userName}</option>
 				})}
 			</select>
+			</div>
 		);
 	};
 
@@ -58,43 +60,45 @@ const NewUserBox = ({setCurrentUser}) => {
 		if (showSelect === false && showSignUp === false) {
 			return (
 				<>
+				<div className="select-div">
 					<div>
 						<h2 className="question">Signed Up Before?</h2>
 					</div>
-					<div className="button">
-						<button onClick={handleYesClick}>YES</button>
-						<button onClick={handleNoClick}>NO</button>
+					<div className="log-in-btns">
+						<button className="yes-btn" onClick={handleYesClick}>YES</button>
+						<button className="no-btn" onClick={handleNoClick}>NO</button>
 					</div>
+				</div>
 				</>
 			);
 		} else if (showSelect === true) {
 			return (
 				<>
+				<div className="select-div">
 					<div>
 						<h2 className="question">Select your name below:</h2>
 					</div>
 					<div className="show-users">{showAllUsers()}</div>
-					<Link to="/my-books"><button className="" onClick={handleSelectClick}>
+					<Link to="/my-books"><button className="yes-btn" onClick={handleSelectClick}>
 						Select
 					</button></Link>
+				</div>
 				</>
 			);
 		} else {
 			return (
-				<div>
 					<NewUserForm
 						onNewUserSubmit={(newUser) => {
 							addNewUser(newUser);
 						}}
 					/>
-				</div>
 			);
 		}
 	};
 
 	return (
 		<>
-			<div>{renderItems()}</div>
+			{renderItems()}
 		</>
 	);
 };
