@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = ({ currentUser }) => {
@@ -22,18 +23,21 @@ const Header = ({ currentUser }) => {
 		return (
 			<>
 				<header>
-					<a href="/">
+					<Link to="/">
 						<img
 							className="header-logo"
 							src={'../images/BookYeetLogo.png'}
 							alt={'logo'}
 						></img>
-					</a>
+					</Link>
 					<ul className="header-list">
 						<li>
-							<a href="/login" className="header-link1">
-								Login
-							</a>
+              <a href="/login" className="header-link1">
+                Login
+              </a>
+						</li>
+						<li>
+						  <Link to="/"><p>About</p></Link>
 						</li>
 						<li
 							className="img-li"
@@ -53,14 +57,13 @@ const Header = ({ currentUser }) => {
 		);
 	} else {
 		return (
-			<>
-				<header>
-					<a href="/">
-						<img
-							className="header-logo"
-							src={'../images/BookYeetLogo.png'}
-							alt={'logo'}
-						></img>
+			<header>
+				<Link to="/">
+          <img
+            className="header-logo"
+            src={'../images/BookYeetLogo.png'}
+            alt={'logo'}
+          ></img>
 					</a>
 					<ul className="header-list">
 						<li>
