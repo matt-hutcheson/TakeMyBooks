@@ -1,8 +1,27 @@
 .question {
-    font-size: 20px; 
+    font-size: 40px;     
     color: black;
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: absolute;
+    margin-top: 10%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.show-users {
+    font-size: 28px;
+    display: flex;
+    margin:auto; 
+    width: 300px;
+    height: 40px;
+    border: 2px solid rgb(238, 85, 34);
+    border-radius: 3px;
+    background-color:antiquewhite;
+    justify-content: stretch;
+   
+    direction: rtl;
 }
