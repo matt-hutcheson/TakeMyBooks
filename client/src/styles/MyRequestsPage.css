@@ -1,0 +1,23 @@
+.requestsContainer {
+  display: grid;
+  grid-template-columns: 45vw 45vw;
+  justify-content: center;
+  min-height: 60vh;
+  overflow-y: auto;
+}
+
+.reqH2 {
+
+}
+
+.shares {
+  border: 4px black solid;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+
+.recieves {
+  border: 4px black solid;
+  margin: 0 5px;
+  padding: 0 10px;
+}

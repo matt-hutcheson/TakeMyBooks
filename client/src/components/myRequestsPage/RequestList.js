@@ -1,5 +1,6 @@
 import Request from '../../components/myRequestsPage/Request';
 import RequestDetail from './RequestDetail';
+import '../../styles/RequestList.css';
 
 const RequestList = ({ currentUser, requests, handleSelectRequest }) => {
 
@@ -9,7 +10,7 @@ const RequestList = ({ currentUser, requests, handleSelectRequest }) => {
 
 	return (
 		<>
-			<ul>{showRequests}</ul>
+			<ul className="reqUl">{showRequests}</ul>
 		</>
 	);
 };
