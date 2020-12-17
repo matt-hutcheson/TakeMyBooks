@@ -24,7 +24,7 @@ const Header = () => {
 							src={'../images/burger-menu.svg'}
 							alt={'nav bar menu'}
 							className="burger-image"
-						/>
+						></img>
 					</li>
 				</ul>
 			</header>
