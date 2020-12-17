@@ -13,9 +13,10 @@ const MyRequestsPage = ({currentUser}) => {
         if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
             return null;
         }
-        console.log(currentUser.id)
         getRequestsByOwnerId(currentUser.id)
         .then((data) => {
+            // console.log('getting back the request data, updating of request', data[0].status)
+
         setRequestsShare(data);
         });
     }, [currentUser, selectedRequest]);
@@ -26,6 +27,7 @@ const MyRequestsPage = ({currentUser}) => {
         }
         getRequestsByRequesterId(currentUser.id)
         .then((data) => {
+            // console.log('getting back the request data, updating of request', data[0].status)
         setRequestsBorrow(data);
         });
     }, [currentUser, selectedRequest]);

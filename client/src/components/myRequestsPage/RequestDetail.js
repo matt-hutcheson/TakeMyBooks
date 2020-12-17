@@ -4,8 +4,8 @@ import { deleteRequest } from '../../fetches/RequestFetch'
 const RequestDetail = ({onUpdateRequest, selectedRequest, currentUser, resetSelectRequest})=>{
     
     const cancelRequest = ()=>{
-        resetSelectRequest()
         deleteRequest(selectedRequest.id)
+        .then(()=>resetSelectRequest());        
     }
 
     if(selectedRequest.owner.id===currentUser.id){
