@@ -52,14 +52,14 @@ public class BookController {
         return new ResponseEntity(bookRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping("/users/{id}/books/add-book")
+    @PostMapping("/user/{id}/my-books/add-book")
     public ResponseEntity<Book> postBook(@RequestBody Book book, @PathVariable Long id){
         Optional<User> currentUser = userRepository.findById(id);
         currentUser.ifPresent(user -> user.addBookToSharedBooks(bookRepository.save(book)));
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
-    @PostMapping("/users/{id}/books/add-book/{isbn}")
+    @PostMapping("/my-books/add-book/{isbn}")
     public ResponseEntity<Book> createBookFromISBN(@RequestBody User user, @PathVariable String isbn){
         BookWebFetch webFetch = new BookWebFetch();
         Book book = webFetch.fetchWithBarcode(isbn, user);
