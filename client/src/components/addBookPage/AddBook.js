@@ -28,11 +28,13 @@ const AddBook = ({currentUser}) => {
   if (Object.keys(newBook).length === 0 && newBook.constructor === Object){
     return (
       <>
-        <h1>newBook</h1>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="isbn" placeholder="ISBN Number" />
-          <button type="submit">Lookup Barcode</button>
-        </form>
+        <div className="add-new-book">
+          <h1>newBook</h1>
+            <form onSubmit={handleSubmit}>
+              <input type="text" name="isbn" placeholder="ISBN Number" />
+              <button type="submit">Lookup Barcode</button>
+            </form>
+        </div>
       </>
     )
   } else {
