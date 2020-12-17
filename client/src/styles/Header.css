@@ -41,10 +41,6 @@ header {
 }
 
 .header-link1 {
-	margin-right: 6vw;
-}
-
-.header-link2 {
 	margin-right: 10vw;
 }
 
@@ -69,4 +65,8 @@ header {
 
 .img-li > div {
 	background-color: white;
+}
+
+.img-li:hover {
+	cursor: pointer;
 }

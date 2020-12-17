@@ -31,11 +31,6 @@ const Header = () => {
 							Login
 						</a>
 					</li>
-					<li>
-						<a href="/about" className="header-link2">
-							How it works
-						</a>
-					</li>
 					<li
 						className="img-li"
 						onMouseEnter={handleBurgerHover}

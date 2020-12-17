@@ -1,26 +1,3 @@
-/* .nav-bar-list {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background-color: #f39c12;
-	display: flex;
-	flex-direction: column;
-	overflow: visible;
-} */
-
-/* .nav-bar-list > li {
-	display: block;
-	padding: 8px;
-	text-decoration: none;
-	color: black;
-} */
-/* Change the link color on hover */
-/* .nav-bar-list > li:hover {
-	background-color: rgb(243, 88, 36);
-	color: white;
-} */
-
 .nav-list-link {
 	float: none;
 	color: black;
@@ -35,5 +12,5 @@
 }
 
 .nav-list-link:hover {
-	text-decoration: underline;
+	color: white;
 }
