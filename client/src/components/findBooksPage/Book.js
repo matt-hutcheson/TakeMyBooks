@@ -30,23 +30,21 @@ const Book = ({ book, currentUser }) => {
 	return (
 		<div className="book-result">
 			<img src={book.image} alt="book cover" />
-			<Link to="/book-detail">
-				<div className="overlay">
-					<p className="text1">{book.title}</p>
-					<p className="text2">by {book.author}.</p>
-					{Object.keys(currentUser).length === 0 &&
-					currentUser.constructor === Object ? null : (
-						<button
-							className="request-btn"
-							onClick={handleBookRequestClick}
-						>
-							Request Book
-						</button>
-					)}
-				</div>
-			</Link>
 
-			{/* <p className="book-genre">Genre: {book.genre}</p> */}
+			<div className="overlay">
+				<p className="text1">{book.title}</p>
+				<p className="text2">by {book.author}.</p>
+
+				{Object.keys(currentUser).length === 0 &&
+				currentUser.constructor === Object ? null : (
+					<button
+						className="request-btn"
+						onClick={handleBookRequestClick}
+					>
+						Request Book from {book.owner.userName}
+					</button>
+				)}
+			</div>
 		</div>
 	);
 };
