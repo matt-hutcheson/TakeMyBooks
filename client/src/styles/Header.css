@@ -5,6 +5,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	height: 10vh;
+	overflow-y: hidden;
 }
 
 .header-logo:hover {
@@ -27,7 +28,7 @@ header {
 
 .header-list > li {
 	display: block;
-	padding: 0 20px;
+	padding: 0;
 	font-family: Crimson Text;
 	font-size: 24px;
 	text-align: center;
@@ -37,6 +38,14 @@ header {
 .header-list > li > a {
 	text-decoration: none;
 	color: #000000;
+}
+
+.header-link1 {
+	margin-right: 6vw;
+}
+
+.header-link2 {
+	margin-right: 10vw;
 }
 
 .header-list > li > a:visited {
@@ -49,4 +58,15 @@ header {
 
 .img-li {
 	height: 30px;
+	position: absolute;
+	left: 89vw;
+	float: left;
+	display: block;
+	width: 9vw;
+	padding: 0;
+	margin: 0;
+}
+
+.img-li > div {
+	background-color: white;
 }
