@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import {postBarcode} from '../../fetches/BookFetch';
 import MyBookDetail from '../../components/myBooksPage/MyBookDetail'
+import '../../styles/AddNewBook.css'
 
 const AddBook = ({currentUser}) => {
 
@@ -22,7 +23,7 @@ const AddBook = ({currentUser}) => {
   }
 
   if (Object.keys(currentUser).length === 0 && currentUser.constructor === Object){
-    return <p>Please select a user to continue</p>
+    return <p className>Please select a user to continue</p>
   }
 
   if (Object.keys(newBook).length === 0 && newBook.constructor === Object){
@@ -31,8 +32,8 @@ const AddBook = ({currentUser}) => {
         <div className="add-new-book">
           <h1>newBook</h1>
             <form onSubmit={handleSubmit}>
-              <input type="text" name="isbn" placeholder="ISBN Number" />
-              <button type="submit">Lookup Barcode</button>
+              <input className="input" type="text" name="isbn" placeholder="ISBN Number" />
+              <button className="add-book-button" type="submit">Lookup Barcode</button>
             </form>
         </div>
       </>
