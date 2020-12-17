@@ -26,7 +26,7 @@ const Home = () => {
 
 			<div className="home-btns">
 				<button className="share-btn">
-					<Link to="/share-books">Share books</Link>
+					<Link to="/my-books">Share books</Link>
 				</button>
 
 				<button className="find-btn">

@@ -5,17 +5,19 @@ const Header = () => {
 	return (
 		<>
 			<header>
-				<img
-					className="header-logo"
-					src={'../images/BookYeetLogo.png'}
-					alt={'logo'}
-				></img>
+				<a href="/">
+					<img
+						className="header-logo"
+						src={'../images/BookYeetLogo.png'}
+						alt={'logo'}
+					></img>
+				</a>
 				<ul className="header-list">
 					<li>
-						<a href="">Login</a>
+						<a href="/login">Login</a>
 					</li>
 					<li>
-						<a href="">About</a>
+						<a href="/about">About</a>
 					</li>
 					<li className="img-li">
 						<img

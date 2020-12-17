@@ -14,11 +14,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "username")
+    private String userName;
 
     @Column(name = "email")
     private String email;
@@ -38,9 +35,8 @@ public class User {
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Request> requests;
 
-    public User(String firstName, String lastName, String email, String community) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String userName, String email, String community) {
+        this.userName = userName;
         this.email = email;
         this.community = community;
         this.shareBooks = new ArrayList<>();
@@ -60,20 +56,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
