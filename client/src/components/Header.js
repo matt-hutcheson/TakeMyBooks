@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = ({currentUser}) => {
@@ -20,19 +21,19 @@ const Header = ({currentUser}) => {
 		return (
 			<>
 				<header>
-					<a href="/">
+					<Link to="/">
 						<img
 							className="header-logo"
 							src={'../images/BookYeetLogo.png'}
 							alt={'logo'}
 						></img>
-					</a>
+					</Link>
 					<ul className="header-list">
 						<li>
 							<a href="/login" className="header-link1">Login</a>
 						</li>
 						<li>
-							<a href="/about">About</a>
+						<Link to="/"><p>About</p></Link>
 						</li>
 						<li
 							className="img-li"
@@ -54,19 +55,19 @@ const Header = ({currentUser}) => {
 		return (
 		<>
 			<header>
-				<a href="/">
+				<Link to="/">
 					<img
 						className="header-logo"
 						src={'../images/BookYeetLogo.png'}
 						alt={'logo'}
 					></img>
-				</a>
+				</Link>
 				<ul className="header-list">
 					<li>
 						<a href="/login" className="header-link1">Change User: {currentUser.userName}</a>
 					</li>
 					<li>
-						<a href="/about">About</a>
+						<Link to="/"><p>About</p></Link>
 					</li>
 					<li
 						className="img-li"
