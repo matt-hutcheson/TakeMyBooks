@@ -44,6 +44,7 @@ Users will have:
 - Approve a request for a book.
 
 ### Extensions
+- Book could view available books by location on a map based on a User's postcode outcode (e.g. EH12, EH3)
 - Books could be added by scanning their barcode.
 - Could be able to swap a book for a book the other user is offering.
 - Users can create a 'WishList' of books they would like to swap for.
