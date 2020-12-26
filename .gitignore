@@ -3,6 +3,8 @@
 !/server/.mvn/wrapper/maven-wrapper.jar
 !**/server/src/main/**/target/
 !**/server/src/test/**/target/
+client/.eslintcache
+server/db/
 
 ### STS ###
 .apt_generated
