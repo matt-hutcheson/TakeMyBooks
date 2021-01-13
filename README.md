@@ -9,12 +9,12 @@ The app allows users to easily and quickly add books to be shared using the ISBN
 ## Setup/Installation
 
 The app uses a JavaScript/React front end (client) and a Java/Spring backend (server). To setup the app for personal use:
-#### Server Setup
+### Server Setup
 
-The server is most easily run through the IntelliJ IDEA Community app.
+The server is most easily run through the IntelliJ IDEA Community app.<space><space>
 [download IntelliJ](https://www.jetbrains.com/idea/download/#section=mac)
 
-**An API key is required for the app to be able to communicate with the barcode API and generate books.**
+**An API key is required for the app to be able to communicate with the barcode API and generate books.**<space><space>
 Get your API key from [barcodelookup.com](https://www.barcodelookup.com/api#sign-up). They offer a 30day free trial.
 
 To add your API key to the app, create a new file in the `components` folder called `APIkey.java` and add the following code (replacing `your_key` with the key for barcodelookup).
@@ -39,7 +39,7 @@ Next in terminal starting from the root:
 In IntelliJ hit the "Run" button in the top right corner of the app
 ![run button](./ijRun.png)
 
-#### Client Setup
+### Client Setup
 Install node dependencies starting from root folder:
 
     $ cd client
